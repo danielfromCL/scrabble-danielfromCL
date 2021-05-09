@@ -1,11 +1,11 @@
 package cl.uchile.dcc.scrabble.gui;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
 class ScrabbleTest {
 
-    @Test
-    void start() {
+    @BeforeEach
+    void setUp() {
     }
 }
