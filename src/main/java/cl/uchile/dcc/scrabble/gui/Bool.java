@@ -1,17 +1,17 @@
 package cl.uchile.dcc.scrabble.gui;
 
 public class Bool extends Tipos{
-    public boolean booleano;
-    public Bool(boolean booleano) {
-        this.booleano = booleano;
+    public boolean Bool;
+    public Bool(boolean Bool) {
+        this.Bool = Bool;
     }
 
-    public boolean isBooleano() {
-        return booleano;
+    public boolean isBool() {
+        return Bool;
     }
 
     @Override
-    public java.lang.String toString() {
-        return "Booleano es: "+ this.isBooleano();
+    public String toString() {
+        return "Bool{"+ this.isBool()+"}";
     }
 }

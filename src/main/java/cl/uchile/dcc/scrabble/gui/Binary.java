@@ -1,18 +1,18 @@
 package cl.uchile.dcc.scrabble.gui;
 
 public class Binary extends numero{
-    public java.lang.String Binary;
-    public Binary(java.lang.String Binary) {
+    public String Binary;
+    public Binary(String Binary) {
         this.Binary = Binary;
     }
 
-    public java.lang.String getBinary() {
+    public String getBinary() {
         return Binary;
     }
 
     @Override
-    public java.lang.String toString() {
-        return "Binary es: " + this.getBinary();
+    public String toString() {
+        return "Binary{" + this.getBinary() + "}";
     }
-    
+
 }

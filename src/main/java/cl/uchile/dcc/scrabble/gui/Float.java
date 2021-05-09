@@ -11,8 +11,8 @@ public class Float extends numero{
     }
 
     @Override
-    public java.lang.String toString() {
-        return "Float es: "+this.getFloat();
+    public String toString() {
+        return "Float{"+this.getFloat()+"}";
     }
 
 }

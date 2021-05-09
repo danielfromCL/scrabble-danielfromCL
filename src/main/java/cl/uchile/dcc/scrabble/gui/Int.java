@@ -11,8 +11,8 @@ public class Int extends numero {
     }
 
     @Override
-    public java.lang.String toString() {
-        return "Int es: " + this.getInt();
+    public String toString() {
+        return "Int{" + this.getInt()+"}";
     }
 
 }
