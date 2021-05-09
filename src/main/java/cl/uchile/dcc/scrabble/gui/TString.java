@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public class TString extends Tipos{
+public class TString extends Types{
     public String string;
     public TString(String string) {
         this.string = string;

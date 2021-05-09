@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public class Float extends numero{
+public class Float extends Numbers{
     public double Float;
     public Float(double Float) {
         this.Float=Float;

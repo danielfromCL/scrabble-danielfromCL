@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public class Binary extends numero{
+public class Binary extends Numbers{
     public String Binary;
     public Binary(String Binary) {
         this.Binary = Binary;

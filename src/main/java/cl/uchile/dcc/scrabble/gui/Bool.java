@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public class Bool extends Tipos{
+public class Bool extends Types{
     public boolean Bool;
     public Bool(boolean Bool) {
         this.Bool = Bool;
