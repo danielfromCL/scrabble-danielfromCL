@@ -1,7 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
 
 public class Float extends Numbers{
-    public double Float;
+    private double Float;
     public Float(double Float) {
         this.Float=Float;
     }
@@ -12,7 +12,19 @@ public class Float extends Numbers{
 
     @Override
     public String toString() {
-        return "Float{"+this.getFloat()+"}";
+        return String.valueOf(this.getFloat());
     }
+
+    @Override
+    public Float transformtoFloat(){
+        return this;
+    }
+
+    /*@Override
+    public TString transformtoString(){
+        return
+    }
+     */
+
 
 }

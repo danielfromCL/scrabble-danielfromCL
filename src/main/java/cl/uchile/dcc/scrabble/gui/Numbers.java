@@ -4,4 +4,5 @@ public abstract class Numbers extends Types {
 
     public Numbers() {
     }
+
 }

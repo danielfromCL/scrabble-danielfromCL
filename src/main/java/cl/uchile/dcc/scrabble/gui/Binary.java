@@ -1,7 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
 
 public class Binary extends Numbers{
-    public String Binary;
+    private String Binary;
     public Binary(String Binary) {
         this.Binary = Binary;
     }
@@ -12,7 +12,15 @@ public class Binary extends Numbers{
 
     @Override
     public String toString() {
-        return "Binary{" + this.getBinary() + "}";
+        return this.getBinary();
     }
+
+
+    @Override
+    public Binary transformtoBinary(){
+        return this;
+    }
+
+
 
 }

@@ -1,7 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
 
 public class Bool extends Types{
-    public boolean Bool;
+    private boolean Bool;
     public Bool(boolean Bool) {
         this.Bool = Bool;
     }
@@ -12,6 +12,20 @@ public class Bool extends Types{
 
     @Override
     public String toString() {
-        return "Bool{"+ this.isBool()+"}";
+        return String.valueOf(this.isBool());
     }
+
+    @Override
+    public Bool transformtoBool(){
+        return this;
+    }
+
+/*
+    @Override
+    public TString transformtoString(){
+        return new TString(this.toString());
+    }
+ */
+
+
 }
