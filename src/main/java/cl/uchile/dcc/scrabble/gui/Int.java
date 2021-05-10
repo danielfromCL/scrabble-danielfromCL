@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import java.util.Objects;
+
 public class Int extends Numbers {
     private int Int;
     public Int(int Int) {
@@ -9,6 +11,22 @@ public class Int extends Numbers {
     public int getInt() {
         return Int;
     }
+
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(Int.class);
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof Int){
+            var o = (Int) obj;
+            return o.Int == this.Int;
+        }
+        return false;
+    }
+
 
     @Override
     public String toString() {

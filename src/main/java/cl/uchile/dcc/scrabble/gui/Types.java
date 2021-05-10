@@ -1,4 +1,5 @@
 package cl.uchile.dcc.scrabble.gui;
+import java.util.Objects;
 
 public abstract class Types implements ITypes{
 

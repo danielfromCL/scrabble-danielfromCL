@@ -6,9 +6,21 @@ public class Binary extends Numbers{
         this.Binary = Binary;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof Binary){
+            var o = (Binary) obj;
+            return o.Binary.equals(this.Binary);
+        }
+        return false;
+    }
+
+
     public String getBinary() {
         return Binary;
     }
+
+
 
     @Override
     public String toString() {

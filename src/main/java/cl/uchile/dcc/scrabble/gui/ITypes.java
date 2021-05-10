@@ -13,4 +13,9 @@ public interface ITypes {
 
     Binary transformtoBinary();
 
+    @Override
+    int hashCode();
+    @Override
+    boolean equals(Object o);
+
 }
