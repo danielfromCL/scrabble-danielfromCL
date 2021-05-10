@@ -1,4 +1,4 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public abstract class Types {
+public abstract class Types implements ITypes{
 }
