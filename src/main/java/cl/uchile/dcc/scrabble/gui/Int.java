@@ -35,5 +35,5 @@ public class Int extends Numbers {
         return algo tipo binario
      */
 
-    
+
 }
