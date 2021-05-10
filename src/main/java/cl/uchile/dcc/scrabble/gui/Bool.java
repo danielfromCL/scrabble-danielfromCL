@@ -20,12 +20,4 @@ public class Bool extends Types{
         return this;
     }
 
-/*
-    @Override
-    public TString transformtoString(){
-        return new TString(this.toString());
-    }
- */
-
-
 }

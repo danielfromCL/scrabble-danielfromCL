@@ -35,12 +35,5 @@ public class Int extends Numbers {
         return algo tipo binario
      */
 
-
-    /*
-    @Override
-    public TString transformtoString(){
-        return new TString(this.toString());
-    }
-     */
-
+    
 }

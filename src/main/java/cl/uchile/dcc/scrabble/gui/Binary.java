@@ -23,4 +23,16 @@ public class Binary extends Numbers{
 
 
 
+    /*
+    Estas funciones no tienen que estar implementadas para la entrega parcial 1
+    @Override
+    public Float transformtoFloat(){
+        return algo;
+    }
+    @Override
+    public Int transformtoInt(){
+        return algo;
+    }
+     */
+
 }

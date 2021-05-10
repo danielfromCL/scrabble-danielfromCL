@@ -17,13 +17,4 @@ public class TString extends Types{
 
 
 
-
-/*
-    @Override
-    public TString transformtoString(){
-        return this;
-    }
- */
-
-
 }
