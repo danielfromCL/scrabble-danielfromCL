@@ -22,6 +22,9 @@ class TypesTest {
     private Random rng;
     private char[] ZeroOne =  {'0','1'};
 
+    /**
+     * Creates an object for each subclass of the Types class.
+     */
     @BeforeEach
     void setUp() {
         seed = new Random().nextInt();
@@ -38,6 +41,9 @@ class TypesTest {
 
     }
 
+    /**
+     * Tests that the constructors of every subclass of the Type class are working as expected.
+     */
     @RepeatedTest(20)
     void constructorTest(){
 
@@ -89,6 +95,9 @@ class TypesTest {
 
     }
 
+    /**
+     * Tests the getters of every subclass of the Types class.
+     */
     @RepeatedTest(20)
     void gettersTest(){
         assertEquals(st.getString(),hello);
@@ -98,6 +107,10 @@ class TypesTest {
         assertEquals(i.getInt(),seed);
         assertEquals(f.getFloat(),decimal);
     }
+
+    /**
+     * Tests the toString method of every subclass of the Types class.
+     */
     @RepeatedTest(20)
     void toStringTest(){
         assertEquals(st.toString(),hello);

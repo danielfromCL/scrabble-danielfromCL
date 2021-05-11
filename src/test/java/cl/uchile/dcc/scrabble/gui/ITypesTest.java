@@ -20,6 +20,9 @@ class ITypesTest {
     private Random rng;
     private char[] ZeroOne =  {'0','1'};
 
+    /**
+     * Creates an object for each class in Types
+     */
     @BeforeEach
     void setUp() {
         seed = new Random().nextInt();
@@ -37,6 +40,9 @@ class ITypesTest {
     }
 
 
+    /**
+     * Tests every transformation method solicited for the first parcial submission
+     */
     @RepeatedTest(20)
     void transformersTest(){
         assertEquals(st.transformtoString(),new TString(hello));
