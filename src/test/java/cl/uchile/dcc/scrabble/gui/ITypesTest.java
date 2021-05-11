@@ -7,6 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Class for testing every method in ITypes.
+ */
 class ITypesTest {
     private TString st;
     private Bool bo;
@@ -21,7 +24,7 @@ class ITypesTest {
     private char[] ZeroOne =  {'0','1'};
 
     /**
-     * Creates an object for each class in Types
+     * Creates an object for each subclass of the Types class.
      */
     @BeforeEach
     void setUp() {
@@ -41,7 +44,7 @@ class ITypesTest {
 
 
     /**
-     * Tests every transformation method solicited for the first parcial submission
+     * Tests every transformation method solicited for the first partial submission
      */
     @RepeatedTest(20)
     void transformersTest(){

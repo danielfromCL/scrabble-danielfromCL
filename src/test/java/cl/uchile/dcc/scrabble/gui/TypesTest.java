@@ -9,6 +9,9 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Class for testing every Types methods.
+ */
 class TypesTest {
     private TString st;
     private Bool bo;
@@ -42,7 +45,7 @@ class TypesTest {
     }
 
     /**
-     * Tests that the constructors of every subclass of the Type class are working as expected.
+     * Tests that the constructors of every subclass of the Types class are working as expected.
      */
     @RepeatedTest(20)
     void constructorTest(){
