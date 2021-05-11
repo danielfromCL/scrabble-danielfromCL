@@ -10,7 +10,7 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TypesTest {
-    private TString t;
+    private TString st;
     private Bool bo;
     private Binary bi;
     private Int i;
@@ -29,7 +29,7 @@ class TypesTest {
         int strSize = rng.nextInt(20);
         hello = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
         binary = RandomStringUtils.random(strSize, ZeroOne);
-        t = new TString(hello);
+        st = new TString(hello);
         bo = new Bool(true);
         bi = new Binary(binary);
         i = new Int(seed); //seed is a random number
@@ -42,18 +42,18 @@ class TypesTest {
     void constructorTest(){
 
         var expectedTString = new TString(hello);
-        assertEquals(expectedTString,t);
-        assertEquals(expectedTString.hashCode(),t.hashCode());
+        assertEquals(expectedTString,st);
+        assertEquals(expectedTString.hashCode(),st.hashCode());
         String world;
         do {
             world = RandomStringUtils.random(rng.nextInt(20), 0, Character.MAX_CODE_POINT, true, false, null, rng);
         } while (world.equals(hello));
         var differentTString = new TString(world);
-        assertNotEquals(differentTString,t);
+        assertNotEquals(differentTString,st);
 
         var expectedBooltrue = new Bool(true);
         assertEquals(expectedBooltrue,bo);
-        assertEquals(expectedTString.hashCode(),t.hashCode());
+        assertEquals(expectedBooltrue.hashCode(),bo.hashCode());
         var expectedBoolfalse = new Bool(false);
         assertNotEquals(expectedBoolfalse,bo);
 
@@ -89,8 +89,23 @@ class TypesTest {
 
     }
 
-
-
+    @RepeatedTest(20)
+    void gettersTest(){
+        assertEquals(st.getString(),hello);
+        assertEquals(bo.isBool(),true);
+        assertNotEquals(bo.isBool(),false);
+        assertEquals(bi.getBinary(),binary);
+        assertEquals(i.getInt(),seed);
+        assertEquals(f.getFloat(),decimal);
+    }
+    @RepeatedTest(20)
+    void toStringTest(){
+        assertEquals(st.toString(),hello);
+        assertEquals(bo.toString(),"true");
+        assertEquals(bi.toString(),binary);
+        assertEquals(i.toString(),""+seed);
+        assertEquals(f.toString(),""+decimal);
+    }
 
 
 }
