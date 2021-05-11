@@ -28,7 +28,7 @@ class TypesTest {
         rng = new Random(seed);
         int strSize = rng.nextInt(20);
         hello = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
-        binary = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, false, true, ZeroOne, rng);
+        binary = RandomStringUtils.random(strSize, ZeroOne);
         t = new TString(hello);
         bo = new Bool(true);
         bi = new Binary(binary);
@@ -44,7 +44,6 @@ class TypesTest {
         var expectedTString = new TString(hello);
         assertEquals(expectedTString,t);
         assertEquals(expectedTString.hashCode(),t.hashCode());
-        /*
         String world;
         do {
             world = RandomStringUtils.random(rng.nextInt(20), 0, Character.MAX_CODE_POINT, true, false, null, rng);
@@ -63,7 +62,7 @@ class TypesTest {
         assertEquals(expectedBinary.hashCode(),bi.hashCode());
         String differentbinary;
         do {
-            differentbinary = RandomStringUtils.random(rng.nextInt(20), 0, Character.MAX_CODE_POINT, false, true, ZeroOne, rng);
+            differentbinary = RandomStringUtils.random(rng.nextInt(20), ZeroOne);
         } while (differentbinary.equals(binary));
         var differentBinary = new Binary(differentbinary);
         assertNotEquals(differentBinary,bi);
@@ -88,7 +87,6 @@ class TypesTest {
         var differentFloat = new Float(differentdecimal);
         assertNotEquals(differentFloat,f);
 
-*/
     }
 
 
