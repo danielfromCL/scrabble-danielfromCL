@@ -37,14 +37,19 @@ class TypesTest {
         f = new Float(decimal);
 
     }
+
     @RepeatedTest(20)
     void constructorTest(){
+
         var expectedTString = new TString(hello);
         assertEquals(expectedTString,t);
         assertEquals(expectedTString.hashCode(),t.hashCode());
-
-
-        var differentTString = new TString("world");
+        /*
+        String world;
+        do {
+            world = RandomStringUtils.random(rng.nextInt(20), 0, Character.MAX_CODE_POINT, true, false, null, rng);
+        } while (world.equals(hello));
+        var differentTString = new TString(world);
         assertNotEquals(differentTString,t);
 
         var expectedBooltrue = new Bool(true);
@@ -56,21 +61,38 @@ class TypesTest {
         var expectedBinary = new Binary(binary);
         assertEquals(expectedBinary,bi);
         assertEquals(expectedBinary.hashCode(),bi.hashCode());
-
-        var differentBinary = new Binary("1110");
+        String differentbinary;
+        do {
+            differentbinary = RandomStringUtils.random(rng.nextInt(20), 0, Character.MAX_CODE_POINT, false, true, ZeroOne, rng);
+        } while (differentbinary.equals(binary));
+        var differentBinary = new Binary(differentbinary);
         assertNotEquals(differentBinary,bi);
 
         var expectedInt = new Int(seed);
         assertEquals(expectedInt,i);
         assertEquals(expectedInt.hashCode(),i.hashCode());
-        var differentInt = new Int(4);
+        int differentseed;
+        do {
+            differentseed = new Random().nextInt();
+        } while (seed == differentseed);
+        var differentInt = new Int(differentseed);
         assertNotEquals(differentInt,i);
 
         var expectedFloat = new Float(decimal);
         assertEquals(expectedFloat,f);
         assertEquals(expectedFloat.hashCode(),f.hashCode());
-        var differentFloat = new Float(5);
+        double differentdecimal;
+        do {
+            differentdecimal = new Random().nextInt() +0.1;
+        } while (decimal == differentdecimal);
+        var differentFloat = new Float(differentdecimal);
         assertNotEquals(differentFloat,f);
+
+*/
     }
+
+
+
+
 
 }
