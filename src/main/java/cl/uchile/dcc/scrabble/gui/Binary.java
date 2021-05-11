@@ -1,9 +1,16 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import java.util.Objects;
+
 public class Binary extends Numbers{
     private String Binary;
     public Binary(String Binary) {
         this.Binary = Binary;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(Binary.class);
     }
 
     @Override

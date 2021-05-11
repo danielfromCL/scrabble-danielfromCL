@@ -1,13 +1,15 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import java.util.Random;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class ITypesTest {
+class TypesTest {
     private TString t;
     private Bool bo;
     private Binary bi;
@@ -15,32 +17,33 @@ class ITypesTest {
     private Float f;
     private String hello;
     private String binary;
-    private int integer;
     private double decimal;
     private int seed;
     private Random rng;
-
+    private char[] ZeroOne =  {'0','1'};
 
     @BeforeEach
     void setUp() {
         seed = new Random().nextInt();
         rng = new Random(seed);
-
+        int strSize = rng.nextInt(20);
+        hello = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
+        binary = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, false, true, ZeroOne, rng);
         t = new TString(hello);
         bo = new Bool(true);
         bi = new Binary(binary);
-        i = new Int(integer);
+        i = new Int(seed); //seed is a random number
+        decimal = seed+0.1; //transformed to double
         f = new Float(decimal);
 
-
-
     }
-
-    @Test
+    @RepeatedTest(20)
     void constructorTest(){
         var expectedTString = new TString(hello);
         assertEquals(expectedTString,t);
         assertEquals(expectedTString.hashCode(),t.hashCode());
+
+
         var differentTString = new TString("world");
         assertNotEquals(differentTString,t);
 
@@ -57,23 +60,17 @@ class ITypesTest {
         var differentBinary = new Binary("1110");
         assertNotEquals(differentBinary,bi);
 
-        var expectedInt = new Int(two);
+        var expectedInt = new Int(seed);
         assertEquals(expectedInt,i);
         assertEquals(expectedInt.hashCode(),i.hashCode());
         var differentInt = new Int(4);
         assertNotEquals(differentInt,i);
 
-        var expectedFloat = new Float(pi);
+        var expectedFloat = new Float(decimal);
         assertEquals(expectedFloat,f);
         assertEquals(expectedFloat.hashCode(),f.hashCode());
         var differentFloat = new Float(5);
         assertNotEquals(differentFloat,f);
     }
-
-
-
-
-
-
 
 }

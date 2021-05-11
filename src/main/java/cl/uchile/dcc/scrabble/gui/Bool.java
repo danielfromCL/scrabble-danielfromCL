@@ -16,7 +16,7 @@ public class Bool extends Types{
     public boolean equals(Object obj){
         if(obj instanceof Bool){
             var o = (Bool) obj;
-            return o.Bool == this.isBool();
+            return o.Bool == this.Bool;
         }
         return false;
     }
