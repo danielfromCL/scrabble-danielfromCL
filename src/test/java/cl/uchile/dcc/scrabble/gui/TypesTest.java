@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
+
 
 import org.apache.commons.lang3.RandomStringUtils;
 import java.util.Random;

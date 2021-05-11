@@ -4,7 +4,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import java.util.Random;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.RepeatedTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ITypesTest {
@@ -36,6 +36,36 @@ class ITypesTest {
 
     }
 
+
+    @RepeatedTest(20)
+    void transformersTest(){
+        assertEquals(st.transformtoString(),new TString(hello));
+        assertEquals(bo.transformtoString(),new TString(bo.toString()));
+        assertEquals(f.transformtoString(),new TString(f.toString()));
+        assertEquals(i.transformtoString(),new TString(i.toString()));
+        assertEquals(bi.transformtoString(),new TString(bi.toString()));
+
+        assertNull(st.transformtoBool());
+        assertEquals(bo.transformtoBool(),new Bool(true));
+        assertNull(f.transformtoBool());
+        assertNull(i.transformtoBool());
+        assertNull(bi.transformtoBool());
+
+        assertNull(st.transformtoFloat());
+        assertNull(bo.transformtoFloat());
+        assertEquals(f.transformtoFloat(),new Float(decimal));
+        assertEquals(i.transformtoFloat(),new Float(seed));
+
+        assertNull(st.transformtoInt());
+        assertNull(bo.transformtoInt());
+        assertNull(f.transformtoInt());
+        assertEquals(i.transformtoInt(),new Int(seed));
+
+        assertNull(st.transformtoBinary());
+        assertNull(bo.transformtoBinary());
+        assertNull(f.transformtoBinary());
+        assertEquals(bi.transformtoBinary(),new Binary(binary));
+    }
 
 
 
