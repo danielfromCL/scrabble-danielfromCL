@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Class that represents the Bool type for Scrabble.
  */
-public class Bool extends Types{
+public class Bool extends Types implements ILogical{
     private boolean Bool;
 
     /**

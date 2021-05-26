@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Class that represents the Binary type for Scrabble.
  */
-public class Binary extends Numbers{
+public class Binary extends Numbers implements ILogical{
     private String Binary;
 
     /**
