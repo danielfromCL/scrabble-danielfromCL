@@ -53,5 +53,8 @@ public abstract class Types implements ITypes{
         return null;
     }
 
-
+    @Override
+    public TString sum(Types t){
+        
+    }
 }

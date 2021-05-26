@@ -37,4 +37,10 @@ public interface ITypes {
      */
     Binary transformtoBinary();
 
+
+    /**
+     * Sums a TString object with another object from the Type Class.
+     */
+    TString sum(Types t);
+
 }
