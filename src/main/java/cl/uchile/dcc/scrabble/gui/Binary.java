@@ -76,4 +76,11 @@ public class Binary extends Numbers implements ILogical{
     }
      */
 
+    /**
+     * The negation of a binary is made bit to bit.
+     */
+    @Override
+    public ITypes neg(){
+        return this;
+    }
 }

@@ -54,6 +54,18 @@ public class TString extends Types{
         return this.getString();
     }
 
+    /**
+     * Sums a TString object with another object from the Type Class.
+     */
+    public TString sum(ITypes t) {
+        return new TString(this.toString() + t.toString());
+    }
 
-
+    /**
+     * The negation of a string is itself.
+     */
+    @Override
+    public ITypes neg(){
+        return this;
+    }
 }

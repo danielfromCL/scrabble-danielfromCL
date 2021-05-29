@@ -62,4 +62,11 @@ public class Bool extends Types implements ILogical{
         return this;
     }
 
+    /**
+     * Returns its negated value.
+     */
+    @Override
+    public ITypes neg(){
+        return new Bool(!(this.isBool()));
+    }
 }

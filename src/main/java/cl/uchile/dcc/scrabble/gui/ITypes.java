@@ -39,8 +39,8 @@ public interface ITypes {
 
 
     /**
-     * Sums a TString object with another object from the Type Class.
+     * Negates an ITypes object.
      */
-    TString sum(ITypes t);
+    ITypes neg();
 
 }

@@ -53,8 +53,5 @@ public abstract class Types implements ITypes{
         return null;
     }
 
-    @Override
-    public TString sum(ITypes t){
-        return new TString(this.toString()+t.toString());
-    }
+
 }

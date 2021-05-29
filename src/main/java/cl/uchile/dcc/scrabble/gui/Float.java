@@ -62,5 +62,62 @@ public class Float extends Numbers{
     }
 
 
+    public Float sum(Int n){
+        return new Float(this.getFloat()+ n.getInt());
+    }
 
+    public  Float sum(Float n){
+        return new Float(this.getFloat()+n.getFloat());
+    }
+    /*
+    public Binary sum(Binary n){
+        return new Binary();
+    }
+*/
+
+    public Float sub(Int n){
+        return new Float(this.getFloat()- n.getInt());
+    }
+
+    public  Float sub(Float n){
+        return new Float(this.getFloat()-n.getFloat());
+    }
+    /*
+    public Binary sub(Binary n){
+        return new Binary();
+    }
+*/
+
+    public Float div(Int n){
+        return new Float(this.getFloat()/n.getInt());
+    }
+
+    public  Float div(Float n){
+        return new Float(this.getFloat()/n.getFloat());
+    }
+    /*
+    public Binary sub(Binary n){
+        return new Binary();
+    }
+*/
+
+    public Float mult(Int n){
+        return new Float(this.getFloat()*n.getInt());
+    }
+
+    public  Float mult(Float n){
+        return new Float(this.getFloat()*n.getFloat());
+    }
+    /*
+    public Binary mult(Binary n){
+        return new Binary();
+    }
+*/
+    /**
+     * The negation of a Float is itself multiplied by -1.
+     */
+    @Override
+    public ITypes neg(){
+        return new Float(this.getFloat()*(-1));
+    }
 }
