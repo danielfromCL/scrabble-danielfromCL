@@ -41,6 +41,6 @@ public interface ITypes {
     /**
      * Sums a TString object with another object from the Type Class.
      */
-    TString sum(Types t);
+    TString sum(ITypes t);
 
 }

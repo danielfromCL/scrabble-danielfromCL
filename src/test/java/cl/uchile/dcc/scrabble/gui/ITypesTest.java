@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import java.util.Random;
-
+import java.util.Objects;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import static org.junit.jupiter.api.Assertions.*;
@@ -76,6 +76,19 @@ class ITypesTest {
         assertEquals(bi.transformtoBinary(),new Binary(binary));
     }
 
+    /**
+     * Tests every sum method solicited
+     */
+    @RepeatedTest(20)
+    void sumTest(){
+        assertEquals(st.sum(new TString(hello)),new TString(hello+hello));
+        assertEquals(st.sum(new Bool(true)),new TString(hello+"true"));
+        assertEquals(st.sum(new Bool(false)),new TString(hello+"false"));
+        assertEquals(st.sum(f),new TString(hello+decimal));
+        assertEquals(st.sum(i),new TString(hello+seed));
+        assertEquals(st.sum(bi),new TString(hello+binary));
+
+    }
 
 
 
