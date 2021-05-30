@@ -6,40 +6,65 @@ package cl.uchile.dcc.scrabble.gui;
 public interface INumbers extends ITypes{
 
 
+    /**
+     * Sums a INumbers object with another object from the Float class.
+     */
+    INumbers sum(Float f);
 
-    @Override
-    ITypes sum(Float f);
+    /**
+     * Sums a INumbers object with another object from the Int class.
+     */
+    INumbers sum(Int i);
 
-    @Override
-    ITypes sum(Int i);
-
-    @Override
-    ITypes sum(Binary bi);
+    /**
+     * Sums a INumbers object with another object from the Binary class.
+     */
+    INumbers sum(Binary bi);
 
 
     /**
      * Subtraction between an INumbers object and a Float object
      */
-    INumbers sub(Float f);
+    INumbers sub(Float n);
 
     /**
      * Subtraction between an INumbers object and an Int object
      */
-    INumbers sub(Int f);
+    INumbers sub(Int n);
 
     /**
      * Subtraction between an INumbers object and a Binary object
      */
-    INumbers sub(Binary bi);
+    INumbers sub(Binary n);
 
     /**
-     * Division between two numbers
+     * Division between an INumbers object and a Float object
      */
-    INumbers div(INumbers n);
+    INumbers div(Float n);
 
     /**
-     * Multiplication between two numbers
+     * Division between an INumbers object and an Int object
      */
-    INumbers mult(INumbers n);
+    INumbers div(Int n);
+
+    /**
+     * Division between an INumbers object and a Binary object
+     */
+    INumbers div(Binary n);
+
+    /**
+     * Multiplication between an INumbers object and a Float object
+     */
+    INumbers mult(Float n);
+
+    /**
+     * Multiplication between an INumbers object and an Int object
+     */
+    INumbers mult(Int n);
+
+    /**
+     * Multiplication between an INumbers object and a Binary object
+     */
+    INumbers mult(Binary n);
 
 }

@@ -83,32 +83,34 @@ public class Int extends Numbers {
      */
 
     @Override
-    public ITypes sum(Float f){
+    public INumbers sum(Float f){
         return new Float(this.getInt()+ f.getFloat());
     }
 
     @Override
-    public ITypes sum(Int i){
+    public INumbers sum(Int i){
         return new Int(this.getInt()+i.getInt());
     }
 
-    /*
     @Override
-    public ITypes sum(Binary bi){
-        return new Binary();
+    public INumbers sum(Binary bi){
+        return new Binary("asdjkasjdkajsd");
     }
-     */
 
-    public Float sub(Float n){
+
+    @Override
+    public INumbers sub(Float n){
         return new Float(this.getInt()-n.getFloat());
     }
 
-    public Int sub(Int n){
+    @Override
+    public INumbers sub(Int n){
         return new Int(this.getInt()-n.getInt());
     }
 
     /*
-    public Binary sub(Binary n){
+    @Override
+    public INumbers sub(Binary n){
         return new Binary();
     }
      */

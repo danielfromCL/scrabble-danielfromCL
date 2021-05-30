@@ -62,30 +62,33 @@ public class Float extends Numbers{
     }
 
     @Override
-    public ITypes sum(Int i){
+    public INumbers sum(Int i){
         return new Float(this.getFloat()+ i.getInt());
     }
 
     @Override
-    public ITypes sum(Float f){
+    public INumbers sum(Float f){
         return new Float(this.getFloat()+f.getFloat());
     }
-    /*
-    @Override
-    public ITypes sum(Binary bi){
-        return new Binary();
-    }
-*/
 
-    public Float sub(Int n){
+    @Override
+    public INumbers sum(Binary bi){
+        return new Binary("asdjkalsdjasd");
+    }
+
+
+    @Override
+    public INumbers sub(Int n){
         return new Float(this.getFloat()- n.getInt());
     }
 
-    public  Float sub(Float n){
+    @Override
+    public INumbers sub(Float n){
         return new Float(this.getFloat()-n.getFloat());
     }
     /*
-    public Binary sub(Binary n){
+    @Override
+    public INumbers sub(Binary n){
         return new Binary();
     }
 */
