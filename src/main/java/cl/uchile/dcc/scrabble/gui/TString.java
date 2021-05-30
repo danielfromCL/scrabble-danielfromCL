@@ -55,17 +55,50 @@ public class TString extends Types{
     }
 
     /**
-     * Sums a TString object with another object from the Type Class.
+     * Sums a TString object with another object from the TString Class.
      */
-    public TString sum(ITypes t) {
+    @Override
+    public ITypes sum(TString t) {
         return new TString(this.toString() + t.toString());
     }
 
     /**
-     * The negation of a string is itself.
+     * Sums a TString object with another object from the Float Class.
+     */
+    @Override
+    public ITypes sum(Float f) {
+        return new TString(this.toString() + f.toString());
+    }
+
+    /**
+     * Sums a TString object with another object from the Int Class.
+     */
+    @Override
+    public ITypes sum(Int i) {
+        return new TString(this.toString() + i.toString());
+    }
+
+    /**
+     * Sums a TString object with another object from the Bool Class.
+     */
+    @Override
+    public ITypes sum(Bool bo) {
+        return new TString(this.toString() + bo.toString());
+    }
+
+    /**
+     * Sums a TString object with another object from the Binary Class.
+     */
+    @Override
+    public ITypes sum(Binary bi) {
+        return new TString(this.toString() + bi.toString());
+    }
+
+    /**
+     * It's not possible to negate a String.
      */
     @Override
     public ITypes neg(){
-        return this;
+        return null;
     }
 }

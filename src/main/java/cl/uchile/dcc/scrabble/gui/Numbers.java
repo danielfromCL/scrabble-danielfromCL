@@ -10,10 +10,10 @@ public abstract class Numbers extends Types implements INumbers{
     }
 
     /**
-     * As default returns null
+     * As default returns null.
      */
     @Override
-    public INumbers sum(INumbers n){
+    public ITypes sum(Float f){
         return null;
     }
 
@@ -21,7 +21,7 @@ public abstract class Numbers extends Types implements INumbers{
      * As default returns null
      */
     @Override
-    public INumbers sub(INumbers n){
+    public INumbers sub(Binary bi){
         return null;
     }
 

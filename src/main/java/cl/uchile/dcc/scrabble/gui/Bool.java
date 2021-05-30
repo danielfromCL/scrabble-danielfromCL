@@ -63,10 +63,48 @@ public class Bool extends Types implements ILogical{
     }
 
     /**
+     * Returns null;
+     * It's not possible to sum a Bool object with a TString object.
+     */
+    @Override
+    public ITypes sum(TString t){
+        return null;
+    }
+
+    /**
+     * Returns null;
+     * It's not possible to sum a Bool object with an Int object.
+     */
+    @Override
+    public ITypes sum(Int i){
+        return null;
+    }
+
+    /**
+     * Returns null;
+     * It's not possible to sum a Bool object with a Float object.
+     */
+    @Override
+    public ITypes sum(Float f){
+        return null;
+    }
+
+    /**
+     * Returns null;
+     * It's not possible to sum a Bool object with a Binary object.
+     */
+    @Override
+    public ITypes sum(Binary bi){
+        return null;
+    }
+
+    /**
      * Returns its negated value.
      */
     @Override
     public ITypes neg(){
         return new Bool(!(this.isBool()));
     }
+
+
 }

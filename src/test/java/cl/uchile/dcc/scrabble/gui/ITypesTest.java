@@ -84,7 +84,8 @@ class ITypesTest {
     }
 
     /**
-     * Tests every sum method of the TString + Type object
+     * Tests every sum method between ITypes objects
+     * Doesn't tests the sum method between INumbers objects.
      */
     @RepeatedTest(20)
     void sumTest(){
@@ -94,6 +95,25 @@ class ITypesTest {
         assertEquals(st.sum(f),new TString(hello+decimal));
         assertEquals(st.sum(i),new TString(hello+seed));
         assertEquals(st.sum(bi),new TString(hello+binary));
+
+        assertNull(i.sum(bot));
+        assertNull(i.sum(bof));
+        assertNull(i.sum(st));
+
+        assertNull(f.sum(bot));
+        assertNull(f.sum(bof));
+        assertNull(f.sum(st));
+
+        assertNull(bot.sum(bot));
+        assertNull(bot.sum(bof));
+        assertNull(bof.sum(bot));
+        assertNull(bof.sum(bof));
+        assertNull(bot.sum(st));
+        assertNull(bof.sum(st));
+
+        assertNull(bi.sum(bot));
+        assertNull(bi.sum(bof));
+        assertNull(bi.sum(st));
 
     }
 

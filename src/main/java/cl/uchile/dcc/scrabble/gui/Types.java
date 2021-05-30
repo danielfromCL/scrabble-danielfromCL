@@ -53,5 +53,21 @@ public abstract class Types implements ITypes{
         return null;
     }
 
+    /**
+     * Returns null;
+     * As default, it's not possible to sum an ITypes object with a Bool object.
+     */
+    @Override
+    public ITypes sum(Bool bo){
+        return null;
+    }
+    /**
+     * Returns null;
+     * As default, it's not possible to sum an ITypes object with a TString object.
+     */
+    @Override
+    public ITypes sum(TString t){
+        return null;
+    }
 
 }

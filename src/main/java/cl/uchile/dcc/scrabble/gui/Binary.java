@@ -77,6 +77,14 @@ public class Binary extends Numbers implements ILogical{
      */
 
     /**
+     * Returns null.
+     * It's not possible to sum a Binary object with a Float object.
+     */
+    @Override
+    public ITypes sum(Float f){
+        return null;
+    }
+    /**
      * The negation of a binary is made bit to bit.
      */
     @Override

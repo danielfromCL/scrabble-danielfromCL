@@ -61,16 +61,18 @@ public class Float extends Numbers{
         return this;
     }
 
-
-    public Float sum(Int n){
-        return new Float(this.getFloat()+ n.getInt());
+    @Override
+    public ITypes sum(Int i){
+        return new Float(this.getFloat()+ i.getInt());
     }
 
-    public  Float sum(Float n){
-        return new Float(this.getFloat()+n.getFloat());
+    @Override
+    public ITypes sum(Float f){
+        return new Float(this.getFloat()+f.getFloat());
     }
     /*
-    public Binary sum(Binary n){
+    @Override
+    public ITypes sum(Binary bi){
         return new Binary();
     }
 */

@@ -37,6 +37,30 @@ public interface ITypes {
      */
     Binary transformtoBinary();
 
+    /**
+     * Sums a ITypes object with another object from the TString class.
+     */
+    ITypes sum(TString t);
+
+    /**
+     * Sums a ITypes object with another object from the Float class.
+     */
+    ITypes sum(Float f);
+
+    /**
+     * Sums a ITypes object with another object from the Int class.
+     */
+    ITypes sum(Int i);
+
+    /**
+     * Sums a ITypes object with another object from the Bool class.
+     */
+    ITypes sum(Bool bo);
+
+    /**
+     * Sums a ITypes object with another object from the Binary class.
+     */
+    ITypes sum(Binary bi);
 
     /**
      * Negates an ITypes object.
