@@ -65,7 +65,7 @@ class INumbersTest {
     void divTest(){
         assertEquals(f.div(f), new Float(decimal/decimal));
         assertEquals(f.div(i), new Float(decimal/seed));
-        //assertEquals(f.div(bi), new Binary());
+        //assertEquals(f.div(bi), new Float(bi.get));
         assertEquals(i.div(f), new Float(seed/decimal));
         assertEquals(i.div(i), new Int(seed/seed));
         //assertEquals(i.div(bi), new Binary());

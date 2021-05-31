@@ -81,7 +81,9 @@ public class Float extends Numbers{
      */
     @Override
     public INumbers sum(Binary bi){
-        return new Binary("asdjkalsdjasd");
+        int b = toInt(bi.getBinary());
+        double res = this.getFloat() + b;
+        return new Float(res);
     }
 
     /**
@@ -105,7 +107,9 @@ public class Float extends Numbers{
      */
     @Override
     public INumbers sub(Binary n){
-        return null;
+        int b = toInt(n.getBinary());
+        double res = this.getFloat() - b;
+        return new Float(res);
     }
 
     /**
@@ -129,7 +133,9 @@ public class Float extends Numbers{
      */
     @Override
     public INumbers div(Binary n){
-        return null;
+        int b = toInt(n.getBinary());
+        double res = this.getFloat() / b;
+        return new Float(res);
     }
 
     /**
@@ -153,7 +159,9 @@ public class Float extends Numbers{
      */
     @Override
     public INumbers mult(Binary n){
-        return null;
+        int b = toInt(n.getBinary());
+        double res = this.getFloat() * b;
+        return new Float(res);
     }
 
     /**

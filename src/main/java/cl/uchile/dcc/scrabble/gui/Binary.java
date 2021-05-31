@@ -62,33 +62,38 @@ public class Binary extends Numbers implements ILogical{
         return new Binary(this.getBinary());
     }
 
-
-
-    /*
-    These methods don't have to be implemented for the first partial submission.
     @Override
-    public Float transformtoFloat(){
-
+    public Float transformtoFloat() {
+        int i = toInt(this.getBinary());
+        return new Float(i);
     }
+
     @Override
     public Int transformtoInt(){
-
+        int i = toInt(this.getBinary());
+        return new Int(i);
     }
-     */
 
     /**
      * Returns a new Binary object with the sum between the Binary object and an Int object.
      */
     @Override
     public INumbers sum(Int i){
-        return null;
+        int bi = toInt(this.getBinary());
+        int res = bi + i.getInt();
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
     /**
      * Returns a new Binary object with the sum between the Binary object and another Binary object.
      */
     @Override
     public INumbers sum(Binary bi){
-        return null;
+        int b1 = toInt(this.getBinary());
+        int b2= toInt(bi.getBinary());
+        int res = b1 + b2;
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
 
     /**
@@ -96,7 +101,10 @@ public class Binary extends Numbers implements ILogical{
      */
     @Override
     public INumbers sub(Int n) {
-        return null;
+        int bi = toInt(this.getBinary());
+        int res = bi - n.getInt();
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
 
     /**
@@ -104,7 +112,11 @@ public class Binary extends Numbers implements ILogical{
      */
     @Override
     public INumbers sub(Binary n) {
-        return null;
+        int b1 = toInt(this.getBinary());
+        int b2= toInt(n.getBinary());
+        int res = b1 - b2;
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
 
     /**
@@ -112,14 +124,21 @@ public class Binary extends Numbers implements ILogical{
      */
     @Override
     public INumbers div(Int n) {
-        return null;
+        int bi = toInt(this.getBinary());
+        int res = bi / n.getInt();
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
     /**
      * Returns a new Binary object with the division between the Binary object and another Binary object.
      */
     @Override
     public INumbers div(Binary n) {
-        return null;
+        int b1 = toInt(this.getBinary());
+        int b2= toInt(n.getBinary());
+        int res = b1 / b2;
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
 
     /**
@@ -127,41 +146,209 @@ public class Binary extends Numbers implements ILogical{
      */
     @Override
     public INumbers mult(Int n) {
-        return null;
+        int bi = toInt(this.getBinary());
+        int res = bi * n.getInt();
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
     /**
      * Returns a new Binary object with the multiplication between the Binary object and another Binary object.
      */
     @Override
     public INumbers mult(Binary n) {
-        return null;
+        int b1 = toInt(this.getBinary());
+        int b2= toInt(n.getBinary());
+        int res = b1 * b2;
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
 
     /**
+     * Returns the negation of a Binary object.
      * The negation of a binary is made bit to bit.
      */
     @Override
     public ITypes neg(){
-        return this;
+        String binary = this.getBinary();
+        String res="";
+        for(int i = 0; i<binary.length(); i++){
+            if(binary.charAt(i)=='0'){
+                res+='1';
+            }
+            else{
+                res+='0';
+            }
+        }
+        return new Binary(res);
     }
 
+    /**
+     * Returns a new Binary object with the logical operator "and" applied bit to bit between both Binary objects.
+     */
     @Override
     public ILogical and(Binary b) {
-        return null;
+        String binary1 = this.getBinary();
+        String binary2 = b.getBinary();
+        String res="";
+        String bin1=binary1;
+        String bin2=binary2;
+        int length1 = binary1.length();
+        int length2 = binary2.length();
+        int max = Math.max(length1,length2);
+        boolean neg1 = false;
+        boolean neg2 = false;
+        if(binary1.charAt(0)=='1'){
+            neg1 = true;
+        }
+        if(binary2.charAt(0)=='1'){
+            neg2 = true;
+        }
+        if(length1 < max){
+            bin1="";
+            int k = 0;
+            while(k<length2-length1){
+                if(neg1){
+                    bin1+="1";
+                }
+                else{
+                    bin1+="0";
+                }
+                k++;
+            }
+            bin1+=binary1;
+        }
+        if(length2 < max){
+            bin2 = "";
+            int k = 0;
+            while(k<length1-length2){
+                if(neg2){
+                    bin2+="1";
+                }
+                else{
+                    bin2+="0";
+                }
+                k++;
+            }
+            bin2+=binary2;
+        }
+        for(int i = 0; i<max; i++){
+            if(bin1.charAt(i)=='1' && bin2.charAt(i)=='1'){
+                res+='1';
+            }
+            else{
+                res+='0';
+            }
+        }
+        return new Binary(res);
     }
 
+    /**
+     * Returns a new Binary object with the logical operator "and" applied bit to bit between the Binary object and the boolean value from the Bool object.
+     */
     @Override
     public ILogical and(Bool b) {
-        return null;
+        String binary = this.getBinary();
+        String res="";
+        if(b.isBool()){
+            for(int i = 0; i<binary.length(); i++){
+                if(binary.charAt(i)=='0'){
+                    res+='0';
+                }
+                else{
+                    res+='1';
+                }
+            }
+        }
+        else{
+            for(int i = 0; i<binary.length(); i++){
+                res+='0';
+            }
+        }
+        return new Binary(res);
     }
 
+    /**
+     * Returns a new Binary object with the logical operator "or" applied bit to bit between both Binary objects.
+     */
     @Override
     public ILogical or(Binary b) {
-        return null;
+        String binary1 = this.getBinary();
+        String binary2 = b.getBinary();
+        String res="";
+        String bin1=binary1;
+        String bin2=binary2;
+        int length1 = binary1.length();
+        int length2 = binary2.length();
+        int max = Math.max(length1,length2);
+        boolean neg1 = false;
+        boolean neg2 = false;
+        if(binary1.charAt(0)=='1'){
+            neg1 = true;
+        }
+        if(binary2.charAt(0)=='1'){
+            neg2 = true;
+        }
+        if(length1 < max){
+            bin1="";
+            int k = 0;
+            while(k<length2-length1){
+                if(neg1){
+                    bin1+="1";
+                }
+                else{
+                    bin1+="0";
+                }
+                k++;
+            }
+            bin1+=binary1;
+        }
+        if(length2 < max){
+            bin2 = "";
+            int k = 0;
+            while(k<length1-length2){
+                if(neg2){
+                    bin2+="1";
+                }
+                else{
+                    bin2+="0";
+                }
+                k++;
+            }
+            bin2+=binary2;
+        }
+        for(int i = 0; i<max; i++){
+            if(bin1.charAt(i)=='1' || bin2.charAt(i)=='1'){
+                res+='1';
+            }
+            else{
+                res+='0';
+            }
+        }
+        return new Binary(res);
     }
 
+    /**
+     * Returns a new Binary object with the logical operator "or" applied bit to bit between the Binary object and the boolean value from the Bool object.
+     */
     @Override
     public ILogical or(Bool b) {
-        return null;
+        String binary = this.getBinary();
+        String res="";
+        if(!(b.isBool())){
+            for(int i = 0; i<binary.length(); i++){
+                if(binary.charAt(i)=='0'){
+                    res+='0';
+                }
+                else{
+                    res+='1';
+                }
+            }
+        }
+        else{
+            for(int i = 0; i<binary.length(); i++){
+                res+='1';
+            }
+        }
+        return new Binary(res);
     }
 }

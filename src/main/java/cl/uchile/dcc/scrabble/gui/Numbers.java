@@ -41,6 +41,9 @@ public abstract class Numbers extends Types implements INumbers{
         return null;
     }
 
+    /**
+     * Returns an integer from the String representation of a binary number.
+     */
     public int toInt(String binary){
         if(bitToInt(binary.charAt(0))== 0){
             return positiveBinToInt(binary);
@@ -64,5 +67,29 @@ public abstract class Numbers extends Types implements INumbers{
     }
     private int bitToInt(char bit){
         return bit == '0' ? 0:1;
+    }
+
+    /**
+     * Returns a String with the binary representation of an integer.
+     */
+    public String intToBinary(int i){
+        String b = Integer.toBinaryString(i);
+        //if (i<0){
+          //  b = twosComplement(b);
+        //}
+        return b;
+    }
+    private String positiveIntToBin(int n){
+        String b = "";
+        while(n >0){
+            b= ((n%2)==0 ? "0" : "1")+b;
+            n= n/2;
+        }
+        return b;
+    }
+    private String twosComplement(String binary){
+        int n = binary.length() -1;
+        int w = 0;
+        return null;
     }
 }

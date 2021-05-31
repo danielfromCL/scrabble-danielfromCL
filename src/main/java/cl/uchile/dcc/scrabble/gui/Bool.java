@@ -103,22 +103,66 @@ public class Bool extends Types implements ILogical{
         return new Bool(!(this.isBool()));
     }
 
-
+    /**
+     * Returns a new Binary object with the logical operator "and" applied bit to bit between the boolean value of the Bool object and the Binary object.
+     */
     @Override
     public ILogical and(Binary b) {
-        return null;
+        String binary = b.getBinary();
+        String res="";
+        if(this.isBool()){
+            for(int i = 0; i<binary.length(); i++){
+                if(binary.charAt(i)=='0'){
+                    res+='0';
+                }
+                else{
+                    res+='1';
+                }
+            }
+        }
+        else{
+            for(int i = 0; i<binary.length(); i++){
+                res+='0';
+            }
+        }
+        return new Binary(res);
     }
 
+    /**
+     * Returns a new Bool object with the logical operator "and" applied between the boolean value of both Bool objects.
+     */
     @Override
     public ILogical and(Bool b) {
         return new Bool(this.isBool() && b.isBool());
     }
 
+    /**
+     * Returns a new Binary object with the logical operator "or" applied bit to bit between the boolean value of the Bool object and the Binary object.
+     */
     @Override
     public ILogical or(Binary b) {
-        return null;
+        String binary = b.getBinary();
+        String res="";
+        if(!(this.isBool())){
+            for(int i = 0; i<binary.length(); i++){
+                if(binary.charAt(i)=='0'){
+                    res+='0';
+                }
+                else{
+                    res+='1';
+                }
+            }
+        }
+        else{
+            for(int i = 0; i<binary.length(); i++){
+                res+='1';
+            }
+        }
+        return new Binary(res);
     }
-
+    /**
+     * Returns a new Bool object with the logical operator "or" applied between the boolean value of both Bool objects.
+     */
     @Override
     public ILogical or(Bool b) {
         return new Bool(this.isBool() || b.isBool());

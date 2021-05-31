@@ -67,13 +67,15 @@ public class Int extends Numbers {
     public Float transformtoFloat(){
         return new Float(this.getInt());
     }
-    /*
-    This method doesn't have to be implemented for the first partial submission.
+
+    /**
+     * Returns a new Binary object with the Int object's parameter as its parameter in binary representation.
+     */
     @Override
     public Binary transformtoBinary(){
-
+        String binary = intToBinary(this.getInt());
+        return new Binary(binary);
     }
-     */
 
     /**
      * Returns a new Float object with the sum between the Int object and a Float object.
@@ -94,7 +96,10 @@ public class Int extends Numbers {
      */
     @Override
     public INumbers sum(Binary bi){
-        return new Binary("asdjkasjdkajsd");
+        int b = toInt(bi.getBinary());
+        int res = this.getInt() + b;
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
 
     /**
@@ -116,7 +121,10 @@ public class Int extends Numbers {
      */
     @Override
     public INumbers sub(Binary n){
-        return null;
+        int bi = toInt(n.getBinary());
+        int res = this.getInt() - bi;
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
 
     /**
@@ -138,7 +146,10 @@ public class Int extends Numbers {
      */
     @Override
     public INumbers div(Binary n){
-        return null;
+        int bi = toInt(n.getBinary());
+        int res = this.getInt() / bi;
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
 
     /**
@@ -160,7 +171,10 @@ public class Int extends Numbers {
      */
     @Override
     public INumbers mult(Binary n){
-        return null;
+        int bi = toInt(n.getBinary());
+        int res = this.getInt() * bi;
+        String binary = intToBinary(res);
+        return new Binary(binary);
     }
 
     /**
