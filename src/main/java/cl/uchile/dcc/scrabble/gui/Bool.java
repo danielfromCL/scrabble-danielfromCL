@@ -104,4 +104,23 @@ public class Bool extends Types implements ILogical{
     }
 
 
+    @Override
+    public ILogical and(Binary b) {
+        return null;
+    }
+
+    @Override
+    public ILogical and(Bool b) {
+        return new Bool(this.isBool() && b.isBool());
+    }
+
+    @Override
+    public ILogical or(Binary b) {
+        return null;
+    }
+
+    @Override
+    public ILogical or(Bool b) {
+        return new Bool(this.isBool() || b.isBool());
+    }
 }

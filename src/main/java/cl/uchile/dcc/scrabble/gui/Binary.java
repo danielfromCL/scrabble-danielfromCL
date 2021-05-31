@@ -84,13 +84,6 @@ public class Binary extends Numbers implements ILogical{
         return null;
     }
     /**
-     * Returns a new Binary object with the sum between the Binary object and a Float object.
-     */
-    @Override
-    public INumbers sum(Float f){
-        return null;
-    }
-    /**
      * Returns a new Binary object with the sum between the Binary object and another Binary object.
      */
     @Override
@@ -98,13 +91,6 @@ public class Binary extends Numbers implements ILogical{
         return null;
     }
 
-    /**
-     * Returns a new Binary object with the subtraction between the Binary object and a Float object.
-     */
-    @Override
-    public INumbers sub(Float n) {
-        return null;
-    }
     /**
      * Returns a new Binary object with the subtraction between the Binary object and an Int object.
      */
@@ -122,13 +108,6 @@ public class Binary extends Numbers implements ILogical{
     }
 
     /**
-     * Returns a new Binary object with the division between the Binary object and a Float object.
-     */
-    @Override
-    public INumbers div(Float n) {
-        return null;
-    }
-    /**
      * Returns a new Binary object with the division between the Binary object and an Int object.
      */
     @Override
@@ -143,13 +122,6 @@ public class Binary extends Numbers implements ILogical{
         return null;
     }
 
-    /**
-     * Returns a new Binary object with the multiplication between the Binary object and a Float object.
-     */
-    @Override
-    public INumbers mult(Float n) {
-        return null;
-    }
     /**
      * Returns a new Binary object with the multiplication between the Binary object and an Int object.
      */
@@ -171,5 +143,25 @@ public class Binary extends Numbers implements ILogical{
     @Override
     public ITypes neg(){
         return this;
+    }
+
+    @Override
+    public ILogical and(Binary b) {
+        return null;
+    }
+
+    @Override
+    public ILogical and(Bool b) {
+        return null;
+    }
+
+    @Override
+    public ILogical or(Binary b) {
+        return null;
+    }
+
+    @Override
+    public ILogical or(Bool b) {
+        return null;
     }
 }
