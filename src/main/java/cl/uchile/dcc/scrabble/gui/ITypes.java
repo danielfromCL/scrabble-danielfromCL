@@ -38,32 +38,32 @@ public interface ITypes {
     Binary transformtoBinary();
 
     /**
-     * Sums a ITypes object with another object from the TString class.
+     * Returns an ITypes object with the sum of an ITypes object and a TString object.
      */
     ITypes sum(TString t);
 
     /**
-     * Sums a ITypes object with another object from the Float class.
+     * Returns an ITypes object with the sum of an ITypes object and a Float object.
      */
     ITypes sum(Float f);
 
     /**
-     * Sums a ITypes object with another object from the Int class.
+     * Returns an ITypes object with the sum of an ITypes object and an Int object.
      */
     ITypes sum(Int i);
 
     /**
-     * Sums a ITypes object with another object from the Bool class.
+     * Returns an ITypes object with the sum of an ITypes object and a Bool object.
      */
     ITypes sum(Bool bo);
 
     /**
-     * Sums a ITypes object with another object from the Binary class.
+     * Returns an ITypes object with the sum of an ITypes object and a Binary object.
      */
     ITypes sum(Binary bi);
 
     /**
-     * Negates an ITypes object.
+     * Returns the negation of an ITypes object.
      */
     ITypes neg();
 

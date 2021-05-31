@@ -59,7 +59,7 @@ public class Binary extends Numbers implements ILogical{
      */
     @Override
     public Binary transformtoBinary(){
-        return this;
+        return new Binary(this.getBinary());
     }
 
 
@@ -95,6 +95,73 @@ public class Binary extends Numbers implements ILogical{
      */
     @Override
     public INumbers sum(Binary bi){
+        return null;
+    }
+
+    /**
+     * Returns a new Binary object with the subtraction between the Binary object and a Float object.
+     */
+    @Override
+    public INumbers sub(Float n) {
+        return null;
+    }
+    /**
+     * Returns a new Binary object with the subtraction between the Binary object and an Int object.
+     */
+    @Override
+    public INumbers sub(Int n) {
+        return null;
+    }
+
+    /**
+     * Returns a new Binary object with the subtraction between the Binary object and another Binary object.
+     */
+    @Override
+    public INumbers sub(Binary n) {
+        return null;
+    }
+
+    /**
+     * Returns a new Binary object with the division between the Binary object and a Float object.
+     */
+    @Override
+    public INumbers div(Float n) {
+        return null;
+    }
+    /**
+     * Returns a new Binary object with the division between the Binary object and an Int object.
+     */
+    @Override
+    public INumbers div(Int n) {
+        return null;
+    }
+    /**
+     * Returns a new Binary object with the division between the Binary object and another Binary object.
+     */
+    @Override
+    public INumbers div(Binary n) {
+        return null;
+    }
+
+    /**
+     * Returns a new Binary object with the multiplication between the Binary object and a Float object.
+     */
+    @Override
+    public INumbers mult(Float n) {
+        return null;
+    }
+    /**
+     * Returns a new Binary object with the multiplication between the Binary object and an Int object.
+     */
+    @Override
+    public INumbers mult(Int n) {
+        return null;
+    }
+    /**
+     * Returns a new Binary object with the multiplication between the Binary object and another Binary object.
+     */
+    @Override
+    public INumbers mult(Binary n) {
         return null;
     }
 

@@ -7,63 +7,63 @@ public interface INumbers extends ITypes{
 
 
     /**
-     * Sums a INumbers object with another object from the Float class.
+     *  Returns a new INumber object with the sum of an INumbers object and a Float object.
      */
     INumbers sum(Float f);
 
     /**
-     * Sums a INumbers object with another object from the Int class.
+     * Returns a new INumber object with the sum of an INumbers object and an Int object.
      */
     INumbers sum(Int i);
 
     /**
-     * Sums a INumbers object with another object from the Binary class.
+     * Returns a new INumber object with the sum of an INumbers object and a Binary object.
      */
     INumbers sum(Binary bi);
 
 
     /**
-     * Subtraction between an INumbers object and a Float object
+     * Returns a new INumber object with the subtraction of an INumbers object and a Float object.
      */
     INumbers sub(Float n);
 
     /**
-     * Subtraction between an INumbers object and an Int object
+     * Returns a new INumber object with the subtraction of an INumbers object and an Int object.
      */
     INumbers sub(Int n);
 
     /**
-     * Subtraction between an INumbers object and a Binary object
+     * Returns a new INumber object with the subtraction of an INumbers object and a Binary object.
      */
     INumbers sub(Binary n);
 
     /**
-     * Division between an INumbers object and a Float object
+     * Returns a new INumber object with the division between an INumbers object and a Float object.
      */
     INumbers div(Float n);
 
     /**
-     * Division between an INumbers object and an Int object
+     * Returns a new INumber object with the division between an INumbers object and an Int object.
      */
     INumbers div(Int n);
 
     /**
-     * Division between an INumbers object and a Binary object
+     * Returns a new INumber object with the division between an INumbers object and a Binary object.
      */
     INumbers div(Binary n);
 
     /**
-     * Multiplication between an INumbers object and a Float object
+     * Returns a new INumber object with the multiplication between an INumbers object and a Float object
      */
     INumbers mult(Float n);
 
     /**
-     * Multiplication between an INumbers object and an Int object
+     * Returns a new INumber object with the multiplication between an INumbers object and an Int object
      */
     INumbers mult(Int n);
 
     /**
-     * Multiplication between an INumbers object and a Binary object
+     * Returns a new INumber object with the multiplication between an INumbers object and a Binary object
      */
     INumbers mult(Binary n);
 

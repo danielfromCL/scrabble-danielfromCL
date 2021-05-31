@@ -60,7 +60,7 @@ public class Int extends Numbers {
      */
     @Override
     public Int transformtoInt(){
-        return this;
+        return new Int(this.getInt());
     }
 
 
@@ -108,40 +108,40 @@ public class Int extends Numbers {
         return new Int(this.getInt()-n.getInt());
     }
 
-    /*
     @Override
     public INumbers sub(Binary n){
-        return new Binary();
+        return null;
     }
-     */
-
-    public Float div(Float n){
+     
+    @Override 
+    public INumbers div(Float n){
         return new Float(this.getInt()/n.getFloat());
     }
 
-    public Int div(Int n){
+    @Override
+    public INumbers div(Int n){
         return new Int(this.getInt()/n.getInt());
     }
 
-    /*
-    public Binary div(Binary n){
-        return new Binary();
+    @Override
+    public INumbers div(Binary n){
+        return null;
     }
-     */
 
-    public Float mult(Float n){
+    @Override
+    public INumbers mult(Float n){
         return new Float(this.getInt()*n.getFloat());
     }
 
-    public Int mult(Int n){
+    @Override
+    public INumbers mult(Int n){
         return new Int(this.getInt()*n.getInt());
     }
 
-    /*
-    public Binary mult(Binary n){
-        return new Binary();
+    @Override
+    public INumbers mult(Binary n){
+        return null;
     }
-     */
 
     /**
      * The negation of an Int is itself multiplied by -1.

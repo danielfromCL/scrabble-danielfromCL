@@ -49,7 +49,7 @@ class TypesTest {
      */
     @RepeatedTest(20)
     void constructorTest(){
-
+//FALTAN LOS CASOS QUE COMPARO OBJETOS DISTINTOS
         var expectedTString = new TString(hello);
         assertEquals(expectedTString,st);
         assertEquals(expectedTString.hashCode(),st.hashCode());

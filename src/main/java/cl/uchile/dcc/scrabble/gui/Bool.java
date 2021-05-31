@@ -59,7 +59,7 @@ public class Bool extends Types implements ILogical{
      */
     @Override
     public Bool transformtoBool(){
-        return this;
+        return new Bool(this.isBool());
     }
 
     /**
