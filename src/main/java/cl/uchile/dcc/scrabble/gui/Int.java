@@ -45,7 +45,6 @@ public class Int extends Numbers {
         return Int;
     }
 
-
     /**
      * Returns the Int object representation as a java type String.
      */
@@ -54,7 +53,6 @@ public class Int extends Numbers {
         return String.valueOf(this.getInt());
     }
 
-
     /**
      * Returns a copy of the Int object.
      */
@@ -62,8 +60,6 @@ public class Int extends Numbers {
     public Int transformtoInt(){
         return new Int(this.getInt());
     }
-
-
     /**
      * Returns a new Float object with the Int object's parameter as its parameter.
      */
@@ -71,73 +67,97 @@ public class Int extends Numbers {
     public Float transformtoFloat(){
         return new Float(this.getInt());
     }
-
-
     /*
-
     This method doesn't have to be implemented for the first partial submission.
     @Override
     public Binary transformtoBinary(){
 
-        }
+    }
      */
 
+    /**
+     * Returns a new Float object with the sum between the Int object and a Float object.
+     */
     @Override
     public INumbers sum(Float f){
         return new Float(this.getInt()+ f.getFloat());
     }
-
+    /**
+     * Returns a new Int object with the sum between the Int object and another Int object.
+     */
     @Override
     public INumbers sum(Int i){
         return new Int(this.getInt()+i.getInt());
     }
-
+    /**
+     * Returns a new Binary object with the sum between the Int object and a Binary object.
+     */
     @Override
     public INumbers sum(Binary bi){
         return new Binary("asdjkasjdkajsd");
     }
 
-
+    /**
+     * Returns a new Float object with the subtraction between the Int object and a Float object.
+     */
     @Override
     public INumbers sub(Float n){
         return new Float(this.getInt()-n.getFloat());
     }
-
+    /**
+     * Returns a new Int object with the subtraction between the Int object and another Int object.
+     */
     @Override
     public INumbers sub(Int n){
         return new Int(this.getInt()-n.getInt());
     }
-
+    /**
+     * Returns a new Binary object with the subtraction between the Int object and a Binary object.
+     */
     @Override
     public INumbers sub(Binary n){
         return null;
     }
-     
+
+    /**
+     * Returns a new Float object with the division between the Int object and a Float object.
+     */
     @Override 
     public INumbers div(Float n){
         return new Float(this.getInt()/n.getFloat());
     }
-
+    /**
+     * Returns a new Int object with the division between the Int object and another Int object.
+     */
     @Override
     public INumbers div(Int n){
         return new Int(this.getInt()/n.getInt());
     }
-
+    /**
+     * Returns a new Binary object with the division between the Int object and a Binary object.
+     */
     @Override
     public INumbers div(Binary n){
         return null;
     }
 
+    /**
+     * Returns a new Float object with the multiplication between the Int object and a Float object.
+     */
     @Override
     public INumbers mult(Float n){
         return new Float(this.getInt()*n.getFloat());
     }
-
+    /**
+     * Returns a new Int object with the multiplication between the Int object and another Int object.
+     */
     @Override
     public INumbers mult(Int n){
         return new Int(this.getInt()*n.getInt());
     }
-
+    /**
+     * Returns a new Binary object with the multiplication between the Int object and a Binary object.
+     */
     @Override
     public INumbers mult(Binary n){
         return null;

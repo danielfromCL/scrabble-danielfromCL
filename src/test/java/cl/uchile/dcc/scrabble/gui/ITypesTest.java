@@ -122,7 +122,7 @@ class ITypesTest {
      */
     @RepeatedTest(20)
     void negTest(){
-        assertEquals(st.neg(),st);
+        assertNull(st.neg());
         assertEquals(bot.neg(), bof);
         assertEquals(bof.neg(),bot);
         assertEquals(f.neg(), new Float(decimal*(-1)));

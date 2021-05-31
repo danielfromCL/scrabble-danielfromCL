@@ -49,7 +49,6 @@ class TypesTest {
      */
     @RepeatedTest(20)
     void constructorTest(){
-//FALTAN LOS CASOS QUE COMPARO OBJETOS DISTINTOS
         var expectedTString = new TString(hello);
         assertEquals(expectedTString,st);
         assertEquals(expectedTString.hashCode(),st.hashCode());
@@ -59,12 +58,14 @@ class TypesTest {
         } while (world.equals(hello));
         var differentTString = new TString(world);
         assertNotEquals(differentTString,st);
+        assertNotEquals(st, bo);
 
         var expectedBooltrue = new Bool(true);
         assertEquals(expectedBooltrue,bo);
         assertEquals(expectedBooltrue.hashCode(),bo.hashCode());
         var expectedBoolfalse = new Bool(false);
         assertNotEquals(expectedBoolfalse,bo);
+        assertNotEquals(bo, bi);
 
         var expectedBinary = new Binary(binary);
         assertEquals(expectedBinary,bi);
@@ -75,6 +76,7 @@ class TypesTest {
         } while (differentbinary.equals(binary));
         var differentBinary = new Binary(differentbinary);
         assertNotEquals(differentBinary,bi);
+        assertNotEquals(bi,f);
 
         var expectedInt = new Int(seed);
         assertEquals(expectedInt,i);
@@ -85,6 +87,7 @@ class TypesTest {
         } while (seed == differentseed);
         var differentInt = new Int(differentseed);
         assertNotEquals(differentInt,i);
+        assertNotEquals(i, f);
 
         var expectedFloat = new Float(decimal);
         assertEquals(expectedFloat,f);
@@ -95,7 +98,7 @@ class TypesTest {
         } while (decimal == differentdecimal);
         var differentFloat = new Float(differentdecimal);
         assertNotEquals(differentFloat,f);
-
+        assertNotEquals(f, st);
     }
 
     /**

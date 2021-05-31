@@ -70,7 +70,6 @@ public class Bool extends Types implements ILogical{
     public ITypes sum(TString t){
         return null;
     }
-
     /**
      * Returns null;
      * It's not possible to sum a Bool object with an Int object.
@@ -79,7 +78,6 @@ public class Bool extends Types implements ILogical{
     public ITypes sum(Int i){
         return null;
     }
-
     /**
      * Returns null;
      * It's not possible to sum a Bool object with a Float object.
@@ -88,7 +86,6 @@ public class Bool extends Types implements ILogical{
     public ITypes sum(Float f){
         return null;
     }
-
     /**
      * Returns null;
      * It's not possible to sum a Bool object with a Binary object.
