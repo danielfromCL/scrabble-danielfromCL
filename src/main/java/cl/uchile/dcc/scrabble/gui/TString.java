@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Class that represents the String type for Scrabble.
  */
-public class TString extends Types{
+public class TString extends Types {
     private String string;
 
     /**
@@ -21,7 +21,7 @@ public class TString extends Types{
      * Returns the hash of the TString class.
      */
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return Objects.hash(TString.class);
     }
 
@@ -29,8 +29,8 @@ public class TString extends Types{
      * Returns whether an object is equal to the TString object that it's being compared to.
      */
     @Override
-    public boolean equals(Object obj){
-        if(obj instanceof TString){
+    public boolean equals(Object obj) {
+        if (obj instanceof TString) {
             var o = (TString) obj;
             return o.string.equals(this.string);
         }
@@ -54,51 +54,12 @@ public class TString extends Types{
         return this.getString();
     }
 
-    /**
-     * Sums a TString object with another object from the TString Class.
-     */
-    @Override
-    public ITypes sum(TString t) {
-        return new TString(this.toString() + t.toString());
-    }
 
     /**
-     * Sums a TString object with another object from the Float Class.
+     * Sums a TString object with another ITypes object.
      */
-    @Override
-    public ITypes sum(Float f) {
-        return new TString(this.toString() + f.toString());
-    }
-
-    /**
-     * Sums a TString object with another object from the Int Class.
-     */
-    @Override
-    public ITypes sum(Int i) {
-        return new TString(this.toString() + i.toString());
-    }
-
-    /**
-     * Sums a TString object with another object from the Bool Class.
-     */
-    @Override
-    public ITypes sum(Bool bo) {
-        return new TString(this.toString() + bo.toString());
-    }
-
-    /**
-     * Sums a TString object with another object from the Binary Class.
-     */
-    @Override
-    public ITypes sum(Binary bi) {
-        return new TString(this.toString() + bi.toString());
-    }
-
-    /**
-     * It's not possible to negate a String.
-     */
-    @Override
-    public ITypes neg(){
-        return null;
+    public TString sum(ITypes t) {
+        return t.addedByString(this);
     }
 }
+

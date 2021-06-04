@@ -3,68 +3,44 @@ package cl.uchile.dcc.scrabble.gui;
 /**
  * Interface that implements all the interactions between the subclasses of the Numbers class.
  */
-public interface INumbers extends ITypes{
-
-
-    /**
-     *  Returns a new INumber object with the sum of an INumbers object and a Float object.
-     */
-    INumbers sum(Float f);
+public interface INumbers {
 
     /**
-     * Returns a new INumber object with the sum of an INumbers object and an Int object.
+     * Returns a Float object with the INumbers parameter as its parameter.
      */
-    INumbers sum(Int i);
-
+    Float transformtoFloat();
     /**
-     * Returns a new INumber object with the sum of an INumbers object and a Binary object.
+     * Returns a new INumber object with the sum between an INumbers object and a Float object.
      */
-    INumbers sum(Binary bi);
-
-
+    INumbers addingAFloat(Float f);
     /**
-     * Returns a new INumber object with the subtraction of an INumbers object and a Float object.
+     * Returns a new INumber object with the sum between an INumbers object's parameter and an Int object's parameter.
      */
-    INumbers sub(Float n);
-
+    INumbers addingAnInt(Int i);
     /**
-     * Returns a new INumber object with the subtraction of an INumbers object and an Int object.
+     * Returns a new INumber object with the subtraction between a Float object's parameter and an INumbers object's parameter.
      */
-    INumbers sub(Int n);
-
+    INumbers subtractingAFloat(Float f);
     /**
-     * Returns a new INumber object with the subtraction of an INumbers object and a Binary object.
+     * Returns a new INumber object with the subtraction between an Int object's parameter and an INumbers object's parameter.
      */
-    INumbers sub(Binary n);
-
+    INumbers subtractingAnInt(Int i);
     /**
-     * Returns a new INumber object with the division between an INumbers object and a Float object.
+     * Returns a new INumber object with the multiplication between an INumbers object's parameter and a Float object's parameter.
      */
-    INumbers div(Float n);
-
+    INumbers multiplyingAFloat(Float f);
     /**
-     * Returns a new INumber object with the division between an INumbers object and an Int object.
+     * Returns a new INumber object with the multiplication between an INumbers object's parameter and an Int object's parameter.
      */
-    INumbers div(Int n);
-
+    INumbers multiplyingAnInt(Int i);
     /**
-     * Returns a new INumber object with the division between an INumbers object and a Binary object.
+     * Returns a new INumber object with the division between a Float object's parameter and an INumbers object's parameter.
      */
-    INumbers div(Binary n);
-
+    INumbers dividingAFloat(Float f);
     /**
-     * Returns a new INumber object with the multiplication between an INumbers object and a Float object
+     * Returns a new INumber object with the division between an Int object's parameter and an INumbers object's parameter.
      */
-    INumbers mult(Float n);
+    INumbers dividingAnInt(Int i);
 
-    /**
-     * Returns a new INumber object with the multiplication between an INumbers object and an Int object
-     */
-    INumbers mult(Int n);
-
-    /**
-     * Returns a new INumber object with the multiplication between an INumbers object and a Binary object
-     */
-    INumbers mult(Binary n);
 
 }

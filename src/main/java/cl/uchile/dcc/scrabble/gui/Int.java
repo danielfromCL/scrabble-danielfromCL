@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Class that represents the Int type for Scrabble.
  */
-public class Int extends Numbers {
+public class Int extends Numbers implements FloatInt, IntBinary {
     private int Int;
 
     /**
@@ -76,112 +76,106 @@ public class Int extends Numbers {
         String binary = intToBinary(this.getInt());
         return new Binary(binary);
     }
-
-    /**
-     * Returns a new Float object with the sum between the Int object and a Float object.
-     */
-    @Override
-    public INumbers sum(Float f){
-        return new Float(this.getInt()+ f.getFloat());
-    }
-    /**
-     * Returns a new Int object with the sum between the Int object and another Int object.
-     */
-    @Override
-    public INumbers sum(Int i){
-        return new Int(this.getInt()+i.getInt());
-    }
-    /**
-     * Returns a new Binary object with the sum between the Int object and a Binary object.
-     */
-    @Override
-    public INumbers sum(Binary bi){
-        int b = toInt(bi.getBinary());
-        int res = this.getInt() + b;
-        String binary = intToBinary(res);
-        return new Binary(binary);
-    }
-
-    /**
-     * Returns a new Float object with the subtraction between the Int object and a Float object.
-     */
-    @Override
-    public INumbers sub(Float n){
-        return new Float(this.getInt()-n.getFloat());
-    }
-    /**
-     * Returns a new Int object with the subtraction between the Int object and another Int object.
-     */
-    @Override
-    public INumbers sub(Int n){
-        return new Int(this.getInt()-n.getInt());
-    }
-    /**
-     * Returns a new Binary object with the subtraction between the Int object and a Binary object.
-     */
-    @Override
-    public INumbers sub(Binary n){
-        int bi = toInt(n.getBinary());
-        int res = this.getInt() - bi;
-        String binary = intToBinary(res);
-        return new Binary(binary);
-    }
-
-    /**
-     * Returns a new Float object with the division between the Int object and a Float object.
-     */
-    @Override 
-    public INumbers div(Float n){
-        return new Float(this.getInt()/n.getFloat());
-    }
-    /**
-     * Returns a new Int object with the division between the Int object and another Int object.
-     */
-    @Override
-    public INumbers div(Int n){
-        return new Int(this.getInt()/n.getInt());
-    }
-    /**
-     * Returns a new Binary object with the division between the Int object and a Binary object.
-     */
-    @Override
-    public INumbers div(Binary n){
-        int bi = toInt(n.getBinary());
-        int res = this.getInt() / bi;
-        String binary = intToBinary(res);
-        return new Binary(binary);
-    }
-
-    /**
-     * Returns a new Float object with the multiplication between the Int object and a Float object.
-     */
-    @Override
-    public INumbers mult(Float n){
-        return new Float(this.getInt()*n.getFloat());
-    }
-    /**
-     * Returns a new Int object with the multiplication between the Int object and another Int object.
-     */
-    @Override
-    public INumbers mult(Int n){
-        return new Int(this.getInt()*n.getInt());
-    }
-    /**
-     * Returns a new Binary object with the multiplication between the Int object and a Binary object.
-     */
-    @Override
-    public INumbers mult(Binary n){
-        int bi = toInt(n.getBinary());
-        int res = this.getInt() * bi;
-        String binary = intToBinary(res);
-        return new Binary(binary);
-    }
-
     /**
      * The negation of an Int is itself multiplied by -1.
      */
     @Override
-    public ITypes neg(){
+    public FloatInt neg(){
         return new Int(this.getInt()*(-1));
     }
+    /**
+     * Adds an INumber object's parameter with this Int object's parameter.
+     */
+    @Override
+    public INumbers sum(INumbers n){
+        return n.addingAnInt(this);
+    }
+    @Override
+    public INumbers addingAnInt(Int i){
+        return new Int(this.getInt()+i.getInt());
+    }
+    @Override
+    public IntBinary addingABinary(Binary b){
+        int b1 = toInt(b.getBinary());
+        int res = b1+this.getInt();
+        return new Binary(intToBinary(res));
+    }
+
+    @Override
+    public INumbers addingAFloat(Float f) {
+        return new Float(f.getFloat()+this.getInt());
+    }
+    /**
+     * Subtracts an INumbers object's parameter from this Int object's parameter.
+     */
+    @Override
+    public INumbers sub(INumbers n) {
+        return n.subtractingAnInt(this);
+    }
+    @Override
+    public INumbers subtractingAnInt(Int i) {
+        return new Int(i.getInt()-this.getInt());
+    }
+    @Override
+    public INumbers subtractingAFloat(Float f) {
+        return new Float(f.getFloat()-this.getInt());
+    }
+
+    @Override
+    public IntBinary subtractingABinary(Binary b) {
+        int b1= toInt(b.getBinary());
+        int res = b1-this.getInt();
+        return new Binary(intToBinary(res));
+    }
+    /**
+     * Multiplies an INumbers object's parameter with this Int object's parameter.
+     */
+    @Override
+    public INumbers mult(INumbers n) {
+        return n.multiplyingAnInt(this);
+    }
+
+    @Override
+    public INumbers multiplyingAFloat(Float f) {
+        return new Float(f.getFloat()*this.getInt());
+    }
+
+    @Override
+    public INumbers multiplyingAnInt(Int i) {
+        return new Int(i.getInt()*this.getInt());
+    }
+
+    @Override
+    public IntBinary multiplyingABinary(Binary b) {
+        int b1 = toInt(b.getBinary());
+        int res = b1*this.getInt();
+        return new Binary(intToBinary(res));
+    }
+    /**
+     * Divides this Int object's parameter by an INumbers object's parameter.
+     */
+    @Override
+    public INumbers div(INumbers n) {
+        return n.dividingAnInt(this);
+    }
+
+    @Override
+    public INumbers dividingAFloat(Float f) {
+        return new Float(f.getFloat()/this.getInt());
+    }
+
+    @Override
+    public INumbers dividingAnInt(Int i) {
+        return new Int(i.getInt()/this.getInt());
+    }
+
+    @Override
+    public IntBinary dividingABinary(Binary b) {
+        int b1 = toInt(b.getBinary());
+        int res = b1/this.getInt();
+        return new Binary(intToBinary(res));
+    }
+
+
+
 }

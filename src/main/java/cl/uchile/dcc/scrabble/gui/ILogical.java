@@ -1,7 +1,10 @@
 package cl.uchile.dcc.scrabble.gui;
 
 public interface ILogical {
-
+    /**
+     * Returns a new ILogical object with its negated value.
+     */
+    ILogical neg();
     /**
      * Operates the logical operator "and" between and ILogical object and a Binary object.
      */
@@ -19,5 +22,6 @@ public interface ILogical {
      * Operates the logical operator "and" between and ILogical object and a Bool object.
      */
     ILogical or(Bool b);
+
 
 }

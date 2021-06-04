@@ -57,29 +57,14 @@ class ITypesTest {
         assertEquals(i.transformtoString(),new TString(i.toString()));
         assertEquals(bi.transformtoString(),new TString(bi.toString()));
 
-        assertNull(st.transformtoBool());
         assertEquals(bot.transformtoBool(),new Bool(true));
         assertEquals(bof.transformtoBool(),new Bool(false));
-        assertNull(f.transformtoBool());
-        assertNull(i.transformtoBool());
-        assertNull(bi.transformtoBool());
 
-        assertNull(st.transformtoFloat());
-        assertNull(bot.transformtoFloat());
-        assertNull(bof.transformtoFloat());
         assertEquals(f.transformtoFloat(),new Float(decimal));
         assertEquals(i.transformtoFloat(),new Float(seed));
 
-        assertNull(st.transformtoInt());
-        assertNull(bot.transformtoInt());
-        assertNull(bof.transformtoInt());
-        assertNull(f.transformtoInt());
         assertEquals(i.transformtoInt(),new Int(seed));
 
-        assertNull(st.transformtoBinary());
-        assertNull(bot.transformtoBinary());
-        assertNull(bof.transformtoBinary());
-        assertNull(f.transformtoBinary());
         assertEquals(bi.transformtoBinary(),new Binary(binary));
     }
 
@@ -96,24 +81,6 @@ class ITypesTest {
         assertEquals(st.sum(i),new TString(hello+seed));
         assertEquals(st.sum(bi),new TString(hello+binary));
 
-        assertNull(i.sum(bot));
-        assertNull(i.sum(bof));
-        assertNull(i.sum(st));
-
-        assertNull(f.sum(bot));
-        assertNull(f.sum(bof));
-        assertNull(f.sum(st));
-
-        assertNull(bot.sum(bot));
-        assertNull(bot.sum(bof));
-        assertNull(bof.sum(bot));
-        assertNull(bof.sum(bof));
-        assertNull(bot.sum(st));
-        assertNull(bof.sum(st));
-
-        assertNull(bi.sum(bot));
-        assertNull(bi.sum(bof));
-        assertNull(bi.sum(st));
 
     }
 
@@ -122,7 +89,6 @@ class ITypesTest {
      */
     @RepeatedTest(20)
     void negTest(){
-        assertNull(st.neg());
         assertEquals(bot.neg(), bof);
         assertEquals(bof.neg(),bot);
         assertEquals(f.neg(), new Float(decimal*(-1)));

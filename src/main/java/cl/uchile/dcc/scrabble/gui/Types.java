@@ -6,18 +6,6 @@ package cl.uchile.dcc.scrabble.gui;
  */
 public abstract class Types implements ITypes{
 
-    public Types() {
-    }
-
-    /**
-     * As default, every transformation to Bool is not permitted and returns null.
-     */
-    @Override
-    public Bool transformtoBool(){
-        System.out.println("Transformation not permitted, returning null");
-        return null;
-    }
-
     /**
      * Since any subclass can be transformed to TString, the default for every subclass is to use its toString method and create a new object of the TString class.
      */
@@ -27,48 +15,13 @@ public abstract class Types implements ITypes{
     }
 
     /**
-     * As default, every transformation to Int is not permitted and returns null.
+     * Returns a new TString object with this object's paremeter appended to the TString object's parameter.
      */
     @Override
-    public Int transformtoInt(){
-        System.out.println("Transformation not permitted, returning null");
-        return null;
+    public TString addedByString(TString t) {
+        return new TString(t.toString()+this.toString());
     }
-
-    /**
-     * As default, every transformation to Binary is not permitted and returns null.
-     */
-    @Override
-    public Binary transformtoBinary(){
-        System.out.println("Transformation not permitted, returning null");
-        return null;
-    }
-
-    /**
-     * As default, every transformation to Float is not permitted and returns null.
-     */
-    @Override
-    public Float transformtoFloat(){
-        System.out.println("Transformation not permitted, returning null");
-        return null;
-    }
-
-    /**
-     * Returns null;
-     * As default, it's not possible to sum an ITypes object with a Bool object.
-     */
-    @Override
-    public ITypes sum(Bool bo){
-        return null;
-    }
-
-    /**
-     * Returns null;
-     * As default, it's not possible to sum an ITypes object with a TString object.
-     */
-    @Override
-    public ITypes sum(TString t){
-        return null;
-    }
-
 }
+
+
+

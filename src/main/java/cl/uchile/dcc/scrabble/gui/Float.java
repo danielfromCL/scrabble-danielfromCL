@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Class that represents the Float type for Scrabble.
  */
-public class Float extends Numbers{
+public class Float extends Numbers implements FloatInt {
     private double Float;
 
     /**
@@ -61,114 +61,78 @@ public class Float extends Numbers{
     }
 
     /**
-     * Returns a new Float object with the sum between the Float object and another Float object.
-     */
-    @Override
-    public INumbers sum(Int i){
-        return new Float(this.getFloat()+ i.getInt());
-    }
-
-    /**
-     * Returns a new Float object with the sum between the Float object and an Int object.
-     */
-    @Override
-    public INumbers sum(Float f){
-        return new Float(this.getFloat()+f.getFloat());
-    }
-
-    /**
-     * Returns a new Binary object with the sum between the Float object and a Binary object.
-     */
-    @Override
-    public INumbers sum(Binary bi){
-        int b = toInt(bi.getBinary());
-        double res = this.getFloat() + b;
-        return new Float(res);
-    }
-
-    /**
-     * Returns a new Float object with the subtraction between the Float object and an Int object.
-     */
-    @Override
-    public INumbers sub(Int n){
-        return new Float(this.getFloat()- n.getInt());
-    }
-
-    /**
-     * Returns a new Float object with the subtraction between the Float object and a Float object.
-     */
-    @Override
-    public INumbers sub(Float n){
-        return new Float(this.getFloat()-n.getFloat());
-    }
-
-    /**
-     * Returns a new Binary object with the subtraction between the Float object and a Binary object.
-     */
-    @Override
-    public INumbers sub(Binary n){
-        int b = toInt(n.getBinary());
-        double res = this.getFloat() - b;
-        return new Float(res);
-    }
-
-    /**
-     * Returns a new Float object with the division between the Float object and an Int object.
-     */
-    @Override
-    public INumbers div(Int n){
-        return new Float(this.getFloat()/n.getInt());
-    }
-
-    /**
-     * Returns a new Float object with the division between the Float object and a Float object.
-     */
-    @Override
-    public INumbers div(Float n){
-        return new Float(this.getFloat()/n.getFloat());
-    }
-
-    /**
-     * Returns a new Binary object with the division between the Float object and a Binary object.
-     */
-    @Override
-    public INumbers div(Binary n){
-        int b = toInt(n.getBinary());
-        double res = this.getFloat() / b;
-        return new Float(res);
-    }
-
-    /**
-     * Returns a new Float object with the multiplication between the Float object and an Int object.
-     */
-    @Override
-    public INumbers mult(Int n){
-        return new Float(this.getFloat()*n.getInt());
-    }
-
-    /**
-     * Returns a new Float object with the multiplication between the Float object and another Float object.
-     */
-    @Override
-    public INumbers mult(Float n){
-        return new Float(this.getFloat()*n.getFloat());
-    }
-
-    /**
-     * Returns a new Binary object with the multiplication between the Float object and a Binary object.
-     */
-    @Override
-    public INumbers mult(Binary n){
-        int b = toInt(n.getBinary());
-        double res = this.getFloat() * b;
-        return new Float(res);
-    }
-
-    /**
      * The negation of a Float is itself multiplied by -1.
      */
     @Override
-    public ITypes neg(){
+    public FloatInt neg(){
         return new Float(this.getFloat()*(-1));
     }
+    /**
+     * Returns a new Float object with the sum between the Float object and an INumbers object.
+     */
+    @Override
+    public INumbers sum(INumbers n){
+        return n.addingAFloat(this);
+    }
+    @Override
+    public Float addingAFloat(Float f){
+        return new Float(f.getFloat()+this.getFloat());
+    }
+    @Override
+    public INumbers addingAnInt(Int i){
+        return new Float(i.getInt()+this.getFloat());
+    }
+    /**
+     * Returns a new Float object with the subtraction between this Float object's parameter and an INumbers object's paremeter.
+     */
+    @Override
+    public INumbers sub(INumbers n) {
+        return n.subtractingAFloat(this);
+    }
+
+    @Override
+    public INumbers subtractingAFloat(Float f) {
+        return new Float(f.getFloat()-this.getFloat());
+    }
+
+    @Override
+    public INumbers subtractingAnInt(Int i) {
+        return new Float(i.getInt()-this.getFloat());
+    }
+    /**
+     * Returns a new Float object with the multiplication between this Float object's parameter and an INumbers object's paremeter.
+     */
+    @Override
+    public INumbers mult(INumbers n) {
+        return n.multiplyingAFloat(this);
+    }
+
+    @Override
+    public INumbers multiplyingAFloat(Float f) {
+        return new Float(f.getFloat()*this.getFloat());
+    }
+
+    @Override
+    public INumbers multiplyingAnInt(Int i) {
+        return new Float(i.getInt()*this.getFloat());
+    }
+    /**
+     * Returns a new Float object with the division between this Float object's parameter and an INumbers object's paremeter.
+     */
+    @Override
+    public INumbers div(INumbers n) {
+        return n.dividingAFloat(this);
+    }
+
+    @Override
+    public INumbers dividingAFloat(Float f) {
+        return new Float(f.getFloat()/this.getFloat());
+    }
+
+    @Override
+    public INumbers dividingAnInt(Int i) {
+        return new Float(i.getInt()/this.getFloat());
+    }
+
+
 }
