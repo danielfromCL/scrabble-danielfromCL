@@ -30,7 +30,9 @@ class IntBinaryTest {
         bi = new Binary(binary);
         i = new Int(seed); //seed is a random number
     }
-
+    /**
+     * Tests the transformations between Int and Binary objects.
+     */
     @RepeatedTest(20)
     void transformersTest() {
         assertEquals(bi.transformtoBinary(),bi);

@@ -12,6 +12,9 @@ class NumbersTest {
     String bin1,bin2,bin3,bin4,bin5,bin6,bin7,bin8,bin9,bin10;
     Binary b1,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     Int i1, i2,i3,i4,i5,i6,i7;
+    /**
+     * Creates Int and Binary objects.
+     */
     @BeforeEach
     void setUp() {
         n = 2;
@@ -50,6 +53,9 @@ class NumbersTest {
         i7 = new Int(p);
     }
 
+    /**
+     * Tests the transformation from binary to integer.
+     */
     @Test
     void binaryToIntTest() {
         assertEquals(b1.toInt(b1.getBinary()),n);
@@ -63,7 +69,9 @@ class NumbersTest {
         assertEquals(b10.toInt(b10.getBinary()),r);
         assertNotEquals(b5.toInt(b5.getBinary()),b7.toInt(b7.getBinary()));
     }
-
+    /**
+     * Tests the transformation from integer to binary.
+     */
     @Test
     void intToBinaryTest() {
         assertEquals(i1.intToBinary(i1.getInt()), bin1);

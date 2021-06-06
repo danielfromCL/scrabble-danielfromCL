@@ -18,7 +18,9 @@ class BoolTest {
         bot = new Bool(true);
         bof = new Bool(false);
     }
-
+    /**
+     * Tests the constructor of the Bool class.
+     */
     @Test
     void constructorTest() {
         var expectedBooltrue = new Bool(true);
@@ -42,6 +44,9 @@ class BoolTest {
         assertEquals(bot.toString(), "true");
         assertEquals(bof.toString(), "false");
     }
+    /**
+     * Tests the transformation from Bool to Bool
+     */
     @Test
     void transformerTest() {
         assertEquals(bot.transformtoBool(),bot);
@@ -49,6 +54,9 @@ class BoolTest {
         assertNotEquals(bot.transformtoBool(),bof);
         assertNotEquals(bof.transformtoBool(),bot);
     }
+    /**
+     * Tests the negation from Bool objects.
+     */
     @Test
     void negationTest(){
         assertEquals(bot.neg(),bof);

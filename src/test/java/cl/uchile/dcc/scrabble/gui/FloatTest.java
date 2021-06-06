@@ -23,6 +23,9 @@ class FloatTest {
         decimal = random+0.1;
         f1 = new Float(decimal);
     }
+    /**
+     * Tests the constructor of the Float class.
+     */
     @RepeatedTest(20)
     void constructorTest(){
         var expectedInt = new Float(decimal);

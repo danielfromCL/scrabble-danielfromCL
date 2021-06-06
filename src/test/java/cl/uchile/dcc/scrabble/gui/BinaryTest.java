@@ -40,6 +40,9 @@ class BinaryTest {
 
     }
 
+    /**
+     * Tests the constructor of the Binary class.
+     */
     @Test
     void constructorTest() {
         var expectedBinary = new Binary(b1);
@@ -70,6 +73,10 @@ class BinaryTest {
         assertEquals(bi9.getBinary(),b9);
         assertEquals(bi10.getBinary(),b10);
     }
+
+    /**
+     * Tests the sum between Binary and Binary and between Binary and Int.
+     */
     @Test
     void sumTest(){
         assertEquals(bi1.sum(bi2),new Binary("0"));
@@ -84,6 +91,9 @@ class BinaryTest {
         assertEquals(bi4.sum(i1),new Binary("110"));
         assertEquals(bi5.sum(i2),new Binary("11"));
     }
+    /**
+     * Tests the subtraction between Binary and Binary and between Binary and Int.
+     */
     @Test
     void subTest(){
         assertEquals(bi1.sub(bi2),new Binary("010"));
@@ -97,6 +107,9 @@ class BinaryTest {
         assertEquals(bi4.sub(i1),bi3.sub(i2));
         assertEquals(bi5.sub(i2),new Binary("101"));
     }
+    /**
+     * Tests the multiplication between Binary and Binary and between Binary and Int.
+     */
     @Test
     void multTest(){
         assertEquals(bi1.mult(bi2),new Binary("11"));
@@ -114,6 +127,9 @@ class BinaryTest {
         assertEquals(bi1.mult(i3), new Binary("010"));
         assertEquals(bi2.mult(i3), new Binary("110"));
     }
+    /**
+     * Tests the division between Binary and Binary and between Binary and Int.
+     */
     @Test
     void divTest(){
         assertEquals(bi1.div(bi2),new Binary("11"));

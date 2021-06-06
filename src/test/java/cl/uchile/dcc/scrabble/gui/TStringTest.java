@@ -28,6 +28,9 @@ class TStringTest {
         world = "hello world";
         wo = new TString(world);
     }
+    /**
+     * Tests the constructor of the TString class.
+     */
     @RepeatedTest(20)
     void constructorTest(){
         var expectedTString = new TString(hello);
@@ -42,6 +45,7 @@ class TStringTest {
         var differentObject = new Int(seed);
         assertNotEquals(st, differentObject);
     }
+
     @RepeatedTest(20)
     void getterTest(){
         assertEquals(st.getString(),hello);
@@ -52,6 +56,9 @@ class TStringTest {
         assertEquals(st.toString(),hello);
         assertEquals(wo.toString(),world);
     }
+    /**
+     * Tests the sum between TString and ITypes objects.
+     */
     @RepeatedTest(20)
     void sumTest(){
         Int i = new Int(23);

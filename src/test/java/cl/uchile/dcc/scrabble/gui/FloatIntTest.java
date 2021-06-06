@@ -38,7 +38,6 @@ class FloatIntTest {
         f = new Float(decimal);
         g = new Float(random);
     }
-
     /**
      * Tests every sum method of the FloatInt + INumbers type
      */

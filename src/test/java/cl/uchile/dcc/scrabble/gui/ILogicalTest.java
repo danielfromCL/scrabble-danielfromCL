@@ -67,7 +67,9 @@ class ILogicalTest {
         assertEquals(bi.or(notbi), new Binary("1"));
         assertEquals(bi.and(notbi), new Binary("0"));
     }
-
+    /**
+     * Tests every negation method for ILogical objects.
+     */
     @RepeatedTest(20)
     void negationTest(){
         assertEquals(bot.neg(),bof);

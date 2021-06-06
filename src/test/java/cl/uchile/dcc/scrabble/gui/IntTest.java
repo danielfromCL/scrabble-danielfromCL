@@ -12,11 +12,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class IntTest {
     private int random;
     private Int i1;
+    /**
+     * Creates objects of the Int type.
+     */
     @BeforeEach
     void setUp() {
         random = new Random().nextInt();
         i1 = new Int(random);
     }
+    /**
+     * Tests the constructor of the Int class.
+     */
     @RepeatedTest(20)
     void constructorTest(){
         var expectedInt = new Int(random);
