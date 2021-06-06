@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
-
+/**
+ * Interface that declares all the common methods between the Float class and Int class.
+ */
 public interface FloatInt extends INumbers{
     /**
      * Returns a new INumbers object with the sum between both INumbers object's paremeters.

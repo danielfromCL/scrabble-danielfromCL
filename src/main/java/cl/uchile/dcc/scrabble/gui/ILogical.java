@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
-
+/**
+ * Interface that declares all the common methods between the Bool class and the Binary class.
+ */
 public interface ILogical {
     /**
      * Returns a new ILogical object with its negated value.

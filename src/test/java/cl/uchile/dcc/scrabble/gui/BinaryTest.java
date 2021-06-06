@@ -15,7 +15,7 @@ class BinaryTest {
     @BeforeEach
     void setUp() {
         b1 = "01";
-        b2 = "11";
+        b2 = "1";
         b3 = "00000000000001";
         b4 = "11";
         b5 = "1111111110";
@@ -69,6 +69,62 @@ class BinaryTest {
     }
     @Test
     void sumTest(){
-        assertEquals(bi1.sum(bi2),new Binary("00"));
+        assertEquals(bi1.sum(bi2),new Binary("0"));
+        assertEquals(bi3.sum(bi1),new Binary("010"));
+        assertEquals(bi5.sum(bi4),new Binary("101"));
+        assertEquals(bi9.sum(bi10), new Binary("010100"));
+        assertEquals(bi6.sum(bi7),bi7.sum(bi6));
+        Int i1 = new Int(-1);
+        assertEquals(bi1.sum(i1),new Binary("0"));
+        Int i2 = new Int(1);
+        assertEquals(bi3.sum(i2),new Binary("010"));
+        assertEquals(bi4.sum(i1),new Binary("110"));
+        assertEquals(bi5.sum(i2),new Binary("11"));
+    }
+    @Test
+    void subTest(){
+        assertEquals(bi1.sub(bi2),new Binary("010"));
+        assertEquals(bi3.sub(bi1),new Binary("0"));
+        assertEquals(bi5.sub(bi4),new Binary("11"));
+        assertEquals(bi9.sub(bi10), new Binary("0"));
+        Int i1 = new Int(-1);
+        assertEquals(bi1.sub(i1),new Binary("010"));
+        Int i2 = new Int(1);
+        assertEquals(bi3.sub(i2),new Binary("0"));
+        assertEquals(bi4.sub(i1),bi3.sub(i2));
+        assertEquals(bi5.sub(i2),new Binary("101"));
+    }
+    @Test
+    void multTest(){
+        assertEquals(bi1.mult(bi2),new Binary("11"));
+        assertEquals(bi3.mult(bi1),new Binary("01"));
+        assertEquals(bi5.mult(bi4),new Binary("010"));
+        assertEquals(bi9.mult(bi10), new Binary("01100100"));
+        assertEquals(bi8.mult(bi9), bi9.mult(bi8));
+        Int i1 = new Int(-1);
+        assertEquals(bi1.mult(i1),new Binary("11"));
+        Int i2 = new Int(1);
+        assertEquals(bi3.mult(i2),new Binary(b3));
+        assertEquals(bi4.mult(i1),new Binary("01"));
+        assertEquals(bi5.mult(i2),new Binary("110"));
+        Int i3= new Int(2);
+        assertEquals(bi1.mult(i3), new Binary("010"));
+        assertEquals(bi2.mult(i3), new Binary("110"));
+    }
+    @Test
+    void divTest(){
+        assertEquals(bi1.div(bi2),new Binary("11"));
+        assertEquals(bi3.div(bi1),new Binary("01"));
+        assertEquals(bi5.div(bi4),new Binary("010"));
+        assertEquals(bi9.div(bi10), new Binary("01"));
+        Int i1 = new Int(-1);
+        assertEquals(bi1.div(i1),new Binary("11"));
+        Int i2 = new Int(1);
+        assertEquals(bi3.div(i2),new Binary(b3));
+        assertEquals(bi4.div(i1),new Binary("01"));
+        assertEquals(bi5.div(i2),new Binary(b5));
+        Int i3= new Int(2);
+        assertEquals(bi9.div(i3), new Binary("0101"));
+        assertEquals(bi8.div(i3), new Binary("1101"));
     }
 }

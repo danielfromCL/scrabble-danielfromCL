@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
-
+/**
+ * Interface that declares all the common methods between the Int class and the Binary class.
+ */
 public interface IntBinary extends INumbers{
     /**
      *  Transforms an object to Binary.

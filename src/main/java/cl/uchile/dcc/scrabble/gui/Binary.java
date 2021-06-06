@@ -176,7 +176,7 @@ public class Binary extends Numbers implements ILogical, IntBinary {
     public IntBinary subtractingABinary(Binary b){
         int b1 = toInt(b.getBinary());
         int b2 = toInt(this.getBinary());
-        String res = intToBinary(b2-b1);
+        String res = intToBinary(b1-b2);
         return new Binary(res);
     }
     /**

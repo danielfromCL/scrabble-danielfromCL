@@ -46,7 +46,7 @@ class ITypesTest {
 
 
     /**
-     * Tests every transformation method solicited for the first partial submission
+     * Tests every transformation method to TString.
      */
     @RepeatedTest(20)
     void transformersTest(){
@@ -56,44 +56,6 @@ class ITypesTest {
         assertEquals(f.transformtoString(),new TString(f.toString()));
         assertEquals(i.transformtoString(),new TString(i.toString()));
         assertEquals(bi.transformtoString(),new TString(bi.toString()));
-
-        assertEquals(bot.transformtoBool(),new Bool(true));
-        assertEquals(bof.transformtoBool(),new Bool(false));
-
-        assertEquals(f.transformtoFloat(),new Float(decimal));
-        assertEquals(i.transformtoFloat(),new Float(seed));
-
-        assertEquals(i.transformtoInt(),new Int(seed));
-
-        assertEquals(bi.transformtoBinary(),new Binary(binary));
-    }
-
-    /**
-     * Tests every sum method between ITypes objects
-     * Doesn't tests the sum method between INumbers objects.
-     */
-    @RepeatedTest(20)
-    void sumTest(){
-        assertEquals(st.sum(new TString(hello)),new TString(hello+hello));
-        assertEquals(st.sum(bot),new TString(hello+"true"));
-        assertEquals(st.sum(bof),new TString(hello+"false"));
-        assertEquals(st.sum(f),new TString(hello+decimal));
-        assertEquals(st.sum(i),new TString(hello+seed));
-        assertEquals(st.sum(bi),new TString(hello+binary));
-
-
-    }
-
-    /**
-     * Tests every negation method for a Type object
-     */
-    @RepeatedTest(20)
-    void negTest(){
-        assertEquals(bot.neg(), bof);
-        assertEquals(bof.neg(),bot);
-        assertEquals(f.neg(), new Float(decimal*(-1)));
-        assertEquals(i.neg(), new Int(seed*(-1)));
-        //assertEquals(bi.neg(), new Binary());
     }
 
 
