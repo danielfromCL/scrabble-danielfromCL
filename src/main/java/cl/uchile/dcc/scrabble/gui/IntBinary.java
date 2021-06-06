@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public interface IntBinary{
+public interface IntBinary extends INumbers{
     /**
      *  Transforms an object to Binary.
      */
@@ -25,4 +25,5 @@ public interface IntBinary{
      * Returns a new IntBinary object with the division between an IntBinary object's parameter and a Binary object's parameter.
      */
     IntBinary dividingABinary(Binary b);
+
 }

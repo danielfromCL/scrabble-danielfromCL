@@ -7,7 +7,6 @@ import java.util.Objects;
  */
 public class TString extends Types {
     private String string;
-
     /**
      * Creates a TString object.
      * Constructor that creates an object of the TString type, which receives a java String as parameter.
@@ -15,8 +14,6 @@ public class TString extends Types {
     public TString(String string) {
         this.string = string;
     }
-
-
     /**
      * Returns the hash of the TString class.
      */
@@ -24,7 +21,6 @@ public class TString extends Types {
     public int hashCode() {
         return Objects.hash(TString.class);
     }
-
     /**
      * Returns whether an object is equal to the TString object that it's being compared to.
      */
@@ -36,8 +32,6 @@ public class TString extends Types {
         }
         return false;
     }
-
-
     /**
      * Returns the string parameter.
      * Getter that returns the java type String parameter of the TString object.
@@ -45,7 +39,6 @@ public class TString extends Types {
     public String getString() {
         return string;
     }
-
     /**
      * Returns the TString object representation as a java type String.
      */
@@ -53,8 +46,6 @@ public class TString extends Types {
     public String toString() {
         return this.getString();
     }
-
-
     /**
      * Sums a TString object with another ITypes object.
      */

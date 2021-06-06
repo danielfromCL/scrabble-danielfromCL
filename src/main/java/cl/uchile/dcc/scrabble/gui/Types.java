@@ -5,7 +5,6 @@ package cl.uchile.dcc.scrabble.gui;
  * Class that represents every type for Scrabble
  */
 public abstract class Types implements ITypes{
-
     /**
      * Since any subclass can be transformed to TString, the default for every subclass is to use its toString method and create a new object of the TString class.
      */
@@ -13,7 +12,6 @@ public abstract class Types implements ITypes{
     public TString transformtoString(){
         return new TString(this.toString());
     }
-
     /**
      * Returns a new TString object with this object's paremeter appended to the TString object's parameter.
      */

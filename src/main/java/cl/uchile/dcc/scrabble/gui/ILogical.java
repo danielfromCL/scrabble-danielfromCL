@@ -6,22 +6,29 @@ public interface ILogical {
      */
     ILogical neg();
     /**
+     * Operates the logical "and" between an ILogical object's parameter and another ILogical object's parameter.
+     */
+    ILogical and(ILogical b);
+    /**
+     * Operates the logical "or" between an ILogical object's parameter and another ILogical object's parameter.
+     */
+    ILogical or(ILogical b);
+    /**
      * Operates the logical operator "and" between and ILogical object and a Binary object.
      */
-    ILogical and(Binary b);
+    ILogical andwithBinary(Binary b);
     /**
      * Operates the logical operator "and" between and ILogical object and a Bool object.
      */
-    ILogical and(Bool b);
-
+    ILogical andwithBool(Bool b);
     /**
      * Operates the logical operator "or" between and ILogical object and a Binary object.
      */
-    ILogical or(Binary b);
+    ILogical orwithBinary(Binary b);
     /**
      * Operates the logical operator "and" between and ILogical object and a Bool object.
      */
-    ILogical or(Bool b);
+    ILogical orwithBool(Bool b);
 
 
 }

@@ -1,11 +1,12 @@
 package cl.uchile.dcc.scrabble.gui;
 
 
+import static java.lang.Math.abs;
+
 /**
  * Abstract class that represents every possible number type in Types.
  */
 public abstract class Numbers extends Types implements INumbers{
-
     /**
      * Returns an integer from the String representation of a binary number.
      */
@@ -33,28 +34,40 @@ public abstract class Numbers extends Types implements INumbers{
     private int bitToInt(char bit){
         return bit == '0' ? 0:1;
     }
-
     /**
      * Returns a String with the binary representation of an integer.
      */
     public String intToBinary(int i){
-        String b = Integer.toBinaryString(i);
-        //if (i<0){
-          //  b = twosComplement(b);
-        //}
-        return b;
-    }
-    private String positiveIntToBin(int n){
-        String b = "";
-        while(n >0){
-            b= ((n%2)==0 ? "0" : "1")+b;
-            n= n/2;
+        if (i==0){
+            return "0";
+        }
+        String b = positiveIntToBin(abs(i));
+        if (i<0){
+            b = twosComplement(b);
         }
         return b;
     }
+    private String positiveIntToBin(int n){
+        String integerString =n+"";
+        return "0"+Integer.toBinaryString(Integer.parseInt(integerString));
+    }
     private String twosComplement(String binary){
-        int n = binary.length() -1;
-        int w = 0;
-        return null;
+        StringBuilder str = new StringBuilder();
+        str.append(binary);
+        int n = str.length();
+        int i;
+        for (i = n-1 ; i >= 0 ; i--)
+            if (str.charAt(i) == '1')
+                break;
+        if (i == -1)
+            return "1" + str;
+        for (int k = i-1 ; k >= 0; k--)
+        {
+            if (str.charAt(k) == '1')
+                str.replace(k, k+1, "0");
+            else
+                str.replace(k, k+1, "1");
+        }
+        return str.toString();
     }
 }

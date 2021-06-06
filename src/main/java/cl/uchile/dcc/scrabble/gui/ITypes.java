@@ -5,7 +5,6 @@ package cl.uchile.dcc.scrabble.gui;
  * Interface that implements all the interactions between the subclasses of the Type class.
  */
 public interface ITypes {
-
     /**
      *  Transforms an object to TString.
      *  Method that transforms any subclass of the Types class to the TString class.

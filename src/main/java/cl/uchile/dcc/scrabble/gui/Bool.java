@@ -7,7 +7,6 @@ import java.util.Objects;
  */
 public class Bool extends Types implements ILogical{
     private boolean Bool;
-
     /**
      * Creates a Bool object.
      * Constructor that creates an object of the Bool type, which receives a java boolean as parameter.
@@ -15,7 +14,6 @@ public class Bool extends Types implements ILogical{
     public Bool(boolean Bool) {
         this.Bool = Bool;
     }
-
     /**
      * Returns the hash of the Bool class.
      */
@@ -23,8 +21,6 @@ public class Bool extends Types implements ILogical{
     public int hashCode(){
         return Objects.hash(Bool.class);
     }
-
-
     /**
      * Returns whether an object is equal to the Bool object that it's being compared to.
      */
@@ -36,7 +32,6 @@ public class Bool extends Types implements ILogical{
         }
         return false;
     }
-
     /**
      * Returns the Bool parameter.
      * Getter that returns the java type boolean parameter of the Bool object.
@@ -44,8 +39,6 @@ public class Bool extends Types implements ILogical{
     public boolean isBool() {
         return Bool;
     }
-
-
     /**
      * Returns the Bool object representation as a java type String.
      */
@@ -53,14 +46,12 @@ public class Bool extends Types implements ILogical{
     public String toString() {
         return String.valueOf(this.isBool());
     }
-
     /**
      * Returns a copy of the Bool object.
      */
     public Bool transformtoBool(){
         return new Bool(this.isBool());
     }
-
     /**
      * Returns a new Bool with its negated value.
      */
@@ -68,12 +59,18 @@ public class Bool extends Types implements ILogical{
     public ILogical neg(){
         return new Bool(!(this.isBool()));
     }
-
+    /**
+     * Operates the logical "and" between this object's parameter and another ILogical object.
+     */
+    @Override
+    public ILogical and(ILogical b){
+        return b.andwithBool(this);
+    }
     /**
      * Returns a new Binary object with the logical operator "and" applied bit to bit between the boolean value of the Bool object and the Binary object.
      */
     @Override
-    public ILogical and(Binary b) {
+    public ILogical andwithBinary(Binary b) {
         String binary = b.getBinary();
         String res="";
         if(this.isBool()){
@@ -93,20 +90,25 @@ public class Bool extends Types implements ILogical{
         }
         return new Binary(res);
     }
-
     /**
      * Returns a new Bool object with the logical operator "and" applied between the boolean value of both Bool objects.
      */
     @Override
-    public ILogical and(Bool b) {
+    public ILogical andwithBool(Bool b) {
         return new Bool(this.isBool() && b.isBool());
     }
-
     /**
-     * Returns a new Binary object with the logical operator "or" applied bit to bit between the boolean value of the Bool object and the Binary object.
+     * Operates the logical "or" between this object's parameter and another ILogical object.
      */
     @Override
-    public ILogical or(Binary b) {
+    public ILogical or(ILogical b){
+        return b.orwithBool(this);
+    }
+    /**
+     * Returns a new Binary object with the logical operator "or" applied bit to bit between the boolean value of this Bool object and the Binary object.
+     */
+    @Override
+    public ILogical orwithBinary(Binary b) {
         String binary = b.getBinary();
         String res="";
         if(!(this.isBool())){
@@ -130,7 +132,7 @@ public class Bool extends Types implements ILogical{
      * Returns a new Bool object with the logical operator "or" applied between the boolean value of both Bool objects.
      */
     @Override
-    public ILogical or(Bool b) {
+    public ILogical orwithBool(Bool b) {
         return new Bool(this.isBool() || b.isBool());
     }
 
