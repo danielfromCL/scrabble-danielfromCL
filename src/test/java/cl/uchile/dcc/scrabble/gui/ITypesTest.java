@@ -8,7 +8,7 @@ import org.junit.jupiter.api.RepeatedTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Class for testing every method in ITypes.
+ * Test class for every method common to all the ITypes objects.
  */
 class ITypesTest {
     private TString st;

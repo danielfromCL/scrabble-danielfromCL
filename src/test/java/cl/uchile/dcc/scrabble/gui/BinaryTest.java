@@ -1,17 +1,20 @@
 package cl.uchile.dcc.scrabble.gui;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test class for every method exclusive to the Binary class.
+ */
 class BinaryTest {
     String b1,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     private Binary bi1,bi2,bi3,bi4,bi5,bi6,bi7,bi8,bi9,bi10;
+    /**
+     * Creates objects of the Binary type.
+     */
     @BeforeEach
     void setUp() {
         b1 = "01";

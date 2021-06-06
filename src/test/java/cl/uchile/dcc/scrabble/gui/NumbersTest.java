@@ -4,7 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Test class for every method common to all the Numbers objects.
+ */
 class NumbersTest {
     int n,j,k,l,m,r,p;
     String bin1,bin2,bin3,bin4,bin5,bin6,bin7,bin8,bin9,bin10;

@@ -4,10 +4,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Test class for every method exclusive to the Bool class.
+ */
 class BoolTest {
     private Bool bot;
     private Bool bof;
+    /**
+     * Creates objects of the Bool type.
+     */
     @BeforeEach
     void setUp() {
         bot = new Bool(true);

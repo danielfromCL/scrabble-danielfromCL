@@ -7,11 +7,16 @@ import org.junit.jupiter.api.Test;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Test class for every method exclusive to the Float class.
+ */
 class FloatTest {
     private int random;
     private double decimal;
     private Float f1;
+    /**
+     * Creates objects of the Float type.
+     */
     @BeforeEach
     void setUp() {
         random = new Random().nextInt();

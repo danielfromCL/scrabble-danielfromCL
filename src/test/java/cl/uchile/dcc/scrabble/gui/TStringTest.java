@@ -7,12 +7,17 @@ import org.junit.jupiter.api.RepeatedTest;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Test class for every method exclusive to the TString class.
+ */
 class TStringTest {
     private TString st,wo;
     private int seed;
     private Random rng;
     private String hello, world;
+    /**
+     * Creates objects of the TString type.
+     */
     @BeforeEach
     void setUp() {
         seed = new Random().nextInt();

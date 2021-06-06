@@ -6,7 +6,9 @@ import org.junit.jupiter.api.RepeatedTest;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Test class for every method exclusive to the Int class.
+ */
 class IntTest {
     private int random;
     private Int i1;
