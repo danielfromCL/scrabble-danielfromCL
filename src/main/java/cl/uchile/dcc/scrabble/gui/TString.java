@@ -52,5 +52,7 @@ public class TString extends Types {
     public TString sum(ITypes t) {
         return t.addedByString(this);
     }
+
+
 }
 

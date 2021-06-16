@@ -3,7 +3,7 @@ package cl.uchile.dcc.scrabble.gui;
 /**
  * Interface that declares all the common methods between the subclasses of the Numbers class.
  */
-public interface INumbers {
+public interface INumbers extends ITypes {
     /**
      * Returns a Float object with the INumbers parameter as its parameter.
      */

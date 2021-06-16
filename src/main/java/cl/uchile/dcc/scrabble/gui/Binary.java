@@ -1,12 +1,14 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import cl.uchile.dcc.scrabble.gui.ast.AST;
+
 import java.util.Objects;
 
 
 /**
  * Class that represents the Binary type for Scrabble.
  */
-public class Binary extends Numbers implements ILogical, IntBinary {
+public class Binary extends Numbers implements ILogical, IntBinary{
     private String Binary;
     /**
      * Creates a Binary object.
