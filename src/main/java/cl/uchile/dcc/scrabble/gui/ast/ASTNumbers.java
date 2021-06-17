@@ -1,14 +1,10 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-public class ASTNumbers extends AST{
+import cl.uchile.dcc.scrabble.gui.INumbers;
 
-    protected ASTNumbers result;
+public interface ASTNumbers extends IAST{
 
     @Override
-    public ASTNumbers getResult() {
-        return this.result;
-    }
-    void setResult(ASTNumbers result){
-        this.result= result;
-    }
+    INumbers getResult();
+
 }

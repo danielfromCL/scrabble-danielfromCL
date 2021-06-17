@@ -1,13 +1,8 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-public class ASTLogical extends AST{
+import cl.uchile.dcc.scrabble.gui.ILogical;
 
-    protected ASTLogical result;
+public interface ASTLogical extends IAST{
     @Override
-    public ASTLogical getResult() {
-        return this.result;
-    }
-    void setResult(ASTLogical result){
-        this.result= result;
-    }
+    ILogical getResult();
 }

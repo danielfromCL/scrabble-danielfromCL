@@ -1,11 +1,13 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import cl.uchile.dcc.scrabble.gui.ast.ASTString;
+
 import java.util.Objects;
 
 /**
  * Class that represents the String type for Scrabble.
  */
-public class TString extends Types {
+public class TString extends Types implements ASTString {
     private String string;
     /**
      * Creates a TString object.
@@ -54,5 +56,9 @@ public class TString extends Types {
     }
 
 
+    @Override
+    public TString getResult(){
+        return this;
+    }
 }
 

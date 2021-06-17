@@ -4,13 +4,10 @@ import cl.uchile.dcc.scrabble.gui.*;
 
 import java.util.*;
 
-public class AST implements IAST{
+public abstract class AST implements IAST{
 
     protected List<IAST> nodes = new ArrayList<IAST>();
-    protected IAST result;
-    public IAST getResult() {
-        return this.result;
-    }
+    protected ITypes result;
 
     void add(AST a){
         nodes.add(a);
@@ -20,11 +17,13 @@ public class AST implements IAST{
     }
 
 
-    @Override
-    public IAST toTString() {
-        return this.getResult().transformtoString();
+    void setResult(ITypes result){
+        this.result= result;
     }
 
 
+    public void toTString() {
+        setResult(this.getResult().transformtoString());
+    }
 }
 

@@ -197,4 +197,9 @@ public class Int extends Numbers implements FloatInt, IntBinary {
         int res = b1/this.getInt();
         return new Binary(intToBinary(res));
     }
+
+    @Override
+    public Int getResult(){
+        return this;
+    }
 }

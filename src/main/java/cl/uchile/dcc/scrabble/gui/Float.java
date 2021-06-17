@@ -146,4 +146,8 @@ public class Float extends Numbers implements FloatInt {
     }
 
 
+    @Override
+    public Float getResult(){
+        return this;
+    }
 }

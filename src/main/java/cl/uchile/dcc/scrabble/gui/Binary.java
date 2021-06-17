@@ -440,4 +440,11 @@ public class Binary extends Numbers implements ILogical, IntBinary{
         }
         return new Binary(res);
     }
+    @Override
+    public Binary getResult(){
+        return this;
+    }
+    public INumbers ASTAdd(INumbers n){
+        n.addedByBinary
+    }
 }

@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import cl.uchile.dcc.scrabble.gui.ast.ASTLogical;
+
 import java.util.Objects;
 
 /**
@@ -136,4 +138,8 @@ public class Bool extends Types implements ILogical{
         return new Bool(this.isBool() || b.isBool());
     }
 
+    @Override
+    public Bool getResult(){
+        return this;
+    }
 }

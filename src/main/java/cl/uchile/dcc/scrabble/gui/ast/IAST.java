@@ -5,8 +5,6 @@ import cl.uchile.dcc.scrabble.gui.*;
 public interface IAST {
 
 
-    IAST toTString();
-
-    IAST getResult();
+    ITypes getResult();
 
 }

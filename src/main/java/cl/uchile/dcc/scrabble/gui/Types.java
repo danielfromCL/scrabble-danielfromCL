@@ -19,6 +19,8 @@ public abstract class Types implements ITypes{
     public TString addedByString(TString t) {
         return new TString(t.toString()+this.toString());
     }
+
+
 }
 
 
