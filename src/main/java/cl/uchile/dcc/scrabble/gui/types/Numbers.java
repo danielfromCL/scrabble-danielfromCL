@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.types;
 
 
 import static java.lang.Math.abs;
@@ -70,4 +70,7 @@ public abstract class Numbers extends Types implements INumbers{
         }
         return str.toString();
     }
+
+
+
 }

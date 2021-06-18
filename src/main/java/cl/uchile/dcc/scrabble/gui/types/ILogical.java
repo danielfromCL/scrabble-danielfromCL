@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.types;
 /**
  * Interface that declares all the common methods between the Bool class and the Binary class.
  */

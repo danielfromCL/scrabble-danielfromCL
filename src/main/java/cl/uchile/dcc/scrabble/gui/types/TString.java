@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.types;
 
 import cl.uchile.dcc.scrabble.gui.ast.ASTString;
 

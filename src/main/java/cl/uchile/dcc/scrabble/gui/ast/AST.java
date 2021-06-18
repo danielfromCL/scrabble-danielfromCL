@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-import cl.uchile.dcc.scrabble.gui.*;
+import cl.uchile.dcc.scrabble.gui.types.ITypes;
 
 import java.util.*;
 

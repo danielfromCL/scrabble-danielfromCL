@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.types;
 
 import java.util.Objects;
 
@@ -57,7 +57,7 @@ public class Float extends Numbers implements FloatInt {
      * The negation of a Float is itself multiplied by -1.
      */
     @Override
-    public FloatInt neg(){
+    public Float neg(){
         return new Float(this.getFloat()*(-1));
     }
     /**
@@ -149,5 +149,48 @@ public class Float extends Numbers implements FloatInt {
     @Override
     public Float getResult(){
         return this;
+    }
+    @Override
+    public INumbers Add(INumbers n1){
+        return n1.addingAFloat(this);
+    }
+    @Override
+    public INumbers AddingABinaryAST(Binary n) {
+        return n.addingAFloat(this);
+    }
+    @Override
+    public INumbers Sub(INumbers n1){
+        return n1.subtractingAFloat(this);
+    }
+    @Override
+    public INumbers SubtractingABinaryAST(Binary n) {
+        int i = toInt(n.getBinary());
+        return new Float(i-this.getFloat());
+
+    }
+
+    @Override
+    public INumbers Mult(INumbers n) {
+        return n.multiplyingAFloat(this);
+    }
+
+    @Override
+    public INumbers MultiplyingABinaryAST(Binary b) {
+        return b.multiplyingAFloat(this);
+    }
+
+    @Override
+    public INumbers Div(INumbers n) {
+        return n.dividingAFloat(this);
+    }
+
+    @Override
+    public INumbers DividingABinaryAST(Binary b) {
+        int i = toInt(b.getBinary());
+        return new Float(i/this.getFloat());
+    }
+    @Override
+    public Float Neg() {
+        return this.neg();
     }
 }

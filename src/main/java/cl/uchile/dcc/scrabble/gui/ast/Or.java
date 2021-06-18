@@ -1,21 +1,24 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-import cl.uchile.dcc.scrabble.gui.ILogical;
-import cl.uchile.dcc.scrabble.gui.ITypes;
+import cl.uchile.dcc.scrabble.gui.types.Binary;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Or extends ASTLogicalAbs{
+public class Or extends ASTLogicalAbs implements ASTIBin{
 
 
-    public Or(List<ASTLogical> args){
-        for(int i =0; i<args.size();i++){
-            super.nodes.add(args.get(i));
-        }
-        for(int i =0; i<args.size();i=i+2){
-            super.setResult(super.nodes.get(i).getResult().or(super.nodes.get(i+1).getResult()));
-        }
+    public Or(ASTIBin b1, ASTIBool b2){
+        super.nodes.add(b1);
+        super.nodes.add(b2);
+        setResult((Binary) b1.getResult().or(b2.getResult()));
+    }
+    public Or(ASTIBin b1, ASTIBin b2){
+        super.nodes.add(b1);
+        super.nodes.add(b2);
+        setResult((Binary) b1.getResult().or(b2.getResult()));
+    }
+    public Or(ASTIBool b1, ASTIBin b2){
+        super.nodes.add(b1);
+        super.nodes.add(b2);
+        setResult((Binary) b1.getResult().or(b2.getResult()));
     }
 
 

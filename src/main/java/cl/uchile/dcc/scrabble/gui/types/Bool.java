@@ -1,13 +1,13 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.types;
 
-import cl.uchile.dcc.scrabble.gui.ast.ASTLogical;
+import cl.uchile.dcc.scrabble.gui.ast.ASTIBool;
 
 import java.util.Objects;
 
 /**
  * Class that represents the Bool type for Scrabble.
  */
-public class Bool extends Types implements ILogical{
+public class Bool extends Types implements ILogical, ASTIBool {
     private boolean Bool;
     /**
      * Creates a Bool object.
@@ -58,7 +58,7 @@ public class Bool extends Types implements ILogical{
      * Returns a new Bool with its negated value.
      */
     @Override
-    public ILogical neg(){
+    public Bool neg(){
         return new Bool(!(this.isBool()));
     }
     /**
@@ -142,4 +142,11 @@ public class Bool extends Types implements ILogical{
     public Bool getResult(){
         return this;
     }
+
+    @Override
+    public void toBool(){
+        return;
+    }
+
+
 }

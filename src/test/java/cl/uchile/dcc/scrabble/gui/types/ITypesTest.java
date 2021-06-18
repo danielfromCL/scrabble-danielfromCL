@@ -1,5 +1,7 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.types;
 
+import cl.uchile.dcc.scrabble.gui.types.*;
+import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.apache.commons.lang3.RandomStringUtils;
 import java.util.Random;
 

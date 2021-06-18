@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.types;
 
-import cl.uchile.dcc.scrabble.gui.ast.AST;
+import cl.uchile.dcc.scrabble.gui.ast.ASTIBin;
 
 import java.util.Objects;
 
@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * Class that represents the Binary type for Scrabble.
  */
-public class Binary extends Numbers implements ILogical, IntBinary{
+public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
     private String Binary;
     /**
      * Creates a Binary object.
@@ -120,7 +120,7 @@ public class Binary extends Numbers implements ILogical, IntBinary{
      * The negation of a binary is made bit to bit.
      */
     @Override
-    public ILogical neg(){
+    public Binary neg(){
         String binary = this.getBinary();
         String res="";
         for(int i = 0; i<binary.length(); i++){
@@ -444,7 +444,49 @@ public class Binary extends Numbers implements ILogical, IntBinary{
     public Binary getResult(){
         return this;
     }
-    public INumbers ASTAdd(INumbers n){
-        n.addedByBinary
+
+    @Override
+    public INumbers Add(INumbers n1){
+        return n1.AddingABinaryAST(this);
     }
+
+    @Override
+    public INumbers AddingABinaryAST(Binary n) {
+        return this.addingABinary(n);
+    }
+    @Override
+    public INumbers Sub(INumbers n1){
+        return n1.SubtractingABinaryAST(this);
+    }
+    @Override
+    public INumbers SubtractingABinaryAST(Binary n) {
+        return this.subtractingABinary(n);
+    }
+
+    @Override
+    public INumbers Mult(INumbers n) {
+        return n.MultiplyingABinaryAST(this);
+    }
+
+    @Override
+    public INumbers MultiplyingABinaryAST(cl.uchile.dcc.scrabble.gui.types.Binary b) {
+        return this.multiplyingABinary(b);
+    }
+
+    @Override
+    public INumbers Div(INumbers n) {
+        return n.DividingABinaryAST(this);
+    }
+
+    @Override
+    public INumbers DividingABinaryAST(cl.uchile.dcc.scrabble.gui.types.Binary b) {
+        return this.dividingABinary(b);
+    }
+
+    @Override
+    public Binary Neg() {
+        return this.neg();
+    }
+
+
 }

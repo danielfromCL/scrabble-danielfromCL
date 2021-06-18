@@ -1,19 +1,11 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-import cl.uchile.dcc.scrabble.gui.INumbers;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Mult extends ASTNumbersAbs {
 
-    public Mult(List<ASTNumbers> args){
-        for(int i =0; i<args.size();i++){
-            super.nodes.add(args.get(i));
-        }
-        for(int i =0; i<args.size();i=i+2){
-            setResult(super.nodes.get(i).getResult().mult(super.nodes.get(i+1).getResult()));
-        }
+    public Mult(ASTNumbers n1, ASTNumbers n2){
+        super.nodes.add(n1);
+        super.nodes.add(n2);
+        setResult(n1.getResult().Mult(n2.getResult()));
     }
 
 }
