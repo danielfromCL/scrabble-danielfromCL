@@ -1,5 +1,8 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
+/**
+ * Class that represents the sum method in the AST.
+ */
 public class Add extends AST {
 
     public IAST n1;
