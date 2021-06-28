@@ -1,13 +1,11 @@
 package cl.uchile.dcc.scrabble.gui.types;
 
-import cl.uchile.dcc.scrabble.gui.ast.ASTIBool;
-
 import java.util.Objects;
 
 /**
  * Class that represents the Bool type for Scrabble.
  */
-public class Bool extends Types implements ILogical, ASTIBool {
+public class Bool extends Types {
     private boolean Bool;
     /**
      * Creates a Bool object.
@@ -51,6 +49,7 @@ public class Bool extends Types implements ILogical, ASTIBool {
     /**
      * Returns a copy of the Bool object.
      */
+    @Override
     public Bool transformtoBool(){
         return new Bool(this.isBool());
     }
@@ -62,17 +61,17 @@ public class Bool extends Types implements ILogical, ASTIBool {
         return new Bool(!(this.isBool()));
     }
     /**
-     * Operates the logical "and" between this object's parameter and another ILogical object.
+     * Operates the logical "and" between this object's parameter and another ITypes object.
      */
     @Override
-    public ILogical and(ILogical b){
+    public ITypes and(ITypes b){
         return b.andwithBool(this);
     }
     /**
      * Returns a new Binary object with the logical operator "and" applied bit to bit between the boolean value of the Bool object and the Binary object.
      */
     @Override
-    public ILogical andwithBinary(Binary b) {
+    public ITypes andwithBinary(Binary b) {
         String binary = b.getBinary();
         String res="";
         if(this.isBool()){
@@ -96,21 +95,21 @@ public class Bool extends Types implements ILogical, ASTIBool {
      * Returns a new Bool object with the logical operator "and" applied between the boolean value of both Bool objects.
      */
     @Override
-    public ILogical andwithBool(Bool b) {
+    public ITypes andwithBool(Bool b) {
         return new Bool(this.isBool() && b.isBool());
     }
     /**
-     * Operates the logical "or" between this object's parameter and another ILogical object.
+     * Operates the logical "or" between this object's parameter and another ITypes object.
      */
     @Override
-    public ILogical or(ILogical b){
+    public ITypes or(ITypes b){
         return b.orwithBool(this);
     }
     /**
      * Returns a new Binary object with the logical operator "or" applied bit to bit between the boolean value of this Bool object and the Binary object.
      */
     @Override
-    public ILogical orwithBinary(Binary b) {
+    public ITypes orwithBinary(Binary b) {
         String binary = b.getBinary();
         String res="";
         if(!(this.isBool())){
@@ -134,19 +133,10 @@ public class Bool extends Types implements ILogical, ASTIBool {
      * Returns a new Bool object with the logical operator "or" applied between the boolean value of both Bool objects.
      */
     @Override
-    public ILogical orwithBool(Bool b) {
+    public ITypes orwithBool(Bool b) {
         return new Bool(this.isBool() || b.isBool());
     }
 
-    @Override
-    public Bool getResult(){
-        return this;
-    }
-
-    @Override
-    public void toBool(){
-        return;
-    }
 
 
 }

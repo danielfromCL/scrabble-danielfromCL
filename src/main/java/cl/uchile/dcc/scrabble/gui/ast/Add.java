@@ -1,12 +1,12 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-public class Add extends ASTNumbersAbs {
+public class Add extends AST {
 
-    public Add(ASTNumbers n1, ASTNumbers n2){
-        super.nodes.add(n1);
-        super.nodes.add(n2);
-        setResult(n1.getResult().Add(n2.getResult()));
+    public IAST n1;
+    public IAST n2;
+    public Add(IAST n1, IAST n2) {
+        this.n1 = n1;
+        this.n2 = n2;
+        setResult(n1.getResult().sum(n2.getResult()));
     }
-//podria poner esto como varios constructores dependiendo si IntFloat o Binary :c
-    //problema: no puedo diferenciar fuera de la recursion
 }

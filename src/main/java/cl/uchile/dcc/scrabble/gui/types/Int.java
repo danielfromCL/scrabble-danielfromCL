@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Class that represents the Int type for Scrabble.
  */
-public class Int extends Numbers implements FloatInt, IntBinary {
+public class Int extends Numbers implements ITypes {
     private int Int;
     /**
      * Creates an Int object.
@@ -70,17 +70,10 @@ public class Int extends Numbers implements FloatInt, IntBinary {
         return new Binary(binary);
     }
     /**
-     * The negation of an Int is itself multiplied by -1.
-     */
-    @Override
-    public Int neg(){
-        return new Int(this.getInt()*(-1));
-    }
-    /**
      * Adds an INumber object's parameter with this Int object's parameter.
      */
     @Override
-    public INumbers sum(INumbers n){
+    public ITypes sum(ITypes n){
         return n.addingAnInt(this);
     }
 
@@ -88,14 +81,14 @@ public class Int extends Numbers implements FloatInt, IntBinary {
      * Returns a new Int object with the sum between both Int objects's parameters.
      */
     @Override
-    public INumbers addingAnInt(Int i){
+    public ITypes addingAnInt(Int i){
         return new Int(this.getInt()+i.getInt());
     }
     /**
      * Returns a new Binary object with the sum between this object's parameter and the Binary object's parameter.
      */
     @Override
-    public IntBinary addingABinary(Binary b){
+    public ITypes addingABinary(Binary b){
         int b1 = toInt(b.getBinary());
         int res = b1+this.getInt();
         return new Binary(intToBinary(res));
@@ -104,95 +97,95 @@ public class Int extends Numbers implements FloatInt, IntBinary {
      * Returns a new Float object with the sum between this object's parameter and the Float object's paramater.
      */
     @Override
-    public INumbers addingAFloat(Float f) {
+    public ITypes addingAFloat(Float f) {
         return new Float(f.getFloat()+this.getInt());
     }
     /**
-     * Subtracts an INumbers object's parameter from this Int object's parameter.
+     * Subtracts an ITypes object's parameter from this Int object's parameter.
      */
     @Override
-    public INumbers sub(INumbers n) {
+    public ITypes sub(ITypes n) {
         return n.subtractingAnInt(this);
     }
     /**
      * Returns a new Int object with the subtraction between both Int objects's parameters.
      */
     @Override
-    public INumbers subtractingAnInt(Int i) {
+    public ITypes subtractingAnInt(Int i) {
         return new Int(i.getInt()-this.getInt());
     }
     /**
      * Returns a new Float object with the subtraction between the Float object's parameter and this object's parameter.
      */
     @Override
-    public INumbers subtractingAFloat(Float f) {
+    public ITypes subtractingAFloat(Float f) {
         return new Float(f.getFloat()-this.getInt());
     }
     /**
      * Returns a new Binary object with the subtraction between the Binary object's parameter and this object's parameter.
      */
     @Override
-    public IntBinary subtractingABinary(Binary b) {
+    public ITypes subtractingABinary(Binary b) {
         int b1= toInt(b.getBinary());
         int res = b1-this.getInt();
         return new Binary(intToBinary(res));
     }
     /**
-     * Multiplies an INumbers object's parameter with this Int object's parameter.
+     * Multiplies an ITypes object's parameter with this Int object's parameter.
      */
     @Override
-    public INumbers mult(INumbers n) {
+    public ITypes mult(ITypes n) {
         return n.multiplyingAnInt(this);
     }
     /**
      * Returns a new Float object with the multiplication between the Float object's parameter and this object's parameter.
      */
     @Override
-    public INumbers multiplyingAFloat(Float f) {
+    public ITypes multiplyingAFloat(Float f) {
         return new Float(f.getFloat()*this.getInt());
     }
     /**
      * Returns a new Int object with the multiplication between both Int objects's parameters.
      */
     @Override
-    public INumbers multiplyingAnInt(Int i) {
+    public ITypes multiplyingAnInt(Int i) {
         return new Int(i.getInt()*this.getInt());
     }
     /**
      * Returns a new Binary object with the multiplication between the Binary object's parameter and this object's parameter.
      */
     @Override
-    public IntBinary multiplyingABinary(Binary b) {
+    public ITypes multiplyingABinary(Binary b) {
         int b1 = toInt(b.getBinary());
         int res = b1*this.getInt();
         return new Binary(intToBinary(res));
     }
     /**
-     * Divides this Int object's parameter by an INumbers object's parameter.
+     * Divides this Int object's parameter by an ITypes object's parameter.
      */
     @Override
-    public INumbers div(INumbers n) {
+    public ITypes div(ITypes n) {
         return n.dividingAnInt(this);
     }
     /**
      * Returns a new Float object with the division between the Float object's parameter and this object's parameter.
      */
     @Override
-    public INumbers dividingAFloat(Float f) {
+    public ITypes dividingAFloat(Float f) {
         return new Float(f.getFloat()/this.getInt());
     }
     /**
      * Returns a new Int object with the division between both Int objects's parameters.
      */
     @Override
-    public INumbers dividingAnInt(Int i) {
+    public ITypes dividingAnInt(Int i) {
         return new Int(i.getInt()/this.getInt());
     }
     /**
      * Returns a new Binary object with the division between the Binary object's parameter and this object's parameter.
      */
     @Override
-    public IntBinary dividingABinary(Binary b) {
+    public ITypes dividingABinary(Binary b) {
         int b1 = toInt(b.getBinary());
         int res = b1/this.getInt();
         return new Binary(intToBinary(res));
@@ -203,45 +196,4 @@ public class Int extends Numbers implements FloatInt, IntBinary {
         return this;
     }
 
-    @Override
-    public INumbers Add(INumbers n){
-        return n.addingAnInt(this);
-    }
-    @Override
-    public INumbers AddingABinaryAST(Binary n) {
-        return this.addingABinary(n);
-    }
-    @Override
-    public INumbers Sub(INumbers n1){
-        return n1.subtractingAnInt(this);
-    }
-    @Override
-    public INumbers SubtractingABinaryAST(Binary n) {
-        return this.subtractingABinary(n);
-    }
-
-    @Override
-    public INumbers Mult(INumbers n) {
-        return n.multiplyingAnInt(this);
-    }
-
-    @Override
-    public INumbers MultiplyingABinaryAST(Binary b) {
-        return this.multiplyingABinary(b);
-    }
-
-    @Override
-    public INumbers Div(INumbers n) {
-        return n.dividingAnInt(this);
-    }
-
-    @Override
-    public INumbers DividingABinaryAST(Binary b) {
-        return this.dividingABinary(b);
-    }
-
-    @Override
-    public Int Neg() {
-        return this.neg();
-    }
 }

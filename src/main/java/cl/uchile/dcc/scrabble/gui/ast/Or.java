@@ -2,24 +2,14 @@ package cl.uchile.dcc.scrabble.gui.ast;
 
 import cl.uchile.dcc.scrabble.gui.types.Binary;
 
-public class Or extends ASTLogicalAbs implements ASTIBin{
+public class Or extends AST{
 
-
-    public Or(ASTIBin b1, ASTIBool b2){
-        super.nodes.add(b1);
-        super.nodes.add(b2);
-        setResult((Binary) b1.getResult().or(b2.getResult()));
+    public IAST b1;
+    public IAST b2;
+    public Or(IAST b1, IAST b2){
+        this.b1 = b1;
+        this.b2 = b2;
+        setResult(b1.getResult().or(b2.getResult()));
     }
-    public Or(ASTIBin b1, ASTIBin b2){
-        super.nodes.add(b1);
-        super.nodes.add(b2);
-        setResult((Binary) b1.getResult().or(b2.getResult()));
-    }
-    public Or(ASTIBool b1, ASTIBin b2){
-        super.nodes.add(b1);
-        super.nodes.add(b2);
-        setResult((Binary) b1.getResult().or(b2.getResult()));
-    }
-
 
 }

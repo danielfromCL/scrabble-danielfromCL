@@ -3,7 +3,6 @@ import cl.uchile.dcc.scrabble.gui.types.ITypes;
 
 public interface IAST {
 
-
     ITypes getResult();
 
 }

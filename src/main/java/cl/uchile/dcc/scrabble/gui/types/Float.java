@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Class that represents the Float type for Scrabble.
  */
-public class Float extends Numbers implements FloatInt {
+public class Float extends Numbers implements ITypes {
     private double Float;
     /**
      * Creates a Float object.
@@ -54,17 +54,10 @@ public class Float extends Numbers implements FloatInt {
         return new Float(this.getFloat());
     }
     /**
-     * The negation of a Float is itself multiplied by -1.
+     * Returns a new Float object with the sum between the Float object and an ITypes object.
      */
     @Override
-    public Float neg(){
-        return new Float(this.getFloat()*(-1));
-    }
-    /**
-     * Returns a new Float object with the sum between the Float object and an INumbers object.
-     */
-    @Override
-    public INumbers sum(INumbers n){
+    public ITypes sum(ITypes n){
         return n.addingAFloat(this);
     }
     /**
@@ -78,119 +71,72 @@ public class Float extends Numbers implements FloatInt {
      * Returns a new Float object with the sum between this object's parameter and the Int object's paramater.
      */
     @Override
-    public INumbers addingAnInt(Int i){
+    public ITypes addingAnInt(Int i){
         return new Float(i.getInt()+this.getFloat());
     }
     /**
-     * Returns a new Float object with the subtraction between this Float object's parameter and an INumbers object's paremeter.
+     * Returns a new Float object with the subtraction between this Float object's parameter and an ITypes object's paremeter.
      */
     @Override
-    public INumbers sub(INumbers n) {
+    public ITypes sub(ITypes n) {
         return n.subtractingAFloat(this);
     }
     /**
      * Returns a new Float object with the subtraction between both Float objects's parameters.
      */
     @Override
-    public INumbers subtractingAFloat(Float f) {
+    public ITypes subtractingAFloat(Float f) {
         return new Float(f.getFloat()-this.getFloat());
     }
     /**
      * Returns a new Float object with the subtraction between this object's parameter and the Int object's paramater.
      */
     @Override
-    public INumbers subtractingAnInt(Int i) {
+    public ITypes subtractingAnInt(Int i) {
         return new Float(i.getInt()-this.getFloat());
     }
     /**
-     * Returns a new Float object with the multiplication between this Float object's parameter and an INumbers object's paremeter.
+     * Returns a new Float object with the multiplication between this Float object's parameter and an ITypes object's paremeter.
      */
     @Override
-    public INumbers mult(INumbers n) {
+    public ITypes mult(ITypes n) {
         return n.multiplyingAFloat(this);
     }
     /**
      * Returns a new Float object with the multiplication between both Float objects's parameters.
      */
     @Override
-    public INumbers multiplyingAFloat(Float f) {
+    public ITypes multiplyingAFloat(Float f) {
         return new Float(f.getFloat()*this.getFloat());
     }
     /**
      * Returns a new Float object with the multiplication between this object's parameter and the Int object's paramater.
      */
     @Override
-    public INumbers multiplyingAnInt(Int i) {
+    public ITypes multiplyingAnInt(Int i) {
         return new Float(i.getInt()*this.getFloat());
     }
     /**
-     * Returns a new Float object with the division between this Float object's parameter and an INumbers object's paremeter.
+     * Returns a new Float object with the division between this Float object's parameter and an ITypes object's paremeter.
      */
     @Override
-    public INumbers div(INumbers n) {
+    public ITypes div(ITypes n) {
         return n.dividingAFloat(this);
     }
     /**
      * Returns a new Float object with the division between both Float objects's parameters.
      */
     @Override
-    public INumbers dividingAFloat(Float f) {
+    public ITypes dividingAFloat(Float f) {
         return new Float(f.getFloat()/this.getFloat());
     }
     /**
      * Returns a new Float object with the division between this object's parameter and the Int object's paramater.
      */
     @Override
-    public INumbers dividingAnInt(Int i) {
+    public ITypes dividingAnInt(Int i) {
         return new Float(i.getInt()/this.getFloat());
     }
 
 
-    @Override
-    public Float getResult(){
-        return this;
-    }
-    @Override
-    public INumbers Add(INumbers n1){
-        return n1.addingAFloat(this);
-    }
-    @Override
-    public INumbers AddingABinaryAST(Binary n) {
-        return n.addingAFloat(this);
-    }
-    @Override
-    public INumbers Sub(INumbers n1){
-        return n1.subtractingAFloat(this);
-    }
-    @Override
-    public INumbers SubtractingABinaryAST(Binary n) {
-        int i = toInt(n.getBinary());
-        return new Float(i-this.getFloat());
-
-    }
-
-    @Override
-    public INumbers Mult(INumbers n) {
-        return n.multiplyingAFloat(this);
-    }
-
-    @Override
-    public INumbers MultiplyingABinaryAST(Binary b) {
-        return b.multiplyingAFloat(this);
-    }
-
-    @Override
-    public INumbers Div(INumbers n) {
-        return n.dividingAFloat(this);
-    }
-
-    @Override
-    public INumbers DividingABinaryAST(Binary b) {
-        int i = toInt(b.getBinary());
-        return new Float(i/this.getFloat());
-    }
-    @Override
-    public Float Neg() {
-        return this.neg();
-    }
 }

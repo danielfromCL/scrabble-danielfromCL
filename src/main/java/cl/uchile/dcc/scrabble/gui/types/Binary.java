@@ -1,14 +1,12 @@
 package cl.uchile.dcc.scrabble.gui.types;
 
-import cl.uchile.dcc.scrabble.gui.ast.ASTIBin;
-
 import java.util.Objects;
 
 
 /**
  * Class that represents the Binary type for Scrabble.
  */
-public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
+public class Binary extends Numbers {
     private String Binary;
     /**
      * Creates a Binary object.
@@ -115,6 +113,8 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
         int i = toInt(this.getBinary());
         return new Int(i);
     }
+
+
     /**
      * Returns the negation of a Binary object.
      * The negation of a binary is made bit to bit.
@@ -134,16 +134,16 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
         return new Binary(res);
     }
     /**
-     * Adds an IntBinary object's parameter to this Binary object's parameter.
+     * Adds an ITypes object's parameter to this Binary object's parameter.
      */
-    public IntBinary sum(IntBinary n){
+    public ITypes sum(ITypes n){
         return n.addingABinary(this);
     }
     /**
      * Returns a new Binary object with the sum between both Binary objects's parameters.
      */
     @Override
-    public IntBinary addingABinary(Binary b){
+    public ITypes addingABinary(Binary b){
         int bin1 = toInt(b.getBinary());
         int bin2 = toInt(this.getBinary());
         int res = bin1+bin2;
@@ -153,7 +153,7 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Int object with the sum between this object's parameter and the Int object's paramater.
      */
     @Override
-    public INumbers addingAnInt(Int i){
+    public ITypes addingAnInt(Int i){
         int bin1 = toInt(this.getBinary());
         return new Int(i.getInt()+bin1);
     }
@@ -161,21 +161,21 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Float object with the sum between this object's parameter and the Float object's paramater.
      */
     @Override
-    public INumbers addingAFloat(Float f){
+    public ITypes addingAFloat(Float f){
         int bin1 = toInt(this.getBinary());
         return new Float(bin1+f.getFloat());
     }
     /**
-     * Subtracts an IntBinary object's parameter from this Binary object's parameter.
+     * Subtracts an ITypes object's parameter from this Binary object's parameter.
      */
-    public IntBinary sub(IntBinary n){
+    public ITypes sub(ITypes n){
         return n.subtractingABinary(this);
     }
     /**
      * Returns a new Binary object with the subtraction between both Binary objects's parameters.
      */
     @Override
-    public IntBinary subtractingABinary(Binary b){
+    public ITypes subtractingABinary(Binary b){
         int b1 = toInt(b.getBinary());
         int b2 = toInt(this.getBinary());
         String res = intToBinary(b1-b2);
@@ -185,7 +185,7 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Float object with the subtraction between this object's parameter and the Float object's paramater.
      */
     @Override
-    public INumbers subtractingAFloat(Float f) {
+    public ITypes subtractingAFloat(Float f) {
         int b = toInt(this.getBinary());
         return new Float(f.getFloat()-b);
     }
@@ -193,21 +193,21 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Int object with the subtraction between this object's parameter and the Int object's paramater.
      */
     @Override
-    public INumbers subtractingAnInt(Int i) {
+    public ITypes subtractingAnInt(Int i) {
         int b = toInt(this.getBinary());
         return new Int(i.getInt()-b);
     }
     /**
-     * Multiplies an IntBinary object's parameter with this Binary object's parameter.
+     * Multiplies an ITypes object's parameter with this Binary object's parameter.
      */
-    public IntBinary mult(IntBinary n){
+    public ITypes mult(ITypes n){
         return n.multiplyingABinary(this);
     }
     /**
      * Returns a new Binary object with the multiplication between both Binary objects's parameters.
      */
     @Override
-    public IntBinary multiplyingABinary(Binary b) {
+    public ITypes multiplyingABinary(Binary b) {
         int b1= toInt(b.getBinary());
         int b2 = toInt(this.getBinary());
         int res = b1*b2;
@@ -217,7 +217,7 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Float object with the multiplication between this object's parameter and the Float object's paramater.
      */
     @Override
-    public INumbers multiplyingAFloat(Float f) {
+    public ITypes multiplyingAFloat(Float f) {
         int b1= toInt(this.getBinary());
         return new Float(f.getFloat()*b1);
     }
@@ -225,21 +225,21 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Int object with the multiplication between this object's parameter and the Int object's paramater.
      */
     @Override
-    public INumbers multiplyingAnInt(Int i) {
+    public ITypes multiplyingAnInt(Int i) {
         int b1 = toInt(this.getBinary());
         return new Int(i.getInt()*b1);
     }
     /**
-     * Divides this Binary object's parameter by an IntBinary object's parameter.
+     * Divides this Binary object's parameter by an ITypes object's parameter.
      */
-    public IntBinary div(IntBinary n){
+    public ITypes div(ITypes n){
         return n.dividingABinary(this);
     }
     /**
      * Returns a new Float object with the division between this object's parameter and the Float object's paramater.
      */
     @Override
-    public INumbers dividingAFloat(Float f) {
+    public ITypes dividingAFloat(Float f) {
         int b = toInt(this.getBinary());
         return new Float(f.getFloat()/b);
     }
@@ -247,7 +247,7 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Int object with the division between this object's parameter and the Int object's paramater.
      */
     @Override
-    public INumbers dividingAnInt(Int i) {
+    public ITypes dividingAnInt(Int i) {
         int b = toInt(this.getBinary());
         return new Int(i.getInt()/b);
     }
@@ -255,24 +255,24 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Binary object with the division between both Binary objects's parameters.
      */
     @Override
-    public IntBinary dividingABinary(Binary b) {
+    public ITypes dividingABinary(Binary b) {
         int b1= toInt(b.getBinary());
         int b2 = toInt(this.getBinary());
         int res = b1/b2;
         return new Binary(intToBinary(res));
     }
     /**
-     * Operates the logical "and" between this object's parameter and another ILogical object.
+     * Operates the logical "and" between this object's parameter and another ITypes object.
      */
     @Override
-    public ILogical and(ILogical b){
+    public ITypes and(ITypes b){
         return b.andwithBinary(this);
     }
     /**
      * Returns a new Binary object with the logical operator "and" applied bit to bit between both Binary objects.
      */
     @Override
-    public ILogical andwithBinary(Binary b) {
+    public ITypes andwithBinary(Binary b) {
         String binary1 = this.getBinary();
         String binary2 = b.getBinary();
         String res="";
@@ -331,7 +331,7 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Binary object with the logical operator "and" applied bit to bit between this Binary object and the boolean value from the Bool object.
      */
     @Override
-    public ILogical andwithBool(Bool b) {
+    public ITypes andwithBool(Bool b) {
         String binary = this.getBinary();
         String res="";
         if(b.isBool()){
@@ -352,16 +352,16 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
         return new Binary(res);
     }
     /**
-     * Operates the logical "or" between this object's parameter and another ILogical object.
+     * Operates the logical "or" between this object's parameter and another ITypes object.
      */
-    public ILogical or(ILogical b){
+    public ITypes or(ITypes b){
         return b.orwithBinary(this);
     }
     /**
      * Returns a new Binary object with the logical operator "or" applied bit to bit between both Binary objects.
      */
     @Override
-    public ILogical orwithBinary(Binary b) {
+    public ITypes orwithBinary(Binary b) {
         String binary1 = this.getBinary();
         String binary2 = b.getBinary();
         String res="";
@@ -420,7 +420,7 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
      * Returns a new Binary object with the logical operator "or" applied bit to bit between this Binary object and the boolean value from the Bool object.
      */
     @Override
-    public ILogical orwithBool(Bool b) {
+    public ITypes orwithBool(Bool b) {
         String binary = this.getBinary();
         String res="";
         if(!(b.isBool())){
@@ -439,53 +439,6 @@ public class Binary extends Numbers implements ILogical, IntBinary, ASTIBin {
             }
         }
         return new Binary(res);
-    }
-    @Override
-    public Binary getResult(){
-        return this;
-    }
-
-    @Override
-    public INumbers Add(INumbers n1){
-        return n1.AddingABinaryAST(this);
-    }
-
-    @Override
-    public INumbers AddingABinaryAST(Binary n) {
-        return this.addingABinary(n);
-    }
-    @Override
-    public INumbers Sub(INumbers n1){
-        return n1.SubtractingABinaryAST(this);
-    }
-    @Override
-    public INumbers SubtractingABinaryAST(Binary n) {
-        return this.subtractingABinary(n);
-    }
-
-    @Override
-    public INumbers Mult(INumbers n) {
-        return n.MultiplyingABinaryAST(this);
-    }
-
-    @Override
-    public INumbers MultiplyingABinaryAST(cl.uchile.dcc.scrabble.gui.types.Binary b) {
-        return this.multiplyingABinary(b);
-    }
-
-    @Override
-    public INumbers Div(INumbers n) {
-        return n.DividingABinaryAST(this);
-    }
-
-    @Override
-    public INumbers DividingABinaryAST(cl.uchile.dcc.scrabble.gui.types.Binary b) {
-        return this.dividingABinary(b);
-    }
-
-    @Override
-    public Binary Neg() {
-        return this.neg();
     }
 
 

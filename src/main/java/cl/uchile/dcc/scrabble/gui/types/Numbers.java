@@ -6,7 +6,7 @@ import static java.lang.Math.abs;
 /**
  * Abstract class that represents every possible number type in Types.
  */
-public abstract class Numbers extends Types implements INumbers{
+public abstract class Numbers extends Types{
     /**
      * Returns an integer from the String representation of a binary number.
      */

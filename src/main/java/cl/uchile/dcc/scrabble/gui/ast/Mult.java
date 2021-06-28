@@ -1,11 +1,13 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-public class Mult extends ASTNumbersAbs {
+public class Mult extends AST {
 
-    public Mult(ASTNumbers n1, ASTNumbers n2){
-        super.nodes.add(n1);
-        super.nodes.add(n2);
-        setResult(n1.getResult().Mult(n2.getResult()));
+    public IAST n1;
+    public IAST n2;
+    public Mult(IAST n1, IAST n2){
+        this.n1 = n1;
+        this.n2 = n2;
+        setResult(n1.getResult().mult(n2.getResult()));
     }
 
 }
