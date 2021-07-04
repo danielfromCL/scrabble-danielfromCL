@@ -54,9 +54,5 @@ public class TString extends Types {
     }
 
 
-    @Override
-    public TString getResult(){
-        return this;
-    }
 }
 

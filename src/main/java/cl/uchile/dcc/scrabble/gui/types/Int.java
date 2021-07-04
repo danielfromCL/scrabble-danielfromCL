@@ -191,9 +191,5 @@ public class Int extends Numbers implements ITypes {
         return new Binary(intToBinary(res));
     }
 
-    @Override
-    public Int getResult(){
-        return this;
-    }
 
 }

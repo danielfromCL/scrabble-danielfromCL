@@ -1,15 +1,26 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-import cl.uchile.dcc.scrabble.gui.types.Binary;
 
-public class And extends AST{
+import cl.uchile.dcc.scrabble.gui.types.ITypes;
 
-    public IAST b1;
-    public IAST b2;
+/**
+ * Class that represents the and logical operation in the AST.
+ */
+public class And extends twoChildNode{
+
+    /**
+     * Creates a Node in the AST that operates the logical "and" between its first Node's result and its second Node's result as its result .
+     */
     public And(IAST b1, IAST b2){
-        this.b1 = b1;
-        this.b2 = b2;
-        setResult(b1.getResult().and(b2.getResult()));
+        super(b1,b2);
     }
 
+    /**
+     * Returns the result of this node.
+     * Operates the and logical operator between the result of both child nodes;
+     */
+    @Override
+    public ITypes getResult() {
+        return leftchild.getResult().and(rightchild.getResult());
+    }
 }

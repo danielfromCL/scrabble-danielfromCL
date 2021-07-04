@@ -1,14 +1,25 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-import java.util.List;
+import cl.uchile.dcc.scrabble.gui.types.ITypes;
 
-public class Sub extends AST {
+/**
+ * Class that represents the subtraction operation in the AST.
+ */
+public class Sub extends twoChildNode {
 
-    public IAST n1;
-    public IAST n2;
+    /**
+     * Creates a Node in the AST that subtracts its second Node's result from its first Node's result as its result .
+     */
     public Sub(IAST n1, IAST n2){
-        this.n1 = n1;
-        this.n2 = n2;
-        setResult(n1.getResult().sub(n2.getResult()));
+        super(n1,n2);
+    }
+
+    /**
+     * Returns the result of this node.
+     * Subtracts the result of the second child Node from the first child Node's result;
+     */
+    @Override
+    public ITypes getResult() {
+        return leftchild.getResult().sub(rightchild.getResult());
     }
 }

@@ -1,9 +1,24 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-public class ToFloat extends AST{
-    public IAST t1;
+import cl.uchile.dcc.scrabble.gui.types.ITypes;
+
+/**
+ * Class that represents the transformation to Float operation in the AST.
+ */
+public class ToFloat extends oneChildNode{
+    /**
+     * Creates a Node in the AST that transforms its parameter's result to Float as its result.
+     */
     public ToFloat(IAST t1){
-        this.t1=t1;
-        setResult(t1.getResult().transformtoFloat());
+        super(t1);
+    }
+
+    /**
+     * Returns the result of this node.
+     * Transforms the result of it's child node to Float;
+     */
+    @Override
+    public ITypes getResult() {
+        return childNode.getResult().transformtoFloat();
     }
 }

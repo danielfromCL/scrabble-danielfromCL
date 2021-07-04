@@ -45,24 +45,5 @@ class BoolTest {
         assertEquals(bot.toString(), "true");
         assertEquals(bof.toString(), "false");
     }
-    /**
-     * Tests the transformation from Bool to Bool
-     */
-    @Test
-    void transformerTest() {
-        assertEquals(bot.transformtoBool(),bot);
-        assertEquals(bof.transformtoBool(),bof);
-        assertNotEquals(bot.transformtoBool(),bof);
-        assertNotEquals(bof.transformtoBool(),bot);
-    }
-    /**
-     * Tests the negation from Bool objects.
-     */
-    @Test
-    void negationTest(){
-        assertEquals(bot.neg(),bof);
-        assertEquals(bof.neg(),bot);
-        assertNotEquals(bot.neg(),bot);
-        assertNotEquals(bof.neg(),bof);
-    }
+
 }

@@ -17,8 +17,6 @@ public interface ITypes extends IAST {
      */
     ITypes addedByString(TString t);
 
-    //HAY QUE ARREGLAR DE AQUI HACIA ABAJO
-
     /**
      *  Transforms an object to Binary.
      */

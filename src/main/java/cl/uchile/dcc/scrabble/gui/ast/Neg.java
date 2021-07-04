@@ -1,10 +1,25 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
-public class Neg extends AST{
+import cl.uchile.dcc.scrabble.gui.types.ITypes;
 
-    public IAST t1;
+/**
+ * Class that represents the negation operation in the AST.
+ */
+public class Neg extends oneChildNode{
+
+    /**
+     * Creates a Node in the AST that transforms its parameter's result to it's negation as its result.
+     */
     public Neg(IAST t1){
-        this.t1=t1;
-        setResult(t1.getResult().neg());
+        super(t1);
+    }
+
+    /**
+     * Returns the result of this node.
+     * Negates the result of it's child node;
+     */
+    @Override
+    public ITypes getResult() {
+        return childNode.getResult().neg();
     }
 }

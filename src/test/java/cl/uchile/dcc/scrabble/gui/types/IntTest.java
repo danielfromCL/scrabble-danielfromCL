@@ -52,4 +52,6 @@ class IntTest {
     void toStringTest(){
         assertEquals(i1.toString(), ""+random);
     }
+
+
 }

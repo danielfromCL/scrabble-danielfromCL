@@ -58,21 +58,5 @@ class TStringTest {
         assertEquals(st.toString(),hello);
         assertEquals(wo.toString(),world);
     }
-    /**
-     * Tests the sum between TString and ITypes objects.
-     */
-    @RepeatedTest(20)
-    void sumTest(){
-        Int i = new Int(23);
-        assertEquals(st.sum(i),new TString(hello+23));
-        Float f = new Float(23.0);
-        assertEquals(st.sum(f), new TString(hello+23.0));
-        Bool bot = new Bool(true);
-        assertEquals(st.sum(bot),new TString(hello+"true"));
-        Bool bof = new Bool(false);
-        assertEquals(st.sum(bof), new TString(hello+"false"));
-        Binary bi = new Binary("0010");
-        assertEquals(st.sum(bi),new TString(hello+"0010"));
-        assertEquals(st.sum(wo), new TString(hello+"hello world"));
-    }
+
 }
