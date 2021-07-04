@@ -3,6 +3,7 @@ package cl.uchile.dcc.scrabble.gui.ast;
 import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -39,7 +40,7 @@ public class AddTest {
     /**
      * Tests the constructor of the Add class.
      */
-    @Test
+    @RepeatedTest(20)
     void constructorTest() {
         var expectedAdd = new Int(random1+random2);
         Add IntInt = new Add(i1, i2);
