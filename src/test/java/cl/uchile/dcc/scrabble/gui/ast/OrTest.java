@@ -75,7 +75,7 @@ class OrTest {
         assertEquals(FloatBinary.getResult(), Null);
 
         Or OrTree1 = new Or(BoolBool, bo);
-        assertEquals(OrTree1.getResult(),expectedOr);
+        assertEquals(OrTree1.getResult(),bo);
         Or OrTree2 = new Or(OrTree1, BinaryBinary);
         assertEquals(OrTree2.getResult(), expectedOr);
     }
