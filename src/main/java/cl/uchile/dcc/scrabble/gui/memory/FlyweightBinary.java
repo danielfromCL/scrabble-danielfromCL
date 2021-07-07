@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class FlyweightBinary {
 
     private static FlyweightBinary FBinary;
-    private HashMap<String, Binary> Hmap;
+    private HashMap<String, Binary> Hmap = new HashMap<String, Binary>();
 
     private FlyweightBinary(){}
 

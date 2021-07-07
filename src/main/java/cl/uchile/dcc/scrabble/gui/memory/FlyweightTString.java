@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class FlyweightTString {
 
     private static FlyweightTString FTString;
-    private HashMap<String, TString> Hmap;
+    private HashMap<String, TString> Hmap = new HashMap<String, TString>();
 
     private FlyweightTString(){}
 

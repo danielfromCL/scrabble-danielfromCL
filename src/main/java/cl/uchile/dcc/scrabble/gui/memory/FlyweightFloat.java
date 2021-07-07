@@ -11,7 +11,7 @@ import java.util.HashMap;
  */
 public class FlyweightFloat {
     private static FlyweightFloat FFloat;
-    private HashMap<Double, Float> Hmap;
+    private HashMap<Double, Float> Hmap = new HashMap<Double, Float>();
 
     private FlyweightFloat(){}
 

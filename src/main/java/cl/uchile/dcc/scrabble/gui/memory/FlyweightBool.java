@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class FlyweightBool {
 
     private static FlyweightBool FBool;
-    private HashMap<Boolean, Bool> Hmap;
+    private HashMap<Boolean, Bool> Hmap = new HashMap<Boolean, Bool>();
 
     private FlyweightBool(){}
 

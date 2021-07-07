@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class FlyweightInt {
 
     private static FlyweightInt FInt;
-    private HashMap<Integer, Int> Hmap;
+    private HashMap<Integer, Int> Hmap = new HashMap<Integer, Int>();
 
     private FlyweightInt(){}
 
