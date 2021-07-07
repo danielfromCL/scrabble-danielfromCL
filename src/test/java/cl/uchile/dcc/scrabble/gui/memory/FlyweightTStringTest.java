@@ -48,7 +48,7 @@ class FlyweightTStringTest {
         assertEquals(bo2.getString(), "101");
         assertEquals(size1, FTString.getMap().size());
         TString bo3 = FTString.createTString("010");
-        assertEquals(bo3.getString(), "101");
+        assertEquals(bo3.getString(), "010");
         assertNotEquals(size1, FTString.getMap().size());
     }
 }

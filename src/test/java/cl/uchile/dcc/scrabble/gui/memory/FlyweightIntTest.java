@@ -47,8 +47,8 @@ class FlyweightIntTest {
         Int bo2 = FInt.createInt(2);
         assertEquals(bo2.getInt(), 2);
         assertEquals(size1, FInt.getMap().size());
-        Int bo3 = FInt.createInt(4);
-        assertEquals(bo3.getInt(), 2);
+        Int bo3 = FInt.createInt(3);
+        assertEquals(bo3.getInt(), 3);
         assertNotEquals(size1, FInt.getMap().size());
     }
 }
