@@ -1,5 +1,8 @@
 package cl.uchile.dcc.scrabble.gui.types;
 
+import cl.uchile.dcc.scrabble.gui.memory.FlyweightBinary;
+import cl.uchile.dcc.scrabble.gui.memory.FlyweightBool;
+
 import java.util.Objects;
 
 /**
@@ -51,14 +54,14 @@ public class Bool extends Types {
      */
     @Override
     public Bool transformtoBool(){
-        return new Bool(this.isBool());
+        return FlyweightBool.getFBool().createBool(this.isBool());
     }
     /**
-     * Returns a new Bool with its negated value.
+     * Returns  Bool with its negated value.
      */
     @Override
     public Bool neg(){
-        return new Bool(!(this.isBool()));
+        return FlyweightBool.getFBool().createBool(!(this.isBool()));
     }
     /**
      * Operates the logical "and" between this object's parameter and another ITypes object.
@@ -68,7 +71,7 @@ public class Bool extends Types {
         return b.andwithBool(this);
     }
     /**
-     * Returns a new Binary object with the logical operator "and" applied bit to bit between the boolean value of the Bool object and the Binary object.
+     * Returns  Binary object with the logical operator "and" applied bit to bit between the boolean value of the Bool object and the Binary object.
      */
     @Override
     public ITypes andwithBinary(Binary b) {
@@ -89,14 +92,14 @@ public class Bool extends Types {
                 res+='0';
             }
         }
-        return new Binary(res);
+        return FlyweightBinary.getFBinary().createBinary(res);
     }
     /**
-     * Returns a new Bool object with the logical operator "and" applied between the boolean value of both Bool objects.
+     * Returns  Bool object with the logical operator "and" applied between the boolean value of both Bool objects.
      */
     @Override
     public ITypes andwithBool(Bool b) {
-        return new Bool(this.isBool() && b.isBool());
+        return FlyweightBool.getFBool().createBool(this.isBool() && b.isBool());
     }
     /**
      * Operates the logical "or" between this object's parameter and another ITypes object.
@@ -106,7 +109,7 @@ public class Bool extends Types {
         return b.orwithBool(this);
     }
     /**
-     * Returns a new Binary object with the logical operator "or" applied bit to bit between the boolean value of this Bool object and the Binary object.
+     * Returns  Binary object with the logical operator "or" applied bit to bit between the boolean value of this Bool object and the Binary object.
      */
     @Override
     public ITypes orwithBinary(Binary b) {
@@ -127,14 +130,14 @@ public class Bool extends Types {
                 res+='1';
             }
         }
-        return new Binary(res);
+        return FlyweightBinary.getFBinary().createBinary(res);
     }
     /**
-     * Returns a new Bool object with the logical operator "or" applied between the boolean value of both Bool objects.
+     * Returns  Bool object with the logical operator "or" applied between the boolean value of both Bool objects.
      */
     @Override
     public ITypes orwithBool(Bool b) {
-        return new Bool(this.isBool() || b.isBool());
+        return FlyweightBool.getFBool().createBool(this.isBool() || b.isBool());
     }
 
 
