@@ -1,5 +1,9 @@
 package cl.uchile.dcc.scrabble.gui.types;
 
+import cl.uchile.dcc.scrabble.gui.memory.FlyweightBinary;
+import cl.uchile.dcc.scrabble.gui.memory.FlyweightFloat;
+import cl.uchile.dcc.scrabble.gui.memory.FlyweightInt;
+
 import java.util.Objects;
 
 
@@ -95,23 +99,23 @@ public class Binary extends Numbers {
      */
     @Override
     public Binary transformtoBinary(){
-        return new Binary(this.getBinary());
+        return FlyweightBinary.getFBinary().createBinary(this.getBinary());
     }
     /**
-     * Returns a new Float object with the Binary object's parameter in int form as its parameter.
+     * Returns a Float object with the Binary object's parameter in int form as its parameter.
      */
     @Override
     public Float transformtoFloat() {
-        int i = toInt(this.getBinary());
-        return new Float(i);
+        double i = toInt(this.getBinary());
+        return FlyweightFloat.getFFloat().createFloat(i);
     }
     /**
-     * Returns a new Int object with the Binary object's parameter in int form as its parameter.
+     * Returns an Int object with the Binary object's parameter in int form as its parameter.
      */
     @Override
     public Int transformtoInt(){
         int i = toInt(this.getBinary());
-        return new Int(i);
+        return FlyweightInt.getFInt().createInt(i);
     }
 
 
@@ -131,7 +135,7 @@ public class Binary extends Numbers {
                 res+='0';
             }
         }
-        return new Binary(res);
+        return FlyweightBinary.getFBinary().createBinary(res);
     }
     /**
      * Adds an ITypes object's parameter to this Binary object's parameter.
@@ -140,30 +144,30 @@ public class Binary extends Numbers {
         return n.addingABinary(this);
     }
     /**
-     * Returns a new Binary object with the sum between both Binary objects's parameters.
+     * Returns a Binary object with the sum between both Binary objects's parameters.
      */
     @Override
     public ITypes addingABinary(Binary b){
         int bin1 = toInt(b.getBinary());
         int bin2 = toInt(this.getBinary());
         int res = bin1+bin2;
-        return new Binary(intToBinary(res));
+        return FlyweightBinary.getFBinary().createBinary(intToBinary(res));
     }
     /**
-     * Returns a new Int object with the sum between this object's parameter and the Int object's paramater.
+     * Returns an Int object with the sum between this object's parameter and the Int object's paramater.
      */
     @Override
     public ITypes addingAnInt(Int i){
         int bin1 = toInt(this.getBinary());
-        return new Int(i.getInt()+bin1);
+        return FlyweightInt.getFInt().createInt(i.getInt()+bin1);
     }
     /**
-     * Returns a new Float object with the sum between this object's parameter and the Float object's paramater.
+     * Returns a Float object with the sum between this object's parameter and the Float object's paramater.
      */
     @Override
     public ITypes addingAFloat(Float f){
         int bin1 = toInt(this.getBinary());
-        return new Float(bin1+f.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(bin1+f.getFloat());
     }
     /**
      * Subtracts an ITypes object's parameter from this Binary object's parameter.
@@ -172,30 +176,30 @@ public class Binary extends Numbers {
         return n.subtractingABinary(this);
     }
     /**
-     * Returns a new Binary object with the subtraction between both Binary objects's parameters.
+     * Returns a Binary object with the subtraction between both Binary objects's parameters.
      */
     @Override
     public ITypes subtractingABinary(Binary b){
         int b1 = toInt(b.getBinary());
         int b2 = toInt(this.getBinary());
         String res = intToBinary(b1-b2);
-        return new Binary(res);
+        return FlyweightBinary.getFBinary().createBinary(res);
     }
     /**
-     * Returns a new Float object with the subtraction between this object's parameter and the Float object's paramater.
+     * Returns a Float object with the subtraction between this object's parameter and the Float object's paramater.
      */
     @Override
     public ITypes subtractingAFloat(Float f) {
         int b = toInt(this.getBinary());
-        return new Float(f.getFloat()-b);
+        return FlyweightFloat.getFFloat().createFloat(f.getFloat()-b);
     }
     /**
-     * Returns a new Int object with the subtraction between this object's parameter and the Int object's paramater.
+     * Returns an Int object with the subtraction between this object's parameter and the Int object's paramater.
      */
     @Override
     public ITypes subtractingAnInt(Int i) {
         int b = toInt(this.getBinary());
-        return new Int(i.getInt()-b);
+        return FlyweightInt.getFInt().createInt(i.getInt()-b);
     }
     /**
      * Multiplies an ITypes object's parameter with this Binary object's parameter.
@@ -204,30 +208,30 @@ public class Binary extends Numbers {
         return n.multiplyingABinary(this);
     }
     /**
-     * Returns a new Binary object with the multiplication between both Binary objects's parameters.
+     * Returns a Binary object with the multiplication between both Binary objects's parameters.
      */
     @Override
     public ITypes multiplyingABinary(Binary b) {
         int b1= toInt(b.getBinary());
         int b2 = toInt(this.getBinary());
         int res = b1*b2;
-        return new Binary(intToBinary(res));
+        return FlyweightBinary.getFBinary().createBinary(intToBinary(res));
     }
     /**
-     * Returns a new Float object with the multiplication between this object's parameter and the Float object's paramater.
+     * Returns a Float object with the multiplication between this object's parameter and the Float object's paramater.
      */
     @Override
     public ITypes multiplyingAFloat(Float f) {
         int b1= toInt(this.getBinary());
-        return new Float(f.getFloat()*b1);
+        return FlyweightFloat.getFFloat().createFloat(f.getFloat()*b1);
     }
     /**
-     * Returns a new Int object with the multiplication between this object's parameter and the Int object's paramater.
+     * Returns an Int object with the multiplication between this object's parameter and the Int object's paramater.
      */
     @Override
     public ITypes multiplyingAnInt(Int i) {
         int b1 = toInt(this.getBinary());
-        return new Int(i.getInt()*b1);
+        return FlyweightInt.getFInt().createInt(i.getInt() * b1);
     }
     /**
      * Divides this Binary object's parameter by an ITypes object's parameter.
@@ -236,30 +240,30 @@ public class Binary extends Numbers {
         return n.dividingABinary(this);
     }
     /**
-     * Returns a new Float object with the division between this object's parameter and the Float object's paramater.
+     * Returns a Float object with the division between this object's parameter and the Float object's paramater.
      */
     @Override
     public ITypes dividingAFloat(Float f) {
         int b = toInt(this.getBinary());
-        return new Float(f.getFloat()/b);
+        return FlyweightFloat.getFFloat().createFloat(f.getFloat()/b);
     }
     /**
-     * Returns a new Int object with the division between this object's parameter and the Int object's paramater.
+     * Returns an Int object with the division between this object's parameter and the Int object's paramater.
      */
     @Override
     public ITypes dividingAnInt(Int i) {
         int b = toInt(this.getBinary());
-        return new Int(i.getInt()/b);
+        return FlyweightInt.getFInt().createInt(i.getInt()/b);
     }
     /**
-     * Returns a new Binary object with the division between both Binary objects's parameters.
+     * Returns an Binary object with the division between both Binary objects's parameters.
      */
     @Override
     public ITypes dividingABinary(Binary b) {
         int b1= toInt(b.getBinary());
         int b2 = toInt(this.getBinary());
         int res = b1/b2;
-        return new Binary(intToBinary(res));
+        return FlyweightBinary.getFBinary().createBinary(intToBinary(res));
     }
     /**
      * Operates the logical "and" between this object's parameter and another ITypes object.
@@ -269,7 +273,7 @@ public class Binary extends Numbers {
         return b.andwithBinary(this);
     }
     /**
-     * Returns a new Binary object with the logical operator "and" applied bit to bit between both Binary objects.
+     * Returns a Binary object with the logical operator "and" applied bit to bit between both Binary objects.
      */
     @Override
     public ITypes andwithBinary(Binary b) {
@@ -325,10 +329,10 @@ public class Binary extends Numbers {
                 res+='0';
             }
         }
-        return new Binary(res);
+        return FlyweightBinary.getFBinary().createBinary(res);
     }
     /**
-     * Returns a new Binary object with the logical operator "and" applied bit to bit between this Binary object and the boolean value from the Bool object.
+     * Returns a Binary object with the logical operator "and" applied bit to bit between this Binary object and the boolean value from the Bool object.
      */
     @Override
     public ITypes andwithBool(Bool b) {
@@ -349,7 +353,7 @@ public class Binary extends Numbers {
                 res+='0';
             }
         }
-        return new Binary(res);
+        return FlyweightBinary.getFBinary().createBinary(res);
     }
     /**
      * Operates the logical "or" between this object's parameter and another ITypes object.
@@ -358,7 +362,7 @@ public class Binary extends Numbers {
         return b.orwithBinary(this);
     }
     /**
-     * Returns a new Binary object with the logical operator "or" applied bit to bit between both Binary objects.
+     * Returns a Binary object with the logical operator "or" applied bit to bit between both Binary objects.
      */
     @Override
     public ITypes orwithBinary(Binary b) {
@@ -414,10 +418,10 @@ public class Binary extends Numbers {
                 res+='0';
             }
         }
-        return new Binary(res);
+        return FlyweightBinary.getFBinary().createBinary(res);
     }
     /**
-     * Returns a new Binary object with the logical operator "or" applied bit to bit between this Binary object and the boolean value from the Bool object.
+     * Returns a Binary object with the logical operator "or" applied bit to bit between this Binary object and the boolean value from the Bool object.
      */
     @Override
     public ITypes orwithBool(Bool b) {
@@ -438,7 +442,7 @@ public class Binary extends Numbers {
                 res+='1';
             }
         }
-        return new Binary(res);
+        return FlyweightBinary.getFBinary().createBinary(res);
     }
 
 

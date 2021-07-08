@@ -30,6 +30,8 @@ class FlyweightBoolTest {
         FBool.createBool(true);
         test.put(true, new Bool(true));
         assertEquals(test, FBool.getMap());
+        FBool.createBool(true);
+        assertEquals(test, FBool.getMap());
         test.put(false, new Bool(false));
         assertNotEquals(test, FBool.getMap());
         FBool.createBool(false);

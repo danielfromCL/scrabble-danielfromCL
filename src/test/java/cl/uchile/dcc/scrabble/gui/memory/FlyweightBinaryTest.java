@@ -30,6 +30,8 @@ class FlyweightBinaryTest {
         FBinary.createBinary("101");
         test.put("101", new Binary("101"));
         assertEquals(test, FBinary.getMap());
+        FBinary.createBinary("101");
+        assertEquals(test, FBinary.getMap());
         test.put("010", new Binary("010"));
         assertNotEquals(test, FBinary.getMap());
         FBinary.createBinary("010");

@@ -2,6 +2,9 @@ package cl.uchile.dcc.scrabble.gui.types;
 
 import java.util.Objects;
 
+/**
+ * Class that represents Nulls on Scrabble.
+ */
 public class NullType extends Types{
 
     /**
@@ -24,7 +27,7 @@ public class NullType extends Types{
         return this;
     }
     /**
-     * Returns a new TString object with this object's paremeter appended to the TString object's parameter.
+     * Returns a TString object with this object's paremeter appended to the TString object's parameter.
      */
     @Override
     public ITypes addedByString(TString t) {

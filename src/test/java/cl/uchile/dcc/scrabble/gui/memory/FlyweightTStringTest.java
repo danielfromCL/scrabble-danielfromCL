@@ -30,6 +30,8 @@ class FlyweightTStringTest {
         FTString.createTString("101");
         test.put("101", new TString("101"));
         assertEquals(test, FTString.getMap());
+        FTString.createTString("101");
+        assertEquals(test, FTString.getMap());
         test.put("010", new TString("010"));
         assertNotEquals(test, FTString.getMap());
         FTString.createTString("010");

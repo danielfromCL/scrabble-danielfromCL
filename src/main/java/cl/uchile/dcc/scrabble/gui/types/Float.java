@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.gui.types;
 
+import cl.uchile.dcc.scrabble.gui.memory.FlyweightFloat;
+
 import java.util.Objects;
 
 /**
@@ -51,91 +53,91 @@ public class Float extends Numbers implements ITypes {
      */
     @Override
     public Float transformtoFloat(){
-        return new Float(this.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(this.getFloat());
     }
     /**
-     * Returns a new Float object with the sum between the Float object and an ITypes object.
+     * Returns a Float object with the sum between the Float object and an ITypes object.
      */
     @Override
     public ITypes sum(ITypes n){
         return n.addingAFloat(this);
     }
     /**
-     * Returns a new Float object with the sum between both Float objects's parameters.
+     * Returns a Float object with the sum between both Float objects's parameters.
      */
     @Override
     public Float addingAFloat(Float f){
-        return new Float(f.getFloat()+this.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(f.getFloat()+this.getFloat());
     }
     /**
-     * Returns a new Float object with the sum between this object's parameter and the Int object's paramater.
+     * Returns a Float object with the sum between this object's parameter and the Int object's paramater.
      */
     @Override
     public ITypes addingAnInt(Int i){
-        return new Float(i.getInt()+this.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(i.getInt()+this.getFloat());
     }
     /**
-     * Returns a new Float object with the subtraction between this Float object's parameter and an ITypes object's paremeter.
+     * Returns a Float object with the subtraction between this Float object's parameter and an ITypes object's paremeter.
      */
     @Override
     public ITypes sub(ITypes n) {
         return n.subtractingAFloat(this);
     }
     /**
-     * Returns a new Float object with the subtraction between both Float objects's parameters.
+     * Returns a Float object with the subtraction between both Float objects's parameters.
      */
     @Override
     public ITypes subtractingAFloat(Float f) {
-        return new Float(f.getFloat()-this.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(f.getFloat()-this.getFloat());
     }
     /**
-     * Returns a new Float object with the subtraction between this object's parameter and the Int object's paramater.
+     * Returns a Float object with the subtraction between this object's parameter and the Int object's paramater.
      */
     @Override
     public ITypes subtractingAnInt(Int i) {
-        return new Float(i.getInt()-this.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(i.getInt()-this.getFloat());
     }
     /**
-     * Returns a new Float object with the multiplication between this Float object's parameter and an ITypes object's paremeter.
+     * Returns a Float object with the multiplication between this Float object's parameter and an ITypes object's paremeter.
      */
     @Override
     public ITypes mult(ITypes n) {
         return n.multiplyingAFloat(this);
     }
     /**
-     * Returns a new Float object with the multiplication between both Float objects's parameters.
+     * Returns a Float object with the multiplication between both Float objects's parameters.
      */
     @Override
     public ITypes multiplyingAFloat(Float f) {
-        return new Float(f.getFloat()*this.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(f.getFloat()*this.getFloat());
     }
     /**
-     * Returns a new Float object with the multiplication between this object's parameter and the Int object's paramater.
+     * Returns a Float object with the multiplication between this object's parameter and the Int object's paramater.
      */
     @Override
     public ITypes multiplyingAnInt(Int i) {
-        return new Float(i.getInt()*this.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(i.getInt()*this.getFloat());
     }
     /**
-     * Returns a new Float object with the division between this Float object's parameter and an ITypes object's paremeter.
+     * Returns a Float object with the division between this Float object's parameter and an ITypes object's paremeter.
      */
     @Override
     public ITypes div(ITypes n) {
         return n.dividingAFloat(this);
     }
     /**
-     * Returns a new Float object with the division between both Float objects's parameters.
+     * Returns a Float object with the division between both Float objects's parameters.
      */
     @Override
     public ITypes dividingAFloat(Float f) {
-        return new Float(f.getFloat()/this.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(f.getFloat()/this.getFloat());
     }
     /**
-     * Returns a new Float object with the division between this object's parameter and the Int object's paramater.
+     * Returns a Float object with the division between this object's parameter and the Int object's paramater.
      */
     @Override
     public ITypes dividingAnInt(Int i) {
-        return new Float(i.getInt()/this.getFloat());
+        return FlyweightFloat.getFFloat().createFloat(i.getInt()/this.getFloat());
     }
 
 

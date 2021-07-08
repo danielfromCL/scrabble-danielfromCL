@@ -30,6 +30,8 @@ class FlyweightFloatTest {
         FFloat.createFloat(2.0);
         test.put(2.0, new Float(2.0));
         assertEquals(test, FFloat.getMap());
+        FFloat.createFloat(2.0);
+        assertEquals(test, FFloat.getMap());
         test.put(3.0, new Float(3.0));
         assertNotEquals(test, FFloat.getMap());
         FFloat.createFloat(3.0);
