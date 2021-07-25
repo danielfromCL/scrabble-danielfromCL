@@ -2,7 +2,10 @@ package cl.uchile.dcc.scrabble.gui.ast.flow;
 
 import cl.uchile.dcc.scrabble.gui.ast.IAST;
 import cl.uchile.dcc.scrabble.gui.types.ITypes;
-
+/**
+ * Class that represents the If operator.
+ * It's represented as a node on the AST.
+ */
 public class If implements IAST {
 
     private boolean cond;
