@@ -1,4 +1,6 @@
-package cl.uchile.dcc.scrabble.gui.ast;
+package cl.uchile.dcc.scrabble.gui.ast.operations;
+
+import cl.uchile.dcc.scrabble.gui.ast.IAST;
 
 public abstract class oneChildNode implements IAST {
 

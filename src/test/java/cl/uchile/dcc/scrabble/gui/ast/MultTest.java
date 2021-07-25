@@ -1,10 +1,10 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
+import cl.uchile.dcc.scrabble.gui.ast.operations.Mult;
 import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 

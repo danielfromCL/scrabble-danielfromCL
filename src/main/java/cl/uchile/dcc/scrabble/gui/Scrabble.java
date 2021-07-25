@@ -2,9 +2,12 @@ package cl.uchile.dcc.scrabble.gui;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
+
 
 /**
  * Main entry point for the application.
@@ -21,14 +24,18 @@ public class Scrabble extends Application {
   }
 
   @Override
-  public void start(Stage primaryStage) {
-    primaryStage.setTitle("Final reality");
+  public void start(@NotNull Stage primaryStage) {
 
-    Label label = new Label("This will be an app sometime");
+    primaryStage.setTitle("Final Reality");
+
+    var root = new Group();
+    int width = 1280;
+    int height = 720;
+    Label label = new Label("This was an app long ago...");
     label.setAlignment(Pos.CENTER);
 
     // This sets the size of the Scene to be 400px wide, 200px high
-    Scene scene = new Scene(label, 400, 200);
+    Scene scene = new Scene(label, width, height);
     primaryStage.setScene(scene);
 
     primaryStage.show();
