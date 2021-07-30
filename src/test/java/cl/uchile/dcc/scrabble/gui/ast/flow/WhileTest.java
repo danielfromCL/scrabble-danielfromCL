@@ -12,14 +12,18 @@ class WhileTest {
     }
 
     @Test
-    void getResult() {
+    void constructorTest(){
+
+    }
+    @Test
+    void getResultTest() {
     }
 
     @Test
-    void greaterThan() {
+    void greaterThanTest() {
     }
 
     @Test
-    void lesserThan() {
+    void lesserThanTest() {
     }
 }

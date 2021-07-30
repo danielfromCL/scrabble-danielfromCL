@@ -17,7 +17,7 @@ public class If implements IAST {
     /**
      * Creates a node in the AST that checks a condition. If the given condition is False it evaluates it's left child Node (ifFalse parameter), and evaluates it's right child Node (ifTrue parameter) otherwise.
      */
-    public If(boolean cond, IAST ifFalse, IAST ifTrue) {
+    public If(boolean cond, IAST ifTrue, IAST ifFalse) {
         this.cond = cond;
         this.ifFalse = ifFalse;
         this.ifTrue = ifTrue;
