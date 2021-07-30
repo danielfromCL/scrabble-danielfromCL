@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.gui.ast;
+package cl.uchile.dcc.scrabble.gui.ast.operations;
 
-import cl.uchile.dcc.scrabble.gui.ast.operations.Mult;
+import cl.uchile.dcc.scrabble.gui.ast.operations.Sub;
 import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,7 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MultTest {
+class SubTest {
 
     private Float f1,f2;
     private Int i1,i2;
@@ -37,44 +37,44 @@ class MultTest {
     }
 
     /**
-     * Tests the constructor of the Mult class.
+     * Tests the constructor of the Sub class.
      */
     @RepeatedTest(20)
     void constructorTest() {
-        var expectedMult = new Int(random1*random2);
-        Mult IntInt = new Mult(i1, i2);
-        Mult FloatInt = new Mult(f2, i1);
-        Mult BinaryInt = new Mult(bi, i1);
-        assertEquals(IntInt.getResult(), expectedMult);
-        var expectedMult2 = new Float(decimal2*random1);
-        assertEquals(FloatInt.getResult(), expectedMult2);
-        var NotExpectedMult = new Mult(i1, bi);
-        assertNotEquals(BinaryInt.getResult(), NotExpectedMult.getResult());
+        var expectedSub = new Int(random1-random2);
+        Sub IntInt = new Sub(i1, i2);
+        Sub FloatInt = new Sub(f2, i1);
+        Sub BinaryInt = new Sub(bi, i1);
+        assertEquals(IntInt.getResult(), expectedSub);
+        var expectedSub2 = new Float(decimal2-random1);
+        assertEquals(FloatInt.getResult(), expectedSub2);
+        var NotExpectedSub = new Sub(i1, bi);
+        assertNotEquals(BinaryInt.getResult(), NotExpectedSub.getResult());
 
-        Mult StringInt = new Mult(t, i1);
+        Sub StringInt = new Sub(t, i1);
         assertEquals(StringInt.getResult(), Null);
-        Mult BoolInt = new Mult(bo, i1);
+        Sub BoolInt = new Sub(bo, i1);
         assertEquals(BoolInt.getResult(), Null);
-        Mult IntString = new Mult(i1, t);
+        Sub IntString = new Sub(i1, t);
         assertEquals(IntString.getResult(), Null);
-        Mult FloatString = new Mult(f1, t);
+        Sub FloatString = new Sub(f1, t);
         assertEquals(FloatString.getResult(), Null);
-        Mult BoolString = new Mult(bo, t);
+        Sub BoolString = new Sub(bo, t);
         assertEquals(BoolString.getResult(), Null);
-        Mult StringString = new Mult(t, t);
+        Sub StringString = new Sub(t, t);
         assertEquals(StringString.getResult(),Null);
-        Mult IntBool = new Mult(i1,bo);
+        Sub IntBool = new Sub(i1,bo);
         assertEquals(IntBool.getResult(), Null);
-        Mult FloatBool = new Mult(f1,bo);
+        Sub FloatBool = new Sub(f1,bo);
         assertEquals(FloatBool.getResult(), Null);
-        Mult BinaryBool = new Mult(bi,bo);
+        Sub BinaryBool = new Sub(bi,bo);
         assertEquals(BinaryBool.getResult(), Null);
-        Mult StringBool = new Mult(t,bo);
+        Sub StringBool = new Sub(t,bo);
         assertEquals(StringBool.getResult(), Null);
 
-        Mult MultTree1 = new Mult(IntInt, i1);
-        assertEquals(MultTree1.getResult(), new Int(random1*random2*random1));
-        Mult MultTree2 = new Mult(IntInt, FloatInt);
-        assertEquals(MultTree2.getResult(), new Float(random1*random2*(decimal2*random1)));
+        Sub SubTree1 = new Sub(IntInt, i1);
+        assertEquals(SubTree1.getResult(), new Int(random1-random2-random1));
+        Sub SubTree2 = new Sub(IntInt, FloatInt);
+        assertEquals(SubTree2.getResult(), new Float(random1-random2-(decimal2-random1)));
     }
 }

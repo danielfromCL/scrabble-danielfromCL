@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.gui.ast;
+package cl.uchile.dcc.scrabble.gui.ast.operations;
 
-import cl.uchile.dcc.scrabble.gui.ast.operations.ToFloat;
+import cl.uchile.dcc.scrabble.gui.ast.operations.ToInt;
 import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,7 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ToFloatTest {
+class ToIntTest {
 
     private Float f1;
     private Int i1;
@@ -35,20 +35,20 @@ class ToFloatTest {
     }
 
     /**
-     * Tests the constructor of the ToFloat class.
+     * Tests the constructor of the ToInt class.
      */
     @RepeatedTest(20)
     void constructorTest() {
-        var expectedToFloat = f1;
-        ToFloat FloatToFloat = new ToFloat(f1);
-        assertEquals(FloatToFloat.getResult(), expectedToFloat);
-        ToFloat BinaryToFloat = new ToFloat(bi);
-        assertEquals(BinaryToFloat.getResult(),new Float(1));
-        ToFloat IntToFloat = new ToFloat(i1);
-        assertEquals(IntToFloat.getResult(), new Float(random1));
-        ToFloat StringToFloat = new ToFloat(t);
-        ToFloat BoolToFloat = new ToFloat(bo);
-        assertEquals(BoolToFloat.getResult(), Null);
-        assertEquals(StringToFloat.getResult(), Null);
+        var expectedToInt = new Int(1);
+        ToInt BinaryToInt = new ToInt(bi);
+        assertEquals(BinaryToInt.getResult(),expectedToInt);
+        ToInt IntToInt = new ToInt(i1);
+        assertEquals(IntToInt.getResult(), i1);
+        ToInt BoolToInt = new ToInt(bo);
+        ToInt StringToInt = new ToInt(t);
+        ToInt FloatToInt = new ToInt(f1);
+        assertEquals(StringToInt.getResult(), Null);
+        assertEquals(FloatToInt.getResult(), Null);
+        assertEquals(BoolToInt.getResult(), Null);
     }
 }

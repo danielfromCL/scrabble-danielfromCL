@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.gui.ast;
+package cl.uchile.dcc.scrabble.gui.ast.operations;
 
-import cl.uchile.dcc.scrabble.gui.ast.operations.Or;
+import cl.uchile.dcc.scrabble.gui.ast.operations.And;
 import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,9 +8,10 @@ import org.junit.jupiter.api.RepeatedTest;
 
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-class OrTest {
+public class AndTest {
 
     private Float f1;
     private Int i1;
@@ -35,49 +36,50 @@ class OrTest {
     }
 
     /**
-     * Tests the constructor of the Or class.
+     * Tests the constructor of the And class.
      */
     @RepeatedTest(20)
     void constructorTest() {
-        var expectedOr = new Binary("1");
-        Or BinaryBinary = new Or(bi, bi);
-        Or BinaryBool = new Or(bi, bo);
-        Or BoolBinary = new Or(bo, bi);
-        Or BoolBool = new Or(bo,bo);
-        assertEquals(BinaryBinary.getResult(), bi);
-        assertEquals(BinaryBool.getResult(), expectedOr);
+        var expectedAnd = bi;
+        And BinaryBinary = new And(bi, bi);
+        And BinaryBool = new And(bi, bo);
+        And BoolBinary = new And(bo, bi);
+        And BoolBool = new And(bo,bo);
+        assertEquals(BinaryBinary.getResult(), expectedAnd);
+        var expectedAnd2 = bi;
+        assertEquals(BinaryBool.getResult(), expectedAnd2);
         assertEquals(BoolBinary.getResult(), BinaryBool.getResult());
 
-        Or StringInt = new Or(t, i1);
+        And StringInt = new And(t, i1);
         assertEquals(StringInt.getResult(), Null);
-        Or BoolInt = new Or(bo, i1);
+        And BoolInt = new And(bo, i1);
         assertEquals(BoolInt.getResult(), Null);
-        Or IntString = new Or(i1, t);
+        And IntString = new And(i1, t);
         assertEquals(IntString.getResult(), Null);
-        Or FloatString = new Or(f1, t);
+        And FloatString = new And(f1, t);
         assertEquals(FloatString.getResult(), Null);
-        Or BoolString = new Or(bo, t);
+        And BoolString = new And(bo, t);
         assertEquals(BoolString.getResult(), Null);
-        Or StringString = new Or(t, t);
+        And StringString = new And(t, t);
         assertEquals(StringString.getResult(), Null);
-        Or IntBool = new Or(i1,bo);
+        And IntBool = new And(i1,bo);
         assertEquals(IntBool.getResult(), Null);
-        Or FloatBool = new Or(f1,bo);
+        And FloatBool = new And(f1,bo);
         assertEquals(FloatBool.getResult(), Null);
-        Or StringBool = new Or(t,bo);
+        And StringBool = new And(t,bo);
         assertEquals(StringBool.getResult(), Null);
-        Or BinaryInt = new Or(bi, i1);
+        And BinaryInt = new And(bi, i1);
         assertEquals(BinaryInt.getResult(), Null);
-        Or BinaryFloat = new Or(bi, i1);
+        And BinaryFloat = new And(bi, i1);
         assertEquals(BinaryFloat.getResult(), Null);
-        Or IntBinary = new Or(i1, bi);
+        And IntBinary = new And(i1, bi);
         assertEquals(IntBinary.getResult(), Null);
-        Or FloatBinary = new Or(f1, bi);
+        And FloatBinary = new And(f1, bi);
         assertEquals(FloatBinary.getResult(), Null);
 
-        Or OrTree1 = new Or(BoolBool, bo);
-        assertEquals(OrTree1.getResult(),bo);
-        Or OrTree2 = new Or(OrTree1, BinaryBinary);
-        assertEquals(OrTree2.getResult(), expectedOr);
+        And AndTree1 = new And(BoolBool, bo);
+        assertEquals(AndTree1.getResult(),bo);
+        And AndTree2 = new And(AndTree1, BinaryBinary);
+        assertEquals(AndTree2.getResult(), bi);
     }
 }

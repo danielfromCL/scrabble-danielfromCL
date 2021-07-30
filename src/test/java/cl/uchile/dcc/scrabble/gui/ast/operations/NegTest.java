@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.gui.ast;
+package cl.uchile.dcc.scrabble.gui.ast.operations;
 
-import cl.uchile.dcc.scrabble.gui.ast.operations.ToTString;
+import cl.uchile.dcc.scrabble.gui.ast.operations.Neg;
 import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,7 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ToTStringTest {
+class NegTest {
 
     private Float f1;
     private Int i1;
@@ -35,20 +35,20 @@ class ToTStringTest {
     }
 
     /**
-     * Tests the constructor of the ToTString class.
+     * Tests the constructor of the Neg class.
      */
     @RepeatedTest(20)
     void constructorTest() {
-        var expectedToTString = t;
-        ToTString BinaryToTString = new ToTString(bi);
-        assertEquals(BinaryToTString.getResult(),new TString("01"));
-        ToTString IntToTString = new ToTString(i1);
-        assertEquals(IntToTString.getResult(), new TString(""+random1));
-        ToTString BoolToTString = new ToTString(bo);
-        ToTString StringToTString = new ToTString(t);
-        ToTString FloatToTString = new ToTString(f1);
-        assertEquals(StringToTString.getResult(), expectedToTString);
-        assertEquals(FloatToTString.getResult(), new TString(""+decimal1));
-        assertEquals(BoolToTString.getResult(), new TString("true"));
+        var expectedNeg = new Binary("10");
+        Neg Binaryneg = new Neg(bi);
+        Neg Boolneg = new Neg(bo);
+        assertEquals(Binaryneg.getResult(),expectedNeg);
+        assertEquals(Boolneg.getResult(), new Bool(false));
+        Neg Stringneg = new Neg(t);
+        Neg Floatneg = new Neg(f1);
+        Neg Intneg = new Neg(i1);
+        assertEquals(Stringneg.getResult(), Null);
+        assertEquals(Floatneg.getResult(), Null);
+        assertEquals(Intneg.getResult(), Null);
     }
 }

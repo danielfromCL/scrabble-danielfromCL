@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.gui.ast;
+package cl.uchile.dcc.scrabble.gui.ast.operations;
 
-import cl.uchile.dcc.scrabble.gui.ast.operations.Neg;
+import cl.uchile.dcc.scrabble.gui.ast.operations.ToBool;
 import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,7 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class NegTest {
+class ToBoolTest {
 
     private Float f1;
     private Int i1;
@@ -35,20 +35,21 @@ class NegTest {
     }
 
     /**
-     * Tests the constructor of the Neg class.
+     * Tests the constructor of the ToBool class.
      */
     @RepeatedTest(20)
     void constructorTest() {
-        var expectedNeg = new Binary("10");
-        Neg Binaryneg = new Neg(bi);
-        Neg Boolneg = new Neg(bo);
-        assertEquals(Binaryneg.getResult(),expectedNeg);
-        assertEquals(Boolneg.getResult(), new Bool(false));
-        Neg Stringneg = new Neg(t);
-        Neg Floatneg = new Neg(f1);
-        Neg Intneg = new Neg(i1);
-        assertEquals(Stringneg.getResult(), Null);
-        assertEquals(Floatneg.getResult(), Null);
-        assertEquals(Intneg.getResult(), Null);
+        var expectedToBool = bo;
+        ToBool BoolToBool = new ToBool(bo);
+        assertEquals(BoolToBool.getResult(), expectedToBool);
+        ToBool BinaryToBool = new ToBool(bi);
+        assertEquals(BinaryToBool.getResult(),Null);
+        ToBool IntToBool = new ToBool(i1);
+        assertEquals(IntToBool.getResult(), Null);
+        ToBool StringToBool = new ToBool(t);
+        ToBool FloatToBool = new ToBool(f1);
+        assertEquals(StringToBool.getResult(), Null);
+        assertEquals(FloatToBool.getResult(), Null);
+
     }
 }

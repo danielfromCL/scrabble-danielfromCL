@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.gui.ast;
+package cl.uchile.dcc.scrabble.gui.ast.operations;
 
-import cl.uchile.dcc.scrabble.gui.ast.operations.ToInt;
+import cl.uchile.dcc.scrabble.gui.ast.operations.ToBinary;
 import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,7 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ToIntTest {
+class ToBinaryTest {
 
     private Float f1;
     private Int i1;
@@ -35,20 +35,20 @@ class ToIntTest {
     }
 
     /**
-     * Tests the constructor of the ToInt class.
+     * Tests the constructor of the ToBinary class.
      */
     @RepeatedTest(20)
     void constructorTest() {
-        var expectedToInt = new Int(1);
-        ToInt BinaryToInt = new ToInt(bi);
-        assertEquals(BinaryToInt.getResult(),expectedToInt);
-        ToInt IntToInt = new ToInt(i1);
-        assertEquals(IntToInt.getResult(), i1);
-        ToInt BoolToInt = new ToInt(bo);
-        ToInt StringToInt = new ToInt(t);
-        ToInt FloatToInt = new ToInt(f1);
-        assertEquals(StringToInt.getResult(), Null);
-        assertEquals(FloatToInt.getResult(), Null);
-        assertEquals(BoolToInt.getResult(), Null);
+        var expectedToBinary = bi;
+        ToBinary BinaryToBinary = new ToBinary(bi);
+        assertEquals(BinaryToBinary.getResult(),expectedToBinary);
+        ToBinary IntToBinary = new ToBinary(new Int(1));
+        assertEquals(IntToBinary.getResult(), bi);
+        ToBinary BoolToBinary = new ToBinary(bo);
+        ToBinary StringToBinary = new ToBinary(t);
+        ToBinary FloatToBinary = new ToBinary(f1);
+        assertEquals(StringToBinary.getResult(), Null);
+        assertEquals(FloatToBinary.getResult(), Null);
+        assertEquals(BoolToBinary.getResult(), Null);
     }
 }

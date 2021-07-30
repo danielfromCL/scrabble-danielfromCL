@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.gui.ast;
+package cl.uchile.dcc.scrabble.gui.ast.operations;
 
 import cl.uchile.dcc.scrabble.gui.ast.operations.Add;
 import cl.uchile.dcc.scrabble.gui.types.*;
