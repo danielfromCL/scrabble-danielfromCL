@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Class that tests all the methods of the While class.
+ */
 class WhileTest {
 
     private While a;
@@ -20,6 +23,9 @@ class WhileTest {
         c = new While(1, new TString("this is another good test")).lesserThan(5);
     }
 
+    /**
+     * Tests both the constructors amd getResult methods for While objects.
+     */
     @Test
     void constructorAndgetResultTest(){
         NullType expectedWhileNull = new NullType();
@@ -34,6 +40,9 @@ class WhileTest {
         assertNotEquals(c.getResult(), expectedWhileGT);
     }
 
+    /**
+     * Tests that While objects are being set correctly with a greater than as condition.
+     */
     @Test
     void greaterThanTest() {
         While d = new While(1, new Bool(false));
@@ -46,7 +55,9 @@ class WhileTest {
         d.greaterThan(20);
         assertEquals(d.getResult(), new NullType());
     }
-
+    /**
+     * Tests that While objects are being set correctly with a lesser than as condition.
+     */
     @Test
     void lesserThanTest() {
         While e = new While(1, new Bool(false));

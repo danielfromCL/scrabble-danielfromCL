@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Class that tests all the methods of the If class.
+ */
 class IfTest {
     private If a;
     private If b;
@@ -16,6 +19,9 @@ class IfTest {
        b = new If(false, new Bool(true), new TString("byeworld"));
     }
 
+    /**
+     * Tests the constructor for If objects.
+     */
     @Test
     void constructorTest(){
         var expectedIf = new Bool(true);
@@ -30,6 +36,9 @@ class IfTest {
 
     }
 
+    /**
+     * Tests the getResult method for If objects.
+     */
     @Test
     void getResultTest() {
         assertEquals(a.getResult(), new TString("helloworld"));

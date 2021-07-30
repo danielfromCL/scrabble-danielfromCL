@@ -21,15 +21,16 @@ public class Visitor implements IVisitor{
         } else {
             ITypes b = FlyweightNull.getFNull().createNull();
             int other = a.getOther();
+            int cond = a.getCond();
             if(a.getWhich() == 0) {
-                while (a.getCond() > other) {
-                    other++;
+                while (cond > other) {
+                    cond--;
                     b = a.getWhileTrue().getResult();
                 }
             }
             else if(a.getWhich() == 1) {
-                while (a.getCond() < other) {
-                    other--;
+                while (cond < other) {
+                    cond++;
                     b = a.getWhileTrue().getResult();
                 }
             }
