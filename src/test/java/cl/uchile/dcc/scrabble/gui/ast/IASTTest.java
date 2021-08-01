@@ -1,11 +1,14 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
+
+import cl.uchile.dcc.scrabble.gui.ast.flow.If;
+import cl.uchile.dcc.scrabble.gui.ast.flow.While;
+import cl.uchile.dcc.scrabble.gui.ast.operations.*;
 import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
-
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -64,5 +67,37 @@ public class IASTTest {
         assertEquals(tree3.getResult(), new Binary("101"));
         IAST tree4 = new ToFloat(tree3);
         assertEquals(tree4.getResult(), new Float(-3));
+      
+        While whilenode = new While(2, tree4);
+        assertEquals(whilenode.getResult(), new NullType());
+        whilenode.greaterThan(1);
+        assertEquals(whilenode.getResult(), tree4.getResult());
+        whilenode.greaterThan(2);
+        assertEquals(whilenode.getResult(), new NullType());
+        whilenode.lesserThan(2);
+        assertEquals(whilenode.getResult(), new NullType());
+        whilenode.lesserThan(3);
+        assertEquals(whilenode.getResult(), tree4.getResult());
+        whilenode.lesserThan(2);
+        assertEquals(whilenode.getResult(), new NullType());
+        whilenode.lesserThan(1);
+        assertEquals(whilenode.getResult(), new NullType());
+
+        If ifnode = new If(true, tree3, tree4);
+        assertEquals(ifnode.getResult(), tree3.getResult());
+        assertNotEquals(ifnode.getResult(), tree4.getResult());
+
+        If ifnode2 = new If(false, tree4, ifnode);
+        assertEquals(ifnode2.getResult(), ifnode.getResult());
+        assertNotEquals(ifnode2.getResult(), tree4.getResult());
+
+        If ifnode3 = new If(true, ifnode2, whilenode);
+        assertEquals(ifnode3.getResult(),ifnode2.getResult());
+        assertNotEquals(ifnode3.getResult(), whilenode.getResult());
+
+        If ifnode4 = new If(false, ifnode3, whilenode);
+        assertEquals(ifnode4.getResult(), whilenode.getResult());
+        assertNotEquals(ifnode4.getResult(), ifnode3.getResult());
+
     }
 }
