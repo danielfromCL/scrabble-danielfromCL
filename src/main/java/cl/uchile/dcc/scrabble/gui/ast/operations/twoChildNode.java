@@ -7,8 +7,8 @@ import cl.uchile.dcc.scrabble.gui.types.ITypes;
  */
 public abstract class twoChildNode implements IAST {
 
-    public IAST leftchild;
-    public IAST rightchild;
+    protected IAST leftchild;
+    protected IAST rightchild;
     /**
      * Creates a Node in the AST that has two child Nodes.
      */
