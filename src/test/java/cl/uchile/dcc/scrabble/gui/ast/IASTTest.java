@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.gui.ast;
 
+
 import cl.uchile.dcc.scrabble.gui.ast.flow.If;
 import cl.uchile.dcc.scrabble.gui.ast.flow.While;
 import cl.uchile.dcc.scrabble.gui.ast.operations.*;
@@ -7,7 +8,7 @@ import cl.uchile.dcc.scrabble.gui.types.*;
 import cl.uchile.dcc.scrabble.gui.types.Float;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
-
+import org.junit.jupiter.api.Test;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -66,7 +67,7 @@ public class IASTTest {
         assertEquals(tree3.getResult(), new Binary("101"));
         IAST tree4 = new ToFloat(tree3);
         assertEquals(tree4.getResult(), new Float(-3));
-
+      
         While whilenode = new While(2, tree4);
         assertEquals(whilenode.getResult(), new NullType());
         whilenode.greaterThan(1);
@@ -97,5 +98,6 @@ public class IASTTest {
         If ifnode4 = new If(false, ifnode3, whilenode);
         assertEquals(ifnode4.getResult(), whilenode.getResult());
         assertNotEquals(ifnode4.getResult(), ifnode3.getResult());
+
     }
 }
